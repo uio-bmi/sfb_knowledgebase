@@ -28,4 +28,6 @@ jobs:
       - name: make html & push to gh-pages to show automatically
         run: |
           sphinx-build -b html ./source ./docs
+          git add ./docs
+          git commit -m 'update docs'
           git push origin gh-pages
