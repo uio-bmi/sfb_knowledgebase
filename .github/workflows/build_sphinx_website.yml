@@ -25,9 +25,14 @@ jobs:
         run: |
           pip install Sphinx
         
-      - name: make html & push to gh-pages to show automatically
+      - name: make html & commit the changes
         run: |
           sphinx-build -b html ./source ./docs
           git add ./docs
           git commit -m 'update docs'
-          git push origin gh-pages
+          
+      - name: push changes to gh-pages to show automatically
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
