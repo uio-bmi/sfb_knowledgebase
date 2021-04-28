@@ -27,7 +27,6 @@ jobs:
         
       - name: make html & commit the changes
         run: |
-          git pull origin gh-pages
           sphinx-build -b html ./source ./docs
           git config user.name "pavlovicmilena"
           git add ./docs
@@ -37,4 +36,4 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.DEPLOY_TOKEN }}
-          branch: gh-pages
+          branch: master
