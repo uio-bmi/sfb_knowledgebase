@@ -34,11 +34,93 @@
             
   <div class="section" id="programming">
 <h1>Programming<a class="headerlink" href="#programming" title="Permalink to this headline">¶</a></h1>
-<p>This section covers the following topics:</p>
+<p>Most of the bioinformatics projects require at least some coding, where others include developing complex
+bioinformatics platforms, like <a class="reference external" href="https://hyperbrowser.uio.no/hb/#!mode=advanced">HyperBrowser</a> or
+<a class="reference external" href="https://immuneml.uio.no/">immuneML</a>. This section covers the best practices in
+programming, and is useful for both quick coding and platform development project. It covers:</p>
 <ul class="simple">
 <li><p>choosing a programming language,</p></li>
-<li><p>best practices in programming.</p></li>
+<li><p>how to organize the code,</p></li>
+<li><p>unit and integration testing,</p></li>
+<li><p>coding and design guidelines.</p></li>
 </ul>
+<div class="section" id="choosing-a-programming-language">
+<h2>Choosing a programming language<a class="headerlink" href="#choosing-a-programming-language" title="Permalink to this headline">¶</a></h2>
+<p>For most projects in the Centre, <a class="reference external" href="https://www.python.org/about/gettingstarted/">Python</a> is used as the main programming language.</p>
+<p>For smaller projects that heavily rely on statistics and visualization, projects often use R. R is also sometimes used in larger projects
+together with Python, though rpy2 library that allows R to be called from Python.</p>
+<p>When running time or memory could be an issue, e.g., due to large datasets, C++ can also be used. If the running time is an issue
+only for some parts of the code, only those parts can be optimized with C++ and <a class="reference external" href="https://cython.org/">Cython</a> and used together Python.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Even though R and Python can be used together, e.g., by using rpy2 library, it might be a lot of work to set them up
+on different infrastructures.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For more information on recommended development environments, see <a class="reference internal" href="setting_up_project.html#setting-up-and-organizing-a-project"><span class="std std-ref">Setting up and organizing a project</span></a>.</p>
+</div>
+<p>If you are new to programming, see some of the UiO software carpentry courses:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://swcarpentry.github.io/python-novice-gapminder/">Plotting and programming in Python</a> for beginners,</p></li>
+<li><p><a class="reference external" href="https://swcarpentry.github.io/python-novice-inflammation/">Programming with Python</a> for the ones with some experience with Python,</p></li>
+<li><p><a class="reference external" href="http://swcarpentry.github.io/r-novice-gapminder/">R for Reproducible Scientific Analysis</a> for beginners.</p></li>
+</ul>
+<p>Information on upcoming workshops can be found on the <a class="reference external" href="https://www.ub.uio.no/english/courses-events/courses/other/Carpentry/">UiO Library website</a>.</p>
+</div>
+<div class="section" id="organizing-the-code">
+<h2>Organizing the code<a class="headerlink" href="#organizing-the-code" title="Permalink to this headline">¶</a></h2>
+<p>To maintain a good programming style, increase the quality and readability of the code, try to follow the advice below and also
+see the recommended reading for more in-depth coverage of the topics.</p>
+<div class="section" id="make-the-code-modular">
+<h3>1. Make the code modular.<a class="headerlink" href="#make-the-code-modular" title="Permalink to this headline">¶</a></h3>
+<p>Modularity means that at the very least the code should be organized into functions not longer
+than 20-30 lines with understandable, descriptive names. Never write large unstructured stretches of code.
+Ensure that the function is doing exactly one task (called
+<a class="reference external" href="https://en.wikipedia.org/wiki/Single-responsibility_principle">single responsibility principle</a> in computer science) and
+that it has well-defined input and output. For instance, to make a function that will split a string sequence into subsequences
+of a given length, one could name the function <cite>manage_sequence(..)</cite>, but that would not make it clear what the function
+actually does. It is then hard to go back after some time and understand the code, regardless who the author is. If instead the
+same function would be called <cite>split_sequence_into_kmers(..)</cite> it would be clear over time what exactly that function is doing.</p>
+</div>
+<div class="section" id="use-object-oriented-approach">
+<h3>2. Use object-oriented approach.<a class="headerlink" href="#use-object-oriented-approach" title="Permalink to this headline">¶</a></h3>
+<p>Beyond the novice programming level, use object-oriented programming to organize the code, even if the project is small in scope.</p>
+</div>
+<div class="section" id="design-software-architecture-for-larger-projects">
+<h3>3. Design software architecture for larger projects.<a class="headerlink" href="#design-software-architecture-for-larger-projects" title="Permalink to this headline">¶</a></h3>
+<p>For larger and more complex projects, it is beneficial to spend some time initially on designing a good software architecture
+before implementing anything. The requirements might not all be known from the start, but thinking about the known ones and
+planning the architecture accordingly will also make it easier to refactor the code when new requirements arise.</p>
+</div>
+<div class="section" id="develop-software-in-iterations-and-refactor-often">
+<h3>4. Develop software in iterations and refactor often.<a class="headerlink" href="#develop-software-in-iterations-and-refactor-often" title="Permalink to this headline">¶</a></h3>
+<p>Generally, aim for a simpler, working solution first, try to run the code and obtain the feedback, and then improve the code in
+the next iteration. This follows agile approach in software development and is particularly useful in research where the
+requirements typically evolve over time.</p>
+</div>
+<div class="section" id="test-the-code">
+<h3>5. Test the code.<a class="headerlink" href="#test-the-code" title="Permalink to this headline">¶</a></h3>
+<p>To ensure the code works and that there were no breaking changes, it is good to test the code.</p>
+<p>To test that the individual functions or classes perform as expected, write unit tests. This is especially relevant for complex
+codebases where debugging can be inefficient if some of the components fail, where there are various use cases and edge cases might
+easily compe up. However, there is a balance between writing tests and research and development. For experimental projects and
+prototypes that might not be used again or for small one-time scripts where component validation is less important or less
+practical, unit tests might not be necessary. On the other hand, if these scripts end up being reused, then it is good to also
+have tests.</p>
+<p>Integration tests ensure that all components work together as expected. As such, they might discover a wide range of issues and
+edge cases that more realistically reflect the real analysis. They should always be developed, even if unit tests already exist.</p>
+</div>
+</div>
+<div class="section" id="recommended-reading">
+<h2>Recommended reading<a class="headerlink" href="#recommended-reading" title="Permalink to this headline">¶</a></h2>
+<p>Some recommended resources on this topic:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.oreilly.com/library/view/clean-code-a/9780136083238/">Clean Code: A Handbook of Agile Software Craftsmanship</a>, Robert C. Martin, 2008</p></li>
+<li><p><a class="reference external" href="https://doi.org/10.1371/journal.pcbi.1008549">Ten simple rules for quick and dirty scientific programming</a>, Gabriel Balaban, Ivar Grytten, Knut D. Rand,
+Lonneke Scheffer, Geir Kjetil Sandve, 2021</p></li>
+</ul>
+</div>
 </div>
 
 
@@ -61,7 +143,12 @@
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="analysis_design.html">Designing an analysis</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Programming</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Programming</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#choosing-a-programming-language">Choosing a programming language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#organizing-the-code">Organizing the code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#recommended-reading">Recommended reading</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="setting_up_project.html">Setting up and organizing a project</a></li>
 <li class="toctree-l1"><a class="reference internal" href="running_analysis.html">Running an analysis</a></li>
 </ul>
