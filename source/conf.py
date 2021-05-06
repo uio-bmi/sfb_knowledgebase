@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'SfB_knowledge_base'
+project = 'SfB knowledge base'
 copyright = '2021, SfB_UiO'
 author = 'SfB_UiO'
 
