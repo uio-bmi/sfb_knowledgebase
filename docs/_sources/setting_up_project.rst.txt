@@ -32,7 +32,7 @@ The Biomedical Informatics research group at the University of Oslo has a GitHub
 repositories can be created for each project of the group members. For public projects, see
 `BMI organization on GitHub <https://github.com/uio-bmi>`_.
 
-To learn about git, see the CodeRefinery project resources:
+To learn about git, see `the CodeRefinery project <https://coderefinery.org/>`_ resources:
 
 - `Introduction to version control with Git <https://coderefinery.github.io/git-intro/>`_
 - `Collaborative distributed version control <https://coderefinery.github.io/git-collaborative/>`_
