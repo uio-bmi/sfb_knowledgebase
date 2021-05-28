@@ -15,7 +15,7 @@ This repository is a collection of resources for these tasks grouped by a common
 and links to relevant online material and training.
 
 Quick start for new members
----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Follow one of these tutorials to set up a demo project. The steps for these projects will ensure that you have access to BMI resources
 and some basic understanding of setting up a project.
@@ -23,6 +23,8 @@ and some basic understanding of setting up a project.
 - :ref:`Get started with a simple Python project`
 - :ref:`Get started with a simple R project`
 
+Computational competencies
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Do you have biological background and want to get started in bioinformatics?
 ---------------------------------------------------------------------------------------
@@ -45,7 +47,34 @@ Do you need more information on specific tools developed at the Centre?
 Do you need to run large analyses and use servers or HPC clusters?
 --------------------------------------------------------------------
 
-.. point to links for fram / saga / contact info for immunohub
+- HPC intro
+- Fram
+- Saga
+- contact information for immunohub
+
+Do you want to read up on some more specialized/advanced topics in programming?
+--------------------------------------------------------------------------------
+
+- best coding practices
+- organizing code
+- testing
+
+Do you need to set up computational workflows?
+------------------------------------------------
+
+- containers and docker,
+- snakemake, nextflow and similar tools
+
+Do you want to learn more about statistics and machine learning?
+------------------------------------------------------------------
+
+- intro to machine learning
+- training and evaluation of machine learning methods
+- mathematics for machine learning
+- statistics
+
+Biological competencies
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Do you have computational background (computer science, engineering, statistic) and need to learn biology?
 ---------------------------------------------------------------------------------------------------------------------------
@@ -54,22 +83,6 @@ See the following pages for resources for:
 
 - :ref:`Getting started with genomics`
 - :ref:`Getting started with immunology and adaptive immune receptors`
-
-Do you want to read up on some more specialized/advanced topics in programming?
---------------------------------------------------------------------------------
-
-.. links to best coding practices, how to organize the code
-
-Do you need to set up computational workflows?
-------------------------------------------------
-
-.. containers and docker, snakemake and similar tools
-
-Do you want to learn more about statistics and machine learning?
-------------------------------------------------------------------
-
-.. links to pages within the website
-
 
 .. toctree::
    :maxdepth: 2
