@@ -17,8 +17,6 @@ and links to relevant online material and training.
 Quick start for new members
 ---------------------------------
 
-.. Bioinformatics quick start: (get a github account, make a Trello board, set up IDE, make one simple commit) - just to be sure everything is working
-
 Follow one of these tutorials to set up a demo project. The steps for these projects will ensure that you have access to BMI resources
 and some basic understanding of setting up a project.
 
@@ -52,12 +50,20 @@ Do you need to run large analyses and use servers or HPC clusters?
 Do you have computational background (computer science, engineering, statistic) and need to learn biology?
 ---------------------------------------------------------------------------------------------------------------------------
 
-.. links to bio resources: relevant intro papers and other online resources to genomics and immunology? Make a separate page for each one
+See the following pages for resources for:
+
+- :ref:`Getting started with genomics`
+- :ref:`Getting started with immunology and adaptive immune receptors`
 
 Do you want to read up on some more specialized/advanced topics in programming?
 --------------------------------------------------------------------------------
 
-.. links to best coding practices, how to organize the code, how to make containers (e.g., docker)
+.. links to best coding practices, how to organize the code
+
+Do you need to set up computational workflows?
+------------------------------------------------
+
+.. containers and docker, snakemake and similar tools
 
 Do you want to learn more about statistics and machine learning?
 ------------------------------------------------------------------
