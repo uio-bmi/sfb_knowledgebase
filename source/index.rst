@@ -6,6 +6,10 @@
 Centre for Bioinformatics - Knowledge Base
 ===========================================
 
+.. note::
+
+   This website is under development.
+
 For a bioinformatician, a broad variety of topics may be of interest to design and conduct an analysis.
 This repository is a collection of resources for these tasks grouped by a common theme. The resources include both custom content
 and links to relevant online material and training.
