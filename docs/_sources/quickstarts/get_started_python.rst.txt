@@ -20,13 +20,13 @@ When you create a board, you will be redirected to the board page and will be ab
 - get GitHub account
 - set up an IDE
 - connect IDE with GitHub account
-- create a project and add "Hello world" Python file
 - make a new GitHub repository under BMI organization and connect it to the new project
+- create a project and add "Hello world" Python file
 - put changes on GitHub
 
 Create an empty "Done" list and when done with each task, move the corresponding card to "Done".
 
-1. Get a GitHub account
+2. Get a GitHub account
 ---------------------------
 
 Version control allows tracking of changes in the documents (e.g., in code). BMI has an organization set up
@@ -37,7 +37,7 @@ to use for this purpose.
 
 For more information on GitHub and version control, see :ref:`Version control with git`.
 
-2. Set up an IDE
+3. Set up an IDE
 -------------------
 
 Integrated development environment (IDE) provides a convenient way to develop small and large projects.
@@ -48,7 +48,7 @@ To install PyCharm, follow the steps described on the `PyCharm website <https://
 
 For more information how to use PyCharm, see `their quick start guide <https://www.jetbrains.com/help/pycharm/quick-start-guide.html>`_.
 
-3. Connect IDE with GitHub account
+4. Connect IDE with GitHub account
 -------------------------------------
 
 When you are added to BMI organization on GitHub with your account (step 1 here), connect your IDE with
@@ -66,7 +66,7 @@ your initials.
 From PyCharm, connect the project with the repository just created on GitHub as described
 `here <https://www.jetbrains.com/help/pycharm/set-up-a-git-repository.html>`_.
 
-4. Create a project and add a "Hello World" Python file
+6. Create a project and add a "Hello World" Python file
 ----------------------------------------------------------
 
 When you open PyCharm, choose File > New Project.
@@ -89,7 +89,7 @@ copy the following content:
 When asked if the file should be added to Git, choose "add". This way the changes in the file will be
 tracked automatically.
 
-6. Put changes on GitHub
+7. Put changes on GitHub
 --------------------------
 
 From the bottom menu in PyCharm, click on Git. It will show local changes and files ready to be updated
@@ -106,6 +106,8 @@ the menu and choose "Commit and push" from the menu that opened.
 
 This will push your changes and make them visible when accessing the demo project on GitHub from the browser.
 
-7. Check the Trello board
+8. Check the Trello board
 ----------------------------
 
+Check if there are any remaining tasks and finish the remaining ones. When there are no more tasks, this
+quick start tutorial is done and you have set up all accounts and procedures for Python projects. Congrats!
