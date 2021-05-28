@@ -4,11 +4,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Programming &#8212; SfB knowledge base  documentation</title>
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
@@ -32,7 +33,7 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="programming">
+  <section id="programming">
 <h1>Programming<a class="headerlink" href="#programming" title="Permalink to this headline">¶</a></h1>
 <p>Most of the bioinformatics projects require at least some coding, where others include developing complex
 bioinformatics platforms, like <a class="reference external" href="https://hyperbrowser.uio.no/hb/#!mode=advanced">HyperBrowser</a> or
@@ -44,7 +45,7 @@ programming, and is useful for both quick coding and platform development projec
 <li><p>unit and integration testing,</p></li>
 <li><p>coding and design guidelines.</p></li>
 </ul>
-<div class="section" id="choosing-a-programming-language">
+<section id="choosing-a-programming-language">
 <h2>Choosing a programming language<a class="headerlink" href="#choosing-a-programming-language" title="Permalink to this headline">¶</a></h2>
 <p>For most projects in the Centre, <a class="reference external" href="https://www.python.org/about/gettingstarted/">Python</a> is used as the main programming language.</p>
 <p>For smaller projects that heavily rely on statistics and visualization, projects often use R. R is also sometimes used in larger projects
@@ -67,12 +68,12 @@ on different infrastructures.</p>
 <li><p><a class="reference external" href="http://swcarpentry.github.io/r-novice-gapminder/">R for Reproducible Scientific Analysis</a> for beginners.</p></li>
 </ul>
 <p>Information on upcoming workshops can be found on the <a class="reference external" href="https://www.ub.uio.no/english/courses-events/courses/other/Carpentry/">UiO Library website</a>.</p>
-</div>
-<div class="section" id="organizing-the-code">
+</section>
+<section id="organizing-the-code">
 <h2>Organizing the code<a class="headerlink" href="#organizing-the-code" title="Permalink to this headline">¶</a></h2>
 <p>To maintain a good programming style, increase the quality and readability of the code, try to follow the advice below and also
 see the recommended reading for more in-depth coverage of the topics.</p>
-<div class="section" id="make-the-code-modular">
+<section id="make-the-code-modular">
 <h3>1. Make the code modular.<a class="headerlink" href="#make-the-code-modular" title="Permalink to this headline">¶</a></h3>
 <p>Modularity means that at the very least the code should be organized into functions not longer
 than 20-30 lines with understandable, descriptive names. Never write large unstructured stretches of code.
@@ -82,24 +83,24 @@ that it has well-defined input and output. For instance, to make a function that
 of a given length, one could name the function <cite>manage_sequence(..)</cite>, but that would not make it clear what the function
 actually does. It is then hard to go back after some time and understand the code, regardless who the author is. If instead the
 same function would be called <cite>split_sequence_into_kmers(..)</cite> it would be clear over time what exactly that function is doing.</p>
-</div>
-<div class="section" id="use-object-oriented-approach">
+</section>
+<section id="use-object-oriented-approach">
 <h3>2. Use object-oriented approach.<a class="headerlink" href="#use-object-oriented-approach" title="Permalink to this headline">¶</a></h3>
 <p>Beyond the novice programming level, use object-oriented programming to organize the code, even if the project is small in scope.</p>
-</div>
-<div class="section" id="design-software-architecture-for-larger-projects">
+</section>
+<section id="design-software-architecture-for-larger-projects">
 <h3>3. Design software architecture for larger projects.<a class="headerlink" href="#design-software-architecture-for-larger-projects" title="Permalink to this headline">¶</a></h3>
 <p>For larger and more complex projects, it is beneficial to spend some time initially on designing a good software architecture
 before implementing anything. The requirements might not all be known from the start, but thinking about the known ones and
 planning the architecture accordingly will also make it easier to refactor the code when new requirements arise.</p>
-</div>
-<div class="section" id="develop-software-in-iterations-and-refactor-often">
+</section>
+<section id="develop-software-in-iterations-and-refactor-often">
 <h3>4. Develop software in iterations and refactor often.<a class="headerlink" href="#develop-software-in-iterations-and-refactor-often" title="Permalink to this headline">¶</a></h3>
 <p>Generally, aim for a simpler, working solution first, try to run the code and obtain the feedback, and then improve the code in
 the next iteration. This follows agile approach in software development and is particularly useful in research where the
 requirements typically evolve over time.</p>
-</div>
-<div class="section" id="test-the-code">
+</section>
+<section id="test-the-code">
 <h3>5. Test the code.<a class="headerlink" href="#test-the-code" title="Permalink to this headline">¶</a></h3>
 <p>To ensure the code works and that there were no breaking changes, it is good to test the code.</p>
 <p>To test that the individual functions or classes perform as expected, write unit tests. This is especially relevant for complex
@@ -110,9 +111,9 @@ practical, unit tests might not be necessary. On the other hand, if these script
 have tests.</p>
 <p>Integration tests ensure that all components work together as expected. As such, they might discover a wide range of issues and
 edge cases that more realistically reflect the real analysis. They should always be developed, even if unit tests already exist.</p>
-</div>
-</div>
-<div class="section" id="recommended-reading">
+</section>
+</section>
+<section id="recommended-reading">
 <h2>Recommended reading<a class="headerlink" href="#recommended-reading" title="Permalink to this headline">¶</a></h2>
 <p>Some recommended resources on this topic:</p>
 <ul class="simple">
@@ -120,8 +121,8 @@ edge cases that more realistically reflect the real analysis. They should always
 <li><p><a class="reference external" href="https://doi.org/10.1371/journal.pcbi.1008549">Ten simple rules for quick and dirty scientific programming</a>, Gabriel Balaban, Ivar Grytten, Knut D. Rand,
 Lonneke Scheffer, Geir Kjetil Sandve, 2021</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
           </div>
@@ -188,7 +189,7 @@ Lonneke Scheffer, Geir Kjetil Sandve, 2021</p></li>
       &copy;2021, SfB_UiO.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.4</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.0.2</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

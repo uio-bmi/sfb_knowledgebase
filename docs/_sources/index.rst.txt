@@ -10,16 +10,55 @@ For a bioinformatician, a broad variety of topics may be of interest to design a
 This repository is a collection of resources for these tasks grouped by a common theme. The resources include both custom content
 and links to relevant online material and training.
 
-The resources here cover:
+Quick start for new members
+---------------------------------
 
-1. :ref:`Designing an analysis`: domain-specific information related to statistics, machine learning,
-   adaptive immune receptor repertoires and other fields,
+.. Bioinformatics quick start: (get a github account, make a Trello board, set up IDE, make one simple commit) - just to be sure everything is working
 
-2. :ref:`Programming` starting from choosing a language to best practices like modular design, object oriented programming, testing,
+Follow one of these tutorials to set up a demo project. The steps for these projects will ensure that you have access to BMI resources
+and some basic understanding of setting up a project.
 
-3. :ref:`Setting up and organizing a project` including project management tools, version control, editors, and
+- :ref:`Get started with a simple Python project`
+- :ref:`Get started with a simple R project`
 
-4. :ref:`Running an analysis` describing running the command line and other recommended tools, and commonly used infrastructure.
+
+Do you have biological background and want to get started in bioinformatics?
+---------------------------------------------------------------------------------------
+
+- how to run analysis: unix and some simple tools
+- run tools from docker
+- using custom tools developed at the centre
+- computational thinking? / algorithms?
+- intro to programming
+- version control
+
+Do you need more information on specific tools developed at the Centre?
+-------------------------------------------------------------------------
+
+- GSuite Hyperbrowser
+- Proto
+- immuneML & immuneML Galaxy
+- other tools?
+
+Do you need to run large analyses and use servers or HPC clusters?
+--------------------------------------------------------------------
+
+.. point to links for fram / saga / contact info for immunohub
+
+Do you have computational background (computer science, engineering, statistic) and need to learn biology?
+---------------------------------------------------------------------------------------------------------------------------
+
+.. links to bio resources: relevant intro papers and other online resources to genomics and immunology? Make a separate page for each one
+
+Do you want to read up on some more specialized/advanced topics in programming?
+--------------------------------------------------------------------------------
+
+.. links to best coding practices, how to organize the code, how to make containers (e.g., docker)
+
+Do you want to learn more about statistics and machine learning?
+------------------------------------------------------------------
+
+.. links to pages within the website
 
 
 .. toctree::

@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Get started with a simple Python project &#8212; SfB knowledge base  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="get-started-with-a-simple-python-project">
+<h1>Get started with a simple Python project<a class="headerlink" href="#get-started-with-a-simple-python-project" title="Permalink to this headline">¶</a></h1>
+<p>In this tutorial, steps for setting up a sample project will be provided.</p>
+<section id="make-a-trello-board">
+<h2>1. Make a Trello board<a class="headerlink" href="#make-a-trello-board" title="Permalink to this headline">¶</a></h2>
+<p>Trello is a simple project management software where you can create a “board” for a project and organize
+to-dos in form of lists and cards with arbitrary level of detail.</p>
+<p>Go to <a class="reference external" href="https://trello.com">https://trello.com</a> and create an account. Once you sign up and log in, in the top menu in the right
+corner, press the <cite>+</cite> button and choose “Create a new board” for the dropdown menu.</p>
+<p>In the menu that opens, name your new board “demo project” and click ‘create’.</p>
+<p>When you create a board, you will be redirected to the board page and will be able to make a list. Call it
+“To do” and add a card for each of the following items:</p>
+<ul class="simple">
+<li><p>get GitHub account</p></li>
+<li><p>set up an IDE</p></li>
+<li><p>connect IDE with GitHub account</p></li>
+<li><p>create a project and add “Hello world” Python file</p></li>
+<li><p>make a new GitHub repository under BMI organization and connect it to the new project</p></li>
+<li><p>put changes on GitHub</p></li>
+</ul>
+<p>Create an empty “Done” list and when done with each task, move the corresponding card to “Done”.</p>
+</section>
+<section id="get-a-github-account">
+<h2>1. Get a GitHub account<a class="headerlink" href="#get-a-github-account" title="Permalink to this headline">¶</a></h2>
+<p>Version control allows tracking of changes in the documents (e.g., in code). BMI has an organization set up
+on GitHub (<a class="reference external" href="https://github.com">https://github.com</a> - one example of version control software) where the
+group members can create their own repositories and put their material and projects. To get access,
+ask one of the group members to add you and provide them with your GitHub username or an email you wish
+to use for this purpose.</p>
+<p>For more information on GitHub and version control, see <a class="reference internal" href="../setting_up_project.html#version-control-with-git"><span class="std std-ref">Version control with git</span></a>.</p>
+</section>
+<section id="set-up-an-ide">
+<h2>2. Set up an IDE<a class="headerlink" href="#set-up-an-ide" title="Permalink to this headline">¶</a></h2>
+<p>Integrated development environment (IDE) provides a convenient way to develop small and large projects.
+For Python projects, install PyCharm from JetBrains. The community version is free for all, and the
+professional version is free for academics and can be accessed for free using the institutional email.</p>
+<p>To install PyCharm, follow the steps described on the <a class="reference external" href="https://www.jetbrains.com/help/pycharm/installation-guide.html">PyCharm website</a>.</p>
+<p>For more information how to use PyCharm, see <a class="reference external" href="https://www.jetbrains.com/help/pycharm/quick-start-guide.html">their quick start guide</a>.</p>
+</section>
+<section id="connect-ide-with-github-account">
+<h2>3. Connect IDE with GitHub account<a class="headerlink" href="#connect-ide-with-github-account" title="Permalink to this headline">¶</a></h2>
+<p>When you are added to BMI organization on GitHub with your account (step 1 here), connect your IDE with
+your GitHub account so that any changes you make can be added to the repository online.</p>
+<p>To do this, follow the steps described on the
+<a class="reference external" href="https://www.jetbrains.com/help/pycharm/quick-start-guide.html#df750766">PyCharm website for version control systems (VCS)</a>.</p>
+</section>
+<section id="make-a-new-github-repository-and-connect-it-to-the-new-project">
+<h2>5. Make a new GitHub repository and connect it to the new project<a class="headerlink" href="#make-a-new-github-repository-and-connect-it-to-the-new-project" title="Permalink to this headline">¶</a></h2>
+<p>From the GitHub website under BMI organization, choose “New” and enter project details. The repository name could be “demo” and include
+your initials.</p>
+<p>From PyCharm, connect the project with the repository just created on GitHub as described
+<a class="reference external" href="https://www.jetbrains.com/help/pycharm/set-up-a-git-repository.html">here</a>.</p>
+</section>
+<section id="create-a-project-and-add-a-hello-world-python-file">
+<h2>4. Create a project and add a “Hello World” Python file<a class="headerlink" href="#create-a-project-and-add-a-hello-world-python-file" title="Permalink to this headline">¶</a></h2>
+<p>When you open PyCharm, choose File &gt; New Project.</p>
+<p>In the new window that opens, choose “Pure Python” and provide location for the project. By default, a
+new virtual environment will be created automatically. Make sure that ‘Base Python’ points to Python version 3.</p>
+<p>Leave all other options with default values.</p>
+<p>When the environment is set up, from the top menu, choose VCS &gt; Get from version control. Enter the URL of
+the newly created GitHub repository and check out.</p>
+<p>Next, create a file by choosing File &gt; New File &gt; Python file. Name the new file “main.py” and
+copy the following content:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;Hello world from Python!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>When asked if the file should be added to Git, choose “add”. This way the changes in the file will be
+tracked automatically.</p>
+</section>
+<section id="put-changes-on-github">
+<h2>6. Put changes on GitHub<a class="headerlink" href="#put-changes-on-github" title="Permalink to this headline">¶</a></h2>
+<p>From the bottom menu in PyCharm, click on Git. It will show local changes and files ready to be updated
+in the remote repository. If your new file is not there, right click on the file in the left side bar and
+choose Git &gt; Commit file.</p>
+<p>When the file is under the Local Changes / Default Changelist, click on the “Default Changelist” and then
+click on the green check mark (“Commit”) in the menu on the left. The pop up menu will open asking to
+enter the commit message. It can be simply “initial commit” but for subsequent changes it is a good practice
+to have short yet understandable and informative message describing what changes have been made.</p>
+<p>When you have entered the commit message, click on the arrow next to the “Commit” button at the bottom of
+the menu and choose “Commit and push” from the menu that opened.</p>
+<p>This will push your changes and make them visible when accessing the demo project on GitHub from the browser.</p>
+</section>
+<section id="check-the-trello-board">
+<h2>7. Check the Trello board<a class="headerlink" href="#check-the-trello-board" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">SfB knowledge base</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../analysis_design.html">Designing an analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../programming.html">Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setting_up_project.html">Setting up and organizing a project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../running_analysis.html">Running an analysis</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, SfB_UiO.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.0.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/quickstarts/get_started_python.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
