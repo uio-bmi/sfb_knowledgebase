@@ -24,6 +24,7 @@ jobs:
       - name: install dependencies
         run: |
           pip install Sphinx
+          pip install furo
         
       - name: make html & commit the changes
         run: |
