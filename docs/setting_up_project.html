@@ -129,6 +129,12 @@
         </label>
         <div class="section" id="setting-up-and-organizing-a-project">
 <h1>Setting up and organizing a project<a class="headerlink" href="#setting-up-and-organizing-a-project" title="Permalink to this headline">¶</a></h1>
+<div class="admonition- admonition">
+<p class="admonition-title">🌱🌿🌳</p>
+<p>Aim: provide reference for a set of topics as well as further reading material for interested readers</p>
+<p>Level: any 🌱🌿🌳</p>
+<p>More advanced sections are labeled wit 🌿 (apprentice) and 🌳 (journeyman).</p>
+</div>
 <p>This section covers topics in:</p>
 <ul class="simple">
 <li><p>project coordination / management tools,</p></li>
@@ -163,8 +169,89 @@ repositories can be created for each project of the group members. For public pr
 <li><p><a class="reference external" href="https://coderefinery.github.io/git-branch-design/">Git branch design lesson</a></p></li>
 </ul>
 <p>Alternatively, a lot of public resources for version control are available, such as these Atlassian tutorials
-on git for <a class="reference external" href="https://www.atlassian.com/git/tutorials/what-is-version-control">learning version control</a> and
-<a class="reference external" href="https://www.atlassian.com/git/tutorials/what-is-git">what is git</a>.</p>
+for <a class="reference external" href="https://www.atlassian.com/git/tutorials/what-is-version-control">learning version control</a> and
+<a class="reference external" href="https://www.atlassian.com/git/tutorials/what-is-git">learning about git</a>.</p>
+</div>
+<div class="section" id="containers">
+<h2>Containers<a class="headerlink" href="#containers" title="Permalink to this headline">¶</a></h2>
+<p>With many different operating systems and local setups, it is often a challenging task to get all the
+required software up and running. Containers are one possible solution that. They encapsulate the entire
+working environment including not only needed applications and packages, but also an operating system.
+Their main goal is to handle all dependencies in a standardized and reliable manner and ensure that the
+same applications can be run on the new computing environment (laptop, server, HPC, etc. depending on the application).</p>
+<div class="section" id="docker">
+<h3>Docker<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h3>
+<p>Docker is one container platform we have used in projects at the Centre.</p>
+<p>Docker defines several types of objects, but here we will mention only images and containers. Docker
+containers are the same as containers discussed above: the full computing environments taking care of all
+dependencies. Docker images, on the other hand, are templates defining how these environments are created.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more information on Docker objects, see the official <a class="reference external" href="https://docs.docker.com/get-started/overview/#docker-objects">Docker object documentation</a>.</p>
+</div>
+<p>This section will cover and link to resources for using the existing Docker images and creating new ones.</p>
+<div class="section" id="install-docker">
+<h4>Install Docker<a class="headerlink" href="#install-docker" title="Permalink to this headline">¶</a></h4>
+<p>To install Docker, follow <a class="reference external" href="https://docs.docker.com/get-docker/">the official Docker installation guide</a>.</p>
+</div>
+<div class="section" id="run-a-docker-container-locally">
+<h4>Run a Docker container locally<a class="headerlink" href="#run-a-docker-container-locally" title="Permalink to this headline">¶</a></h4>
+<div class="admonition- admonition">
+<p class="admonition-title">🌿</p>
+<p>Aim: create and run a Docker container from a publicly available Docker image</p>
+<p>Level: apprentice 🌿</p>
+</div>
+<p>Once Docker is installed and running locally, check the list of available containers by running the
+following command from the terminal:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">docker ps -a</span>
+</pre></div>
+</div>
+<p>If you just installed Docker, this list will be empty. If there are any containers, the list will show
+container ID, image from which it was created, when it was created, current status, etc.</p>
+<p>Copy the following command in the terminal to pull a public Docker image, create a container from it
+and run a sample analysis. As an example, we here use <a class="reference external" href="https://immuneml.uio.no">immuneML</a> image. immuneML
+is a software for machine learning analysis of immune receptors. In this example run, it will generate a synthetic dataset
+and try to fit a classifier to predict if a person is sick or healthy for the simulated disease.</p>
+<p>This command will:</p>
+<ul class="simple">
+<li><p>make the current working directory (pwd) visible inside the container at path /data</p></li>
+<li><p>name the container <cite>my_container</cite></p></li>
+<li><p>download the immuneML Docker image from DockerHub from user milenapavlovic</p></li>
+<li><p>in a thus created environment, it will run immune-ml-quickstart as described above and store the output to /data/output/ directory</p></li>
+</ul>
+<p>which will be visible later in the current working directory under <cite>output/</cite>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">docker run -it -v $(pwd):/data --name my_container milenapavlovic/immuneml immune-ml-quickstart /data/output/</span>
+</pre></div>
+</div>
+<p>The image reference (here <cite>milenapavlovic/immuneml</cite>) can be replaced with any relevant image, and the
+command following the image should then be adapted to the particular use-case for the downloaded image.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>🌳 For more details on the run command and its parameters, see
+<a class="reference external" href="https://docs.docker.com/engine/reference/run/">the reference</a>.</p>
+</div>
+</div>
+<div class="section" id="create-a-docker-image-and-publish-it-on-dockerhub">
+<h4>Create a Docker image and publish it on DockerHub<a class="headerlink" href="#create-a-docker-image-and-publish-it-on-dockerhub" title="Permalink to this headline">¶</a></h4>
+<div class="admonition- admonition">
+<p class="admonition-title">🌳</p>
+<p>Aim: provide references for creating a Docker image and publishing it in a public repository DockerHub</p>
+<p>Level: journeyman 🌳</p>
+</div>
+<p>To create a Docker image, follow the <a class="reference external" href="https://docs.docker.com/get-started/">Getting started</a> guide. Parts 1-4
+describe how to come up with an image and publish it on DockerHub, that can then be used as described above.</p>
+<p>If you are using GitHub for code development and what to use that code as a basis for a Docker image,
+this process can also be automated to create a new image on a certain event and publish it on DockerHub.</p>
+<p>For example, see the <a class="reference external" href="https://github.com/uio-bmi/immuneML/blob/master/.github/workflows/docker-publish.yml">action YAML file on immuneML repository</a>.
+Every time push is performed to the master branch, the image will be rebuilt based on
+<a class="reference external" href="https://github.com/uio-bmi/immuneML/blob/master/Dockerfile">the Dockerfile</a> at the
+repository and published.</p>
+</div>
+</div>
+</div>
+<div class="section" id="virtual-environments-and-package-management">
+<h2>Virtual environments and package management<a class="headerlink" href="#virtual-environments-and-package-management" title="Permalink to this headline">¶</a></h2>
+<p>to be added</p>
 </div>
 </div>
 
@@ -225,6 +312,16 @@ on git for <a class="reference external" href="https://www.atlassian.com/git/tut
 <li><a class="reference internal" href="#">Setting up and organizing a project</a><ul>
 <li><a class="reference internal" href="#project-management-tools">Project management tools</a></li>
 <li><a class="reference internal" href="#version-control-with-git">Version control with git</a></li>
+<li><a class="reference internal" href="#containers">Containers</a><ul>
+<li><a class="reference internal" href="#docker">Docker</a><ul>
+<li><a class="reference internal" href="#install-docker">Install Docker</a></li>
+<li><a class="reference internal" href="#run-a-docker-container-locally">Run a Docker container locally</a></li>
+<li><a class="reference internal" href="#create-a-docker-image-and-publish-it-on-dockerhub">Create a Docker image and publish it on DockerHub</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#virtual-environments-and-package-management">Virtual environments and package management</a></li>
 </ul>
 </li>
 </ul>
