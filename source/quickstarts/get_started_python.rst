@@ -51,7 +51,7 @@ For more information how to use PyCharm, see `their quick start guide <https://w
 4. Connect IDE with GitHub account
 -------------------------------------
 
-When you are added to BMI organization on GitHub with your account (step 1 here), connect your IDE with
+When you are added to BMI organization on GitHub with your account (step 2 here), connect your IDE with
 your GitHub account so that any changes you make can be added to the repository online.
 
 To do this, follow the steps described on the
