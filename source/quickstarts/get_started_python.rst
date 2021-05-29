@@ -1,7 +1,15 @@
 Get started with a simple Python project
 =========================================
 
-In this tutorial, steps for setting up a sample project will be provided.
+In this short tutorial, we provide steps for setting up a sample Python project.
+
+.. note::
+
+  Aim: set up accounts needed to start developing a project and make sure everything is working.
+
+  Level: any 🌱🌿🌳
+
+  To learn more about mentioned concepts and tools, we provide links to other content throughout this document.
 
 1. Make a Trello board
 ---------------------------
@@ -30,12 +38,14 @@ Create an empty "Done" list and when done with each task, move the corresponding
 ---------------------------
 
 Version control allows tracking of changes in the documents (e.g., in code). BMI has an organization set up
-on GitHub (`https://github.com <https://github.com>`_ - one example of version control software) where the
+on GitHub (https://github.com - one example of version control software) where the
 group members can create their own repositories and put their material and projects. To get access,
 ask one of the group members to add you and provide them with your GitHub username or an email you wish
 to use for this purpose.
 
-For more information on GitHub and version control, see :ref:`Version control with git`.
+.. seealso::
+
+  For more information on GitHub and version control, see :ref:`Version control with git`.
 
 3. Set up an IDE
 -------------------
@@ -46,7 +56,9 @@ professional version is free for academics and can be accessed for free using th
 
 To install PyCharm, follow the steps described on the `PyCharm website <https://www.jetbrains.com/help/pycharm/installation-guide.html>`_.
 
-For more information how to use PyCharm, see `their quick start guide <https://www.jetbrains.com/help/pycharm/quick-start-guide.html>`_.
+.. seealso::
+
+  For more information how to use PyCharm, see `their quick start guide <https://www.jetbrains.com/help/pycharm/quick-start-guide.html>`_.
 
 4. Connect IDE with GitHub account
 -------------------------------------
@@ -75,6 +87,10 @@ In the new window that opens, choose "Pure Python" and provide location for the 
 new virtual environment will be created automatically. Make sure that 'Base Python' points to Python version 3.
 
 Leave all other options with default values.
+
+.. seealso::
+
+  For more information on virtual environments, see :ref:`Virtual environments and package management`.
 
 When the environment is set up, from the top menu, choose VCS > Get from version control. Enter the URL of
 the newly created GitHub repository and check out.
