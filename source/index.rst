@@ -16,7 +16,7 @@ and links to relevant online material and training.
 
 To describe the complexity level of each topic, there will be one of the following signs next to the title to indicate:
 🌱 (beginner level, no previous knowledge needed), 🌿 (apprentice level, some previous experience on the topic might be useful to
-follow the content) and 🌳 (journeyman level, assuming experience on the given topic and might go into details a lot).
+follow the content) and 🌳 (journeyman level, assuming experience on the given topic and the content might be quite detailed).
 
 Quick start for new members 🌱
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -34,6 +34,7 @@ Computational competencies
 Do you have biological background and want to get started in bioinformatics? 🌱
 ---------------------------------------------------------------------------------------
 
+Visit :ref:`this link <Getting started in bioinformatics>` to:
 - how to run analysis: unix and some simple tools
 - run tools from docker
 - using custom tools developed at the centre
@@ -93,6 +94,7 @@ See the following pages for resources for:
    :maxdepth: 2
    :caption: Contents:
 
+   getting_started_bioinf
    analysis_design
    programming
    setting_up_project

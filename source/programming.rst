@@ -1,5 +1,11 @@
-Programming
-===========
+Programming best practices
+============================
+
+.. note::
+
+  Aim: provide a reference list on best practices in programming with varying level of detail
+
+  Level: 🌿
 
 Most of the bioinformatics projects require at least some coding, where others include developing complex
 bioinformatics platforms, like `HyperBrowser <https://hyperbrowser.uio.no/hb/#!mode=advanced>`_ or
@@ -11,8 +17,8 @@ programming, and is useful for both quick coding and platform development projec
 - unit and integration testing,
 - coding and design guidelines.
 
-Choosing a programming language
----------------------------------
+Choosing a programming language 🌱
+-----------------------------------
 
 For most projects in the Centre, `Python <https://www.python.org/about/gettingstarted/>`_ is used as the main programming language.
 
@@ -39,7 +45,7 @@ If you are new to programming, see some of the UiO software carpentry courses:
 
 Information on upcoming workshops can be found on the `UiO Library website <https://www.ub.uio.no/english/courses-events/courses/other/Carpentry/>`_.
 
-Organizing the code
+Organizing the code 🌿
 ---------------------------------
 
 To maintain a good programming style, increase the quality and readability of the code, try to follow the advice below and also
@@ -91,8 +97,8 @@ have tests.
 Integration tests ensure that all components work together as expected. As such, they might discover a wide range of issues and
 edge cases that more realistically reflect the real analysis. They should always be developed, even if unit tests already exist.
 
-Recommended reading
---------------------
+Recommended reading 🌿
+------------------------
 
 Some recommended resources on this topic:
 
