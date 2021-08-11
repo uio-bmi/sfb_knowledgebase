@@ -3,13 +3,13 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Designing an analysis" href="analysis_design.html" /><link rel="prev" title="Centre for Bioinformatics - Knowledge Base" href="index.html" />
 
     <meta name="generator" content="sphinx-4.1.2, furo 2021.08.11.beta42"/>
-        <title>Getting started with genomics - SfB knowledge base documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=197f00461d56902ea7ca048ec6e6ba026f62c97b" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=93475b62d1c3bc01323a0eefdc14a62d77b12690" />
+        <title>Getting started in bioinformatics - SfB knowledge base documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=197f00461d56902ea7ca048ec6e6ba026f62c97b" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=93475b62d1c3bc01323a0eefdc14a62d77b12690" />
     
     
 
@@ -33,7 +33,7 @@
     }
   }
 </style>
-    <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="../_static/pygments_dark.css"></head>
+    <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css"></head>
   <body>
     
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -121,7 +121,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">SfB knowledge base  documentation</div></a>
+      <a href="index.html"><div class="brand">SfB knowledge base  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -132,7 +132,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -141,24 +141,24 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
   <span class="sidebar-brand-text">SfB knowledge base  documentation</span>
   
-</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started_bioinf.html">Getting started in bioinformatics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../analysis_design.html">Designing an analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../programming.html">Programming best practices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../setting_up_project.html">Setting up and organizing a project</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../running_analysis.html">Running an analysis</a></li>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Getting started in bioinformatics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis_design.html">Designing an analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programming.html">Programming best practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setting_up_project.html">Setting up and organizing a project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running_analysis.html">Running an analysis</a></li>
 </ul>
 
 </div>
@@ -179,21 +179,69 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <section id="getting-started-with-genomics">
-<h1>Getting started with genomics<a class="headerlink" href="#getting-started-with-genomics" title="Permalink to this headline">¶</a></h1>
+        <section id="getting-started-in-bioinformatics">
+<h1>Getting started in bioinformatics<a class="headerlink" href="#getting-started-in-bioinformatics" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Aim: Provide a reference list of resources to get started in the computational aspects of bioinformatics.</p>
+<p>Level: 🌱</p>
+</div>
+<section id="running-an-analysis-from-the-command-line-in-unix-environment">
+<h2>Running an analysis from the command line in UNIX environment<a class="headerlink" href="#running-an-analysis-from-the-command-line-in-unix-environment" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="run-tools-from-a-docker-image">
+<h2>Run tools from a Docker image<a class="headerlink" href="#run-tools-from-a-docker-image" title="Permalink to this headline">¶</a></h2>
+<p>Docker image is a template, a definition of how a computing environment (including libraries, packages, installations and the operating system) should
+look like. Based on a Docker image, a Docker container is created which is the environment itself based on the image.</p>
+<p>To run a tool from Docker environment, see the following tutorials: <span class="xref std std-ref">Install Docker</span> and <span class="xref std std-ref">Run a Docker container locally</span>.</p>
+</section>
+<section id="running-tools-developed-at-the-centre-for-bioinformatics">
+<h2>Running tools developed at the Centre for Bioinformatics<a class="headerlink" href="#running-tools-developed-at-the-centre-for-bioinformatics" title="Permalink to this headline">¶</a></h2>
+<section id="immuneml">
+<h3>immuneML<a class="headerlink" href="#immuneml" title="Permalink to this headline">¶</a></h3>
+<p>immuneML, a platform for machine learning analysis of adaptive immune receptors and repertoires, can be ran from the command line, Docker container,
+or through an online graphical interface. To get started, graphical user interface might be the most convenient:</p>
+<ul class="simple">
+<li><p>the graphical interface can be accessed at <a class="reference external" href="https://galaxy.immuneml.uio.no">https://galaxy.immuneml.uio.no</a></p></li>
+<li><p>documentation is available at <a class="reference external" href="https://docs.immuneml.uio.no/latest/galaxy.html">this link</a>.</p></li>
+</ul>
+<p>For alternative ways to run immuneML and detailed user documentation, visit <a class="reference external" href="https://docs.immuneml.uio.no">the immuneML documentation website</a>.</p>
+</section>
+<section id="hyperbrowser">
+<h3>HyperBrowser<a class="headerlink" href="#hyperbrowser" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
 </section>
 
       </article>
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="analysis_design.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Designing an analysis</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Home</div>
+                
+              </div>
+            </a>
         </div>
 
         <div class="related-information">
@@ -204,7 +252,7 @@
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
               <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
             |
-            <a class="muted-link" href="../_sources/biology/genomics.rst.txt"
+            <a class="muted-link" href="_sources/getting_started_bioinf.rst.txt"
                rel="nofollow">
               Show Source
             </a>
@@ -212,16 +260,41 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Getting started in bioinformatics</a><ul>
+<li><a class="reference internal" href="#running-an-analysis-from-the-command-line-in-unix-environment">Running an analysis from the command line in UNIX environment</a></li>
+<li><a class="reference internal" href="#run-tools-from-a-docker-image">Run tools from a Docker image</a></li>
+<li><a class="reference internal" href="#running-tools-developed-at-the-centre-for-bioinformatics">Running tools developed at the Centre for Bioinformatics</a><ul>
+<li><a class="reference internal" href="#immuneml">immuneML</a></li>
+<li><a class="reference internal" href="#hyperbrowser">HyperBrowser</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
   </div>
-</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/scripts/main.js"></script>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/main.js"></script>
     </body>
 </html>

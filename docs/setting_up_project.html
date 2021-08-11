@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Running an analysis" href="running_analysis.html" /><link rel="prev" title="Programming" href="programming.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Running an analysis" href="running_analysis.html" /><link rel="prev" title="Programming best practices" href="programming.html" />
 
     <meta name="generator" content="sphinx-4.1.2, furo 2021.08.11.beta42"/>
         <title>Setting up and organizing a project - SfB knowledge base documentation</title>
@@ -154,8 +154,9 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started_bioinf.html">Getting started in bioinformatics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="analysis_design.html">Designing an analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="programming.html">Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programming.html">Programming best practices</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Setting up and organizing a project</a></li>
 <li class="toctree-l1"><a class="reference internal" href="running_analysis.html">Running an analysis</a></li>
 </ul>
@@ -245,48 +246,6 @@ dependencies. Docker images, on the other hand, are templates defining how these
 <p class="admonition-title">See also</p>
 <p>For more information on Docker objects, see the official <a class="reference external" href="https://docs.docker.com/get-started/overview/#docker-objects">Docker object documentation</a>.</p>
 </div>
-<p>This section will cover and link to resources for using the existing Docker images and creating new ones.</p>
-<section id="install-docker">
-<h4>Install Docker<a class="headerlink" href="#install-docker" title="Permalink to this headline">¶</a></h4>
-<p>To install Docker, follow <a class="reference external" href="https://docs.docker.com/get-docker/">the official Docker installation guide</a>.</p>
-</section>
-<section id="run-a-docker-container-locally">
-<h4>Run a Docker container locally<a class="headerlink" href="#run-a-docker-container-locally" title="Permalink to this headline">¶</a></h4>
-<div class="admonition- admonition">
-<p class="admonition-title">🌿</p>
-<p>Aim: create and run a Docker container from a publicly available Docker image</p>
-<p>Level: apprentice 🌿</p>
-</div>
-<p>Once Docker is installed and running locally, check the list of available containers by running the
-following command from the terminal:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">docker ps -a</span>
-</pre></div>
-</div>
-<p>If you just installed Docker, this list will be empty. If there are any containers, the list will show
-container ID, image from which it was created, when it was created, current status, etc.</p>
-<p>Copy the following command in the terminal to pull a public Docker image, create a container from it
-and run a sample analysis. As an example, we here use <a class="reference external" href="https://immuneml.uio.no">immuneML</a> image. immuneML
-is a software for machine learning analysis of immune receptors. In this example run, it will generate a synthetic dataset
-and try to fit a classifier to predict if a person is sick or healthy for the simulated disease.</p>
-<p>This command will:</p>
-<ul class="simple">
-<li><p>make the current working directory (pwd) visible inside the container at path /data</p></li>
-<li><p>name the container <cite>my_container</cite></p></li>
-<li><p>download the immuneML Docker image from DockerHub from user milenapavlovic</p></li>
-<li><p>in a thus created environment, it will run immune-ml-quickstart as described above and store the output to /data/output/ directory</p></li>
-</ul>
-<p>which will be visible later in the current working directory under <cite>output/</cite>.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">docker run -it -v $(pwd):/data --name my_container milenapavlovic/immuneml immune-ml-quickstart /data/output/</span>
-</pre></div>
-</div>
-<p>The image reference (here <cite>milenapavlovic/immuneml</cite>) can be replaced with any relevant image, and the
-command following the image should then be adapted to the particular use-case for the downloaded image.</p>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>🌳 For more details on the run command and its parameters, see
-<a class="reference external" href="https://docs.docker.com/engine/reference/run/">the reference</a>.</p>
-</div>
-</section>
 <section id="create-a-docker-image-and-publish-it-on-dockerhub">
 <h4>Create a Docker image and publish it on DockerHub<a class="headerlink" href="#create-a-docker-image-and-publish-it-on-dockerhub" title="Permalink to this headline">¶</a></h4>
 <div class="admonition- admonition">
@@ -296,7 +255,7 @@ command following the image should then be adapted to the particular use-case fo
 </div>
 <p>To create a Docker image, follow the <a class="reference external" href="https://docs.docker.com/get-started/">Getting started</a> guide. Parts 1-4
 describe how to come up with an image and publish it on DockerHub, that can then be used as described above.</p>
-<p>If you are using GitHub for code development and what to use that code as a basis for a Docker image,
+<p>If you are using GitHub for code development and want to use that code as a basis for a Docker image,
 this process can also be automated to create a new image on a certain event and publish it on DockerHub.</p>
 <p>For example, see the <a class="reference external" href="https://github.com/uio-bmi/immuneML/blob/master/.github/workflows/docker-publish.yml">action YAML file on immuneML repository</a>.
 Every time push is performed to the master branch, the image will be rebuilt based on
@@ -331,7 +290,7 @@ repository and published.</p>
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Programming</div>
+                <div class="title">Programming best practices</div>
                 
               </div>
             </a>
@@ -370,8 +329,6 @@ repository and published.</p>
 <li><a class="reference internal" href="#version-control-with-git">Version control with git</a></li>
 <li><a class="reference internal" href="#containers">Containers</a><ul>
 <li><a class="reference internal" href="#docker">Docker</a><ul>
-<li><a class="reference internal" href="#install-docker">Install Docker</a></li>
-<li><a class="reference internal" href="#run-a-docker-container-locally">Run a Docker container locally</a></li>
 <li><a class="reference internal" href="#create-a-docker-image-and-publish-it-on-dockerhub">Create a Docker image and publish it on DockerHub</a></li>
 </ul>
 </li>

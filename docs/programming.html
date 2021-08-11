@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Setting up and organizing a project" href="setting_up_project.html" /><link rel="prev" title="Designing an analysis" href="analysis_design.html" />
 
     <meta name="generator" content="sphinx-4.1.2, furo 2021.08.11.beta42"/>
-        <title>Programming - SfB knowledge base documentation</title>
+        <title>Programming best practices - SfB knowledge base documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=197f00461d56902ea7ca048ec6e6ba026f62c97b" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=93475b62d1c3bc01323a0eefdc14a62d77b12690" />
@@ -154,8 +154,9 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started_bioinf.html">Getting started in bioinformatics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="analysis_design.html">Designing an analysis</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Programming</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Programming best practices</a></li>
 <li class="toctree-l1"><a class="reference internal" href="setting_up_project.html">Setting up and organizing a project</a></li>
 <li class="toctree-l1"><a class="reference internal" href="running_analysis.html">Running an analysis</a></li>
 </ul>
@@ -183,8 +184,13 @@
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <section id="programming">
-<h1>Programming<a class="headerlink" href="#programming" title="Permalink to this headline">¶</a></h1>
+        <section id="programming-best-practices">
+<h1>Programming best practices<a class="headerlink" href="#programming-best-practices" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Aim: provide a reference list on best practices in programming with varying level of detail</p>
+<p>Level: 🌿</p>
+</div>
 <p>Most of the bioinformatics projects require at least some coding, where others include developing complex
 bioinformatics platforms, like <a class="reference external" href="https://hyperbrowser.uio.no/hb/#!mode=advanced">HyperBrowser</a> or
 <a class="reference external" href="https://immuneml.uio.no/">immuneML</a>. This section covers the best practices in
@@ -196,7 +202,7 @@ programming, and is useful for both quick coding and platform development projec
 <li><p>coding and design guidelines.</p></li>
 </ul>
 <section id="choosing-a-programming-language">
-<h2>Choosing a programming language<a class="headerlink" href="#choosing-a-programming-language" title="Permalink to this headline">¶</a></h2>
+<h2>Choosing a programming language 🌱<a class="headerlink" href="#choosing-a-programming-language" title="Permalink to this headline">¶</a></h2>
 <p>For most projects in the Centre, <a class="reference external" href="https://www.python.org/about/gettingstarted/">Python</a> is used as the main programming language.</p>
 <p>For smaller projects that heavily rely on statistics and visualization, projects often use R. R is also sometimes used in larger projects
 together with Python, though rpy2 library that allows R to be called from Python.</p>
@@ -220,7 +226,7 @@ on different infrastructures.</p>
 <p>Information on upcoming workshops can be found on the <a class="reference external" href="https://www.ub.uio.no/english/courses-events/courses/other/Carpentry/">UiO Library website</a>.</p>
 </section>
 <section id="organizing-the-code">
-<h2>Organizing the code<a class="headerlink" href="#organizing-the-code" title="Permalink to this headline">¶</a></h2>
+<h2>Organizing the code 🌿<a class="headerlink" href="#organizing-the-code" title="Permalink to this headline">¶</a></h2>
 <p>To maintain a good programming style, increase the quality and readability of the code, try to follow the advice below and also
 see the recommended reading for more in-depth coverage of the topics.</p>
 <section id="make-the-code-modular">
@@ -264,7 +270,7 @@ edge cases that more realistically reflect the real analysis. They should always
 </section>
 </section>
 <section id="recommended-reading">
-<h2>Recommended reading<a class="headerlink" href="#recommended-reading" title="Permalink to this headline">¶</a></h2>
+<h2>Recommended reading 🌿<a class="headerlink" href="#recommended-reading" title="Permalink to this headline">¶</a></h2>
 <p>Some recommended resources on this topic:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.oreilly.com/library/view/clean-code-a/9780136083238/">Clean Code: A Handbook of Agile Software Craftsmanship</a>, Robert C. Martin, 2008</p></li>
@@ -328,9 +334,9 @@ Lonneke Scheffer, Geir Kjetil Sandve, 2021</p></li>
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Programming</a><ul>
-<li><a class="reference internal" href="#choosing-a-programming-language">Choosing a programming language</a></li>
-<li><a class="reference internal" href="#organizing-the-code">Organizing the code</a><ul>
+<li><a class="reference internal" href="#">Programming best practices</a><ul>
+<li><a class="reference internal" href="#choosing-a-programming-language">Choosing a programming language 🌱</a></li>
+<li><a class="reference internal" href="#organizing-the-code">Organizing the code 🌿</a><ul>
 <li><a class="reference internal" href="#make-the-code-modular">1. Make the code modular.</a></li>
 <li><a class="reference internal" href="#use-object-oriented-approach">2. Use object-oriented approach.</a></li>
 <li><a class="reference internal" href="#design-software-architecture-for-larger-projects">3. Design software architecture for larger projects.</a></li>
@@ -338,7 +344,7 @@ Lonneke Scheffer, Geir Kjetil Sandve, 2021</p></li>
 <li><a class="reference internal" href="#test-the-code">5. Test the code.</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#recommended-reading">Recommended reading</a></li>
+<li><a class="reference internal" href="#recommended-reading">Recommended reading 🌿</a></li>
 </ul>
 </li>
 </ul>
