@@ -153,8 +153,11 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="getting_started_bioinf.html">Getting started in bioinformatics</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="analysis_design.html">Designing an analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="programming.html">Programming best practices</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Setting up and organizing a project</a></li>
@@ -196,7 +199,6 @@
 <ul class="simple">
 <li><p>project coordination / management tools,</p></li>
 <li><p>version control using git,</p></li>
-<li><p>containers like Docker,</p></li>
 <li><p>virtual environments and package management with e.g., pip and conda,</p></li>
 <li><p>code editors.</p></li>
 </ul>
@@ -228,41 +230,6 @@ repositories can be created for each project of the group members. For public pr
 <p>Alternatively, a lot of public resources for version control are available, such as these Atlassian tutorials
 for <a class="reference external" href="https://www.atlassian.com/git/tutorials/what-is-version-control">learning version control</a> and
 <a class="reference external" href="https://www.atlassian.com/git/tutorials/what-is-git">learning about git</a>.</p>
-</section>
-<section id="containers">
-<h2>Containers<a class="headerlink" href="#containers" title="Permalink to this headline">¶</a></h2>
-<p>With many different operating systems and local setups, it is often a challenging task to get all the
-required software up and running. Containers are one possible solution that. They encapsulate the entire
-working environment including not only needed applications and packages, but also an operating system.
-Their main goal is to handle all dependencies in a standardized and reliable manner and ensure that the
-same applications can be run on the new computing environment (laptop, server, HPC, etc. depending on the application).</p>
-<section id="docker">
-<h3>Docker<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h3>
-<p>Docker is one container platform we have used in projects at the Centre.</p>
-<p>Docker defines several types of objects, but here we will mention only images and containers. Docker
-containers are the same as containers discussed above: the full computing environments taking care of all
-dependencies. Docker images, on the other hand, are templates defining how these environments are created.</p>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>For more information on Docker objects, see the official <a class="reference external" href="https://docs.docker.com/get-started/overview/#docker-objects">Docker object documentation</a>.</p>
-</div>
-<section id="create-a-docker-image-and-publish-it-on-dockerhub">
-<h4>Create a Docker image and publish it on DockerHub<a class="headerlink" href="#create-a-docker-image-and-publish-it-on-dockerhub" title="Permalink to this headline">¶</a></h4>
-<div class="admonition- admonition">
-<p class="admonition-title">🌳</p>
-<p>Aim: provide references for creating a Docker image and publishing it in a public repository DockerHub</p>
-<p>Level: journeyman 🌳</p>
-</div>
-<p>To create a Docker image, follow the <a class="reference external" href="https://docs.docker.com/get-started/">Getting started</a> guide. Parts 1-4
-describe how to come up with an image and publish it on DockerHub, that can then be used as described above.</p>
-<p>If you are using GitHub for code development and want to use that code as a basis for a Docker image,
-this process can also be automated to create a new image on a certain event and publish it on DockerHub.</p>
-<p>For example, see the <a class="reference external" href="https://github.com/uio-bmi/immuneML/blob/master/.github/workflows/docker-publish.yml">action YAML file on immuneML repository</a>.
-Every time push is performed to the master branch, the image will be rebuilt based on
-<a class="reference external" href="https://github.com/uio-bmi/immuneML/blob/master/Dockerfile">the Dockerfile</a> at the
-repository and published.</p>
-</section>
-</section>
 </section>
 <section id="virtual-environments-and-package-management">
 <h2>Virtual environments and package management<a class="headerlink" href="#virtual-environments-and-package-management" title="Permalink to this headline">¶</a></h2>
@@ -327,13 +294,6 @@ repository and published.</p>
 <li><a class="reference internal" href="#">Setting up and organizing a project</a><ul>
 <li><a class="reference internal" href="#project-management-tools">Project management tools</a></li>
 <li><a class="reference internal" href="#version-control-with-git">Version control with git</a></li>
-<li><a class="reference internal" href="#containers">Containers</a><ul>
-<li><a class="reference internal" href="#docker">Docker</a><ul>
-<li><a class="reference internal" href="#create-a-docker-image-and-publish-it-on-dockerhub">Create a Docker image and publish it on DockerHub</a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li><a class="reference internal" href="#virtual-environments-and-package-management">Virtual environments and package management</a></li>
 </ul>
 </li>

@@ -32,5 +32,5 @@ or through an online graphical interface. To get started, graphical user interfa
 
 For alternative ways to run immuneML and detailed user documentation, visit `the immuneML documentation website <https://docs.immuneml.uio.no>`_.
 
-HyperBrowser
-~~~~~~~~~~~~~~
+GSuite HyperBrowser
+~~~~~~~~~~~~~~~~~~~~~~~

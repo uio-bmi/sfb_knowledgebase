@@ -45,9 +45,9 @@ Visit :ref:`this link <Getting started in bioinformatics>` to:
 Do you need more information on specific tools developed at the Centre? 🌱
 -------------------------------------------------------------------------
 
-- GSuite Hyperbrowser
+- :ref:`GSuite Hyperbrowser`
 - Proto
-- immuneML & immuneML Galaxy
+- :ref:`immuneML` and `immuneML Galaxy <https://galaxy.immuneml.uio.no>`_
 - other tools?
 
 Do you need to run large analyses and use servers or HPC clusters?
@@ -68,7 +68,7 @@ Do you want to read up on some more specialized/advanced topics in programming? 
 Do you need to set up computational workflows? 🌿
 -------------------------------------------------
 
-- containers and docker, 🌿
+- :ref:`Containers` and :ref:`Docker` 🌿
 - snakemake, nextflow and similar tools 🌿
 
 Do you want to learn more about statistics and machine learning? 🌱
@@ -95,6 +95,11 @@ See the following pages for resources for:
    :caption: Contents:
 
    getting_started_bioinf
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
    analysis_design
    programming
    setting_up_project
