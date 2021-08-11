@@ -14,19 +14,24 @@ For a bioinformatician, a broad variety of topics may be of interest to design a
 This repository is a collection of resources for these tasks grouped by a common theme. The resources include both custom content
 and links to relevant online material and training.
 
-Quick start for new members
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+To describe the complexity level of each topic, there will be one of the following signs next to the title to indicate:
+🌱 (beginner level, no previous knowledge needed), 🌿 (apprentice level, some previous experience on the topic might be useful to
+follow the content) and 🌳 (journeyman level, assuming experience on the given topic and might go into details a lot).
+
+Quick start for new members 🌱
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Follow one of these tutorials to set up a demo project. The steps for these projects will ensure that you have access to BMI resources
-and some basic understanding of setting up a project.
+and some basic understanding of setting up a project. Even if you have a lot of experience, it might still be useful to go through the
+tutorials even if only to set up necessary accounts.
 
-- :ref:`Get started with a simple Python project`
-- :ref:`Get started with a simple R project`
+- :ref:`Get started with a simple Python project` 🌱
+- :ref:`Get started with a simple R project` 🌱
 
 Computational competencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Do you have biological background and want to get started in bioinformatics?
+Do you have biological background and want to get started in bioinformatics? 🌱
 ---------------------------------------------------------------------------------------
 
 - how to run analysis: unix and some simple tools
@@ -36,7 +41,7 @@ Do you have biological background and want to get started in bioinformatics?
 - intro to programming
 - version control
 
-Do you need more information on specific tools developed at the Centre?
+Do you need more information on specific tools developed at the Centre? 🌱
 -------------------------------------------------------------------------
 
 - GSuite Hyperbrowser
@@ -52,37 +57,37 @@ Do you need to run large analyses and use servers or HPC clusters?
 - Saga
 - contact information for immunohub
 
-Do you want to read up on some more specialized/advanced topics in programming?
---------------------------------------------------------------------------------
+Do you want to read up on some more specialized/advanced topics in programming? 🌿
+-----------------------------------------------------------------------------------
 
-- best coding practices
-- organizing code
-- testing
+- best coding practices 🌿
+- organizing code 🌿
+- testing 🌿
 
-Do you need to set up computational workflows?
-------------------------------------------------
+Do you need to set up computational workflows? 🌿
+-------------------------------------------------
 
-- containers and docker,
-- snakemake, nextflow and similar tools
+- containers and docker, 🌿
+- snakemake, nextflow and similar tools 🌿
 
-Do you want to learn more about statistics and machine learning?
+Do you want to learn more about statistics and machine learning? 🌱
 ------------------------------------------------------------------
 
-- intro to machine learning
-- training and evaluation of machine learning methods
-- mathematics for machine learning
+- intro to machine learning 🌱
+- training and evaluation of machine learning methods 🌿
+- mathematics for machine learning 🌿
 - statistics
 
 Biological competencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Do you have computational background (computer science, engineering, statistic) and need to learn biology?
+Do you have computational background (computer science, engineering, statistic) and need to learn biology? 🌱
 ---------------------------------------------------------------------------------------------------------------------------
 
 See the following pages for resources for:
 
-- :ref:`Getting started with genomics`
-- :ref:`Getting started with immunology and adaptive immune receptors`
+- :ref:`Getting started with genomics` 🌱
+- :ref:`Getting started with immunology and adaptive immune receptors` 🌱
 
 .. toctree::
    :maxdepth: 2
