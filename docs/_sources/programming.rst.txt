@@ -5,7 +5,7 @@ Programming best practices
 
   Aim: provide a reference list on best practices in programming with varying level of detail
 
-  Level: 🌿
+  Level: 🌱🌿
 
 Most of the bioinformatics projects require at least some coding, where others include developing complex
 bioinformatics platforms, like `HyperBrowser <https://hyperbrowser.uio.no/hb/#!mode=advanced>`_ or
@@ -16,6 +16,9 @@ programming, and is useful for both quick coding and platform development projec
 - how to organize the code,
 - unit and integration testing,
 - coding and design guidelines.
+
+If you are new to programming, see the :ref:`Getting started with programming` first before diving into
+more specialized topics.
 
 Choosing a programming language 🌱
 -----------------------------------
@@ -36,14 +39,6 @@ only for some parts of the code, only those parts can be optimized with C++ and 
 .. note::
 
   For more information on recommended development environments, see :ref:`Setting up and organizing a project`.
-
-If you are new to programming, see some of the UiO software carpentry courses:
-
-- `Plotting and programming in Python <http://swcarpentry.github.io/python-novice-gapminder/>`_ for beginners,
-- `Programming with Python <https://swcarpentry.github.io/python-novice-inflammation/>`_ for the ones with some experience with Python,
-- `R for Reproducible Scientific Analysis <http://swcarpentry.github.io/r-novice-gapminder/>`_ for beginners.
-
-Information on upcoming workshops can be found on the `UiO Library website <https://www.ub.uio.no/english/courses-events/courses/other/Carpentry/>`_.
 
 Organizing the code 🌿
 ---------------------------------

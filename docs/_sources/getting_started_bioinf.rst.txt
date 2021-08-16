@@ -10,7 +10,7 @@ Getting started in bioinformatics
 Running an analysis from the command line in UNIX environment
 ----------------------------------------------------------------
 
-Run tools from a Docker image
+Running tools from a Docker image
 ------------------------------------
 
 Docker image is a template, a definition of how a computing environment (including libraries, packages, installations and the operating system) should
