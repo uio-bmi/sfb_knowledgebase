@@ -1,13 +1,13 @@
 Setting up and organizing a project
 ===================================
 
-.. admonition:: 🌱🌿🌳
+.. note:: 🌱🌿🌳
 
   Aim: provide reference for a set of topics as well as further reading material for interested readers
 
   Level: any 🌱🌿🌳
 
-  More advanced sections are labeled wit 🌿 (apprentice) and 🌳 (journeyman).
+  More advanced sections are labeled with 🌿 (apprentice) and 🌳 (journeyman).
 
 This section covers topics in:
 

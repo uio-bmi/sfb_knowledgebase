@@ -35,8 +35,8 @@ Do you have biological background and want to get started in bioinformatics? ðŸŒ
 ---------------------------------------------------------------------------------------
 
 Visit :ref:`this link <Getting started in bioinformatics>` to:
-- how to run analysis: unix and some simple tools
-- run tools from docker
+- how to run analysis from the command line
+- run tools from Docker image
 - using custom tools developed at the centre
 - computational thinking? / algorithms?
 - intro to programming
@@ -56,6 +56,7 @@ Do you need to run large analyses and use servers or HPC clusters?
 - HPC intro
 - Fram
 - Saga
+- TSD
 - contact information for immunohub
 
 Do you want to read up on some more specialized/advanced topics in programming? ðŸŒ¿
@@ -98,7 +99,7 @@ See the following pages for resources for:
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Topics:
 
    analysis_design
    programming

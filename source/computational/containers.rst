@@ -30,7 +30,7 @@ To install Docker, follow `the official Docker installation guide <https://docs.
 Run a Docker container locally
 ````````````````````````````````
 
-.. admonition:: 🌿
+.. note:: 🌿
 
   Aim: create and run a Docker container from a publicly available Docker image
 
@@ -75,7 +75,7 @@ command following the image should then be adapted to the particular use-case fo
 Create a Docker image and publish it on DockerHub
 ````````````````````````````````````````````````````
 
-.. admonition:: 🌳
+.. note:: 🌳
 
   Aim: provide references for creating a Docker image and publishing it in a public repository DockerHub
 
