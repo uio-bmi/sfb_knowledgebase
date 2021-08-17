@@ -11,3 +11,10 @@ The full list of topics:
 - variant calling,
 - assembly,
 - transcriptome analysis.
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Computational topics:
+
+   computational/statistics
+   computational/ml_and_causality

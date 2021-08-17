@@ -34,9 +34,10 @@ Computational competencies
 Do you have biological background and want to get started in bioinformatics? 🌱
 ---------------------------------------------------------------------------------------
 
-Visit :ref:`this link <Getting started in bioinformatics>` to:
+Visit :ref:`this link <Getting started in bioinformatics>` to read:
+
 - how to run analysis from the command line
-- run tools from Docker image
+- run tools from a Docker image
 - using custom tools developed at the centre
 - computational thinking? / algorithms?
 - intro to programming
