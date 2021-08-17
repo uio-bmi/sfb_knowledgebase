@@ -10,6 +10,8 @@ Getting started in bioinformatics
 Running an analysis from the command line in UNIX environment
 ----------------------------------------------------------------
 
+to be added
+
 Running tools from a Docker image
 ------------------------------------
 
@@ -34,3 +36,19 @@ For alternative ways to run immuneML and detailed user documentation, visit `the
 
 GSuite HyperBrowser
 ~~~~~~~~~~~~~~~~~~~~~~~
+
+To be added
+
+other tools?
+
+Introduction to programming
+-------------------------------
+
+To design custom analysis that cannot be run from the existing tools, one could develop specialized scripts to speed up the analysis or to design new
+ones. To get started with programming, see :ref:`Getting started with programming` that discusses choosing the programming language, links to useful
+courses and other material, as well as provides tasks to test the progress.
+
+Version control
+-----------------
+
+Version control allows us to keep track of the changes made in the files: both code and results. To learn more about it, see :ref:`Version control with git`.
