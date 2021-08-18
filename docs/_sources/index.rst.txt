@@ -76,15 +76,16 @@ Do you need to set up computational workflows? 🌿
 Do you want to learn more about statistics and machine learning? 🌱
 ------------------------------------------------------------------
 
-- intro to machine learning 🌱
+- introduction to machine learning for bioinformatics 🌱
 - training and evaluation of machine learning methods 🌿
 - mathematics for machine learning 🌿
-- statistics
+- introduction to statistics 🌱
+- specialized topics in machine learning and statistics 🌿
 
 Biological competencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Do you have computational background (computer science, engineering, statistic) and need to learn biology? 🌱
+Do you have a computational background (computer science, engineering, statistics) and need to learn biology? 🌱
 ---------------------------------------------------------------------------------------------------------------------------
 
 See the following pages for resources for:
@@ -94,9 +95,11 @@ See the following pages for resources for:
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Getting started:
 
    getting_started_bioinf
+   genomics
+   immunology
 
 .. toctree::
    :maxdepth: 2

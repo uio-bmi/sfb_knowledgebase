@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Programming best practices" href="../programming.html" /><link rel="prev" title="Statistics: reference" href="statistics.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Specialized topics in machine learning and statistics" href="specialized_topics_in_ml_and_stats.html" /><link rel="prev" title="Statistics: reference" href="statistics.html" />
 
     <meta name="generator" content="sphinx-4.1.2, furo 2021.08.17.beta43"/>
         <title>Machine learning and causal inference - SfB knowledge base documentation</title>
@@ -132,7 +132,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -152,7 +152,7 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+  <p class="caption" role="heading"><span class="caption-text">Getting started:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started_bioinf.html">Getting started in bioinformatics</a></li>
 </ul>
@@ -160,7 +160,10 @@
 <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../analysis_design.html">Designing an analysis</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="statistics.html">Statistics: reference</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Machine learning and causal inference</a></li>
+<li class="toctree-l2 current has-children current-page"><a class="current reference internal" href="#">Machine learning and causal inference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="specialized_topics_in_ml_and_stats.html">Specialized topics in machine learning and statistics</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../programming.html">Programming best practices</a></li>
@@ -186,17 +189,38 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <section id="machine-learning-and-causal-inference">
 <h1>Machine learning and causal inference<a class="headerlink" href="#machine-learning-and-causal-inference" title="Permalink to this headline">¶</a></h1>
+<section id="introduction-to-machine-learning">
+<h2>Introduction to machine learning<a class="headerlink" href="#introduction-to-machine-learning" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>🌱</p>
+<p>Aims:</p>
+<ul class="simple">
+<li><p>get intuition and high-level understanding of what machine learning is and what types of problems it can help solving;</p></li>
+<li><p>this material will also show that machine learning is not just a black box, but that different choices have important implications;</p></li>
+<li><p>provide the overall understanding that there are a data representation component and a machine learning algorithm;</p></li>
+<li><p>achieve high-level understanding of machine learning workflow, comparison and the related uncertainty</p></li>
+</ul>
+<p>Level: beginner 🌱</p>
+</div>
+<p>If you are new to machine learning and want to apply it in a biological discipline, the following material might provide a convenient introduction.
+It consists of 6 parts and combines the content and references with tasks and quizzes to test the covered material.</p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="recommended-material">
+<h2>Recommended material<a class="headerlink" href="#recommended-material" title="Permalink to this headline">¶</a></h2>
 <p>Recommended courses at UiO:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.uio.no/studier/emner/matnat/ifi/IN5400/index-eng.html">IN5400/IN9400 Machine Learning for Image Analysis</a></p></li>
-<li><p><a class="reference external" href="https://www.uio.no/studier/emner/matnat/math/STK-IN9300/">STK-IN9300 Statistical Learning Methods in Data Science</a></p></li>
+<li><p><a class="reference external" href="https://www.uio.no/studier/emner/matnat/ifi/IN5400/index-eng.html">IN5400/IN9400 Machine Learning for Image Analysis</a> 🌿</p></li>
+<li><p><a class="reference external" href="https://www.uio.no/studier/emner/matnat/math/STK-IN9300/">STK-IN9300 Statistical Learning Methods in Data Science</a> 🌿</p></li>
 </ul>
 <p>Recommended seminars at UiO:</p>
 <ul class="simple">
@@ -217,17 +241,18 @@
 <li><p><a class="reference external" href="https://ieeexplore.ieee.org/document/9363924">Towards Causal Representation Learning</a> by Schölkopf et al. 2021</p></li>
 </ul>
 </section>
+</section>
 
       </article>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../programming.html">
+          <a class="next-page" href="specialized_topics_in_ml_and_stats.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Programming best practices</div>
+                <div class="title">Specialized topics in machine learning and statistics</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -260,8 +285,28 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Machine learning and causal inference</a><ul>
+<li><a class="reference internal" href="#introduction-to-machine-learning">Introduction to machine learning</a></li>
+<li><a class="reference internal" href="#recommended-material">Recommended material</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

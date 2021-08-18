@@ -1,10 +1,41 @@
 Machine learning and causal inference
 =========================================
 
+Introduction to machine learning
+----------------------------------
+
+.. note:: 🌱
+
+  Aims:
+
+  - get intuition and high-level understanding of what machine learning is and what types of problems it can help solving;
+  - this material will also show that machine learning is not just a black box, but that different choices have important implications;
+  - provide the overall understanding that there are a data representation component and a machine learning algorithm;
+  - achieve high-level understanding of machine learning workflow, comparison and the related uncertainty
+
+  Level: beginner 🌱
+
+If you are new to machine learning and want to apply it in a biological discipline, the following material might provide a convenient introduction.
+It consists of 6 parts and combines the content and references with tasks and quizzes to test the covered material.
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Topics:
+
+   computational/ml/overview
+   computational/ml/intro_to_ml
+   computational/ml/ml_models
+   computational/ml/data_representation
+   computational/ml/ml_model_comparison_and_uncertainty
+   computational/ml/transparency_and_reproducibility
+
+Recommended material
+----------------------
+
 Recommended courses at UiO:
 
-- `IN5400/IN9400 Machine Learning for Image Analysis <https://www.uio.no/studier/emner/matnat/ifi/IN5400/index-eng.html>`_
-- `STK-IN9300 Statistical Learning Methods in Data Science <https://www.uio.no/studier/emner/matnat/math/STK-IN9300/>`_
+- `IN5400/IN9400 Machine Learning for Image Analysis <https://www.uio.no/studier/emner/matnat/ifi/IN5400/index-eng.html>`_ 🌿
+- `STK-IN9300 Statistical Learning Methods in Data Science <https://www.uio.no/studier/emner/matnat/math/STK-IN9300/>`_ 🌿
 
 Recommended seminars at UiO:
 
