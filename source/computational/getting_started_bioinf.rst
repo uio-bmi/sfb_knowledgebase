@@ -5,7 +5,7 @@ Getting started in bioinformatics
 
   Aim: Provide a reference list of resources to get started in the computational aspects of bioinformatics.
 
-  Level: 🌱
+  Level: beginner 🌱
 
 Running an analysis from the command line in UNIX environment
 ----------------------------------------------------------------

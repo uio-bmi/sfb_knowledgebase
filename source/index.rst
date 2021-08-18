@@ -44,7 +44,7 @@ Visit :ref:`this link <Getting started in bioinformatics>` to read:
 - version control
 
 Do you need more information on specific tools developed at the Centre? 🌱
--------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 - :ref:`GSuite Hyperbrowser`
 - Proto
@@ -74,7 +74,7 @@ Do you need to set up computational workflows? 🌿
 - snakemake, nextflow and similar tools 🌿
 
 Do you want to learn more about statistics and machine learning? 🌱
-------------------------------------------------------------------
+-----------------------------------------------------------------------
 
 - introduction to machine learning for bioinformatics 🌱
 - training and evaluation of machine learning methods 🌿
@@ -97,9 +97,9 @@ See the following pages for resources for:
    :maxdepth: 2
    :caption: Getting started:
 
-   getting_started_bioinf
-   genomics
-   immunology
+   computational/getting_started_bioinf
+   biology/genomics_intro
+   biology/immunology_intro
 
 .. toctree::
    :maxdepth: 2

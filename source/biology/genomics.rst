@@ -1,3 +1,4 @@
-Getting started with genomics
-=================================
+Genomics: references
+=======================
 
+to be added
