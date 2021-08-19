@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Introduction to Machine Learning" href="intro_to_ml.html" /><link rel="prev" title="Machine learning and causal inference" href="../ml_and_causality.html" />
 
     <meta name="generator" content="sphinx-4.1.2, furo 2021.08.17.beta43"/>
         <title>Brief overview of machine learning in computational biology - SfB knowledge base documentation</title>
@@ -132,7 +132,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -154,16 +154,26 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Getting started:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../getting_started_bioinf.html">Getting started in bioinformatics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started_bioinf.html">Getting started in bioinformatics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../biology/genomics_intro.html">Getting started with genomics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../biology/immunology_intro.html">Getting started with immunology and adaptive immune receptors</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Topics:</span></p>
-<ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../analysis_design.html">Designing an analysis</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../analysis_design.html">Designing an analysis</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../statistics.html">Statistics: reference</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../ml_and_causality.html">Machine learning and causal inference</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../ml_and_causality.html">Machine learning and causal inference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Brief overview of machine learning in computational biology</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro_to_ml.html">Introduction to Machine Learning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ml_models.html">Introduction to machine learning models and algorithms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_representation.html">Data representation in machine learning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ml_model_comparison_and_uncertainty.html">Machine learning model comparison and uncertainty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="transparency_and_reproducibility.html">Transparency and reproducibility in machine learning</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../specialized_topics_in_ml_and_stats.html">Specialized topics in machine learning and statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../biology/genomics.html">Genomics: references</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../biology/immunology.html">Immunology: references</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../programming.html">Programming best practices</a></li>
@@ -189,22 +199,60 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <section id="brief-overview-of-machine-learning-in-computational-biology">
 <h1>Brief overview of machine learning in computational biology<a class="headerlink" href="#brief-overview-of-machine-learning-in-computational-biology" title="Permalink to this headline">¶</a></h1>
-<p>to be added</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Aim: get an intuition and high-level understanding of what machine learning is and types of problems it can help solving from a
+computational biology perspective</p>
+<p>Level: beginner 🌱</p>
+</div>
+<p>With the development of sequencing technologies, large amounts of data became available that can be examined for biological properties.
+For example, from <a class="reference external" href="https://vdjdb.cdr3.net/">the VDJdb database</a> (<a class="reference external" href="https://academic.oup.com/nar/article/48/D1/D1057/5582255">Bagaev et al. 2020</a>),
+we can retrieve T-cell receptor sequences specific to the epitope YLQPRTFLL of SARS-CoV-2 and discover motifs in these amino acid sequences with or
+without genetic background, as shown below (the motifs and the sequences were obtained from VDJdb):</p>
+<img alt="This figure shows a table with a list of immune receptor (TCR) sequences and the motifs that were extracted as common in those sequences when adjusted and when not adjusted for the genetic background." src="../../_images/TCR_motif_example.png"/>
+<p>One way we can approach the analysis of these sequences is to build a position weight matrices showing the product multinomial distribution of amino
+acids. In this way we can describe these sequences. On the other hand, if we want to predict for a new sequence if it is specific to a virus or not,
+we might need a bit different approach.</p>
+<section id="machine-learning-is-a-powerful-approach-to-discovering-patterns-in-biological-data">
+<h2>Machine learning is a powerful approach to discovering patterns in (biological) data<a class="headerlink" href="#machine-learning-is-a-powerful-approach-to-discovering-patterns-in-biological-data" title="Permalink to this headline">¶</a></h2>
+<p>Machine learning (and statistics) includes a set of methods that allow for making inference about the data. For example if we want to predict if a
+receptor sequence will bind the virus or not, we could fit a logistic regression model on the receptor sequence data and then predict the binding for
+the new receptors using the model.</p>
+<img alt="This figure shows" src="_static/images/simple_ML_workflow.png"/>
+</section>
 </section>
 
       </article>
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="intro_to_ml.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Introduction to Machine Learning</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../ml_and_causality.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Machine learning and causal inference</div>
+                
+              </div>
+            </a>
         </div>
 
         <div class="related-information">
@@ -223,8 +271,27 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Brief overview of machine learning in computational biology</a><ul>
+<li><a class="reference internal" href="#machine-learning-is-a-powerful-approach-to-discovering-patterns-in-biological-data">Machine learning is a powerful approach to discovering patterns in (biological) data</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

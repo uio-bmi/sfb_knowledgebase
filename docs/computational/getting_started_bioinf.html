@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Getting started with genomics" href="../biology/genomics_intro.html" /><link rel="prev" title="Centre for Bioinformatics - Knowledge Base" href="../index.html" />
 
     <meta name="generator" content="sphinx-4.1.2, furo 2021.08.17.beta43"/>
-        <title>Getting started with programming - SfB knowledge base documentation</title>
+        <title>Getting started in bioinformatics - SfB knowledge base documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=910ac4ccc9d7c023151c34010d7b500fb9777a51" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
@@ -153,8 +153,8 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Getting started:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="getting_started_bioinf.html">Getting started in bioinformatics</a></li>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Getting started in bioinformatics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../biology/genomics_intro.html">Getting started with genomics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../biology/immunology_intro.html">Getting started with immunology and adaptive immune receptors</a></li>
 </ul>
@@ -204,30 +204,50 @@
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <section id="getting-started-with-programming">
-<h1>Getting started with programming<a class="headerlink" href="#getting-started-with-programming" title="Permalink to this headline">¶</a></h1>
+        <section id="getting-started-in-bioinformatics">
+<h1>Getting started in bioinformatics<a class="headerlink" href="#getting-started-in-bioinformatics" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>🌱</p>
-<p>Aim: provide a reference and a list of starting points for learning programming</p>
+<p>Aim: Provide a reference list of resources to get started in the computational aspects of bioinformatics.</p>
 <p>Level: beginner 🌱</p>
 </div>
-<p>To get started with programming, especially if going into bioinformatics, Python might be a good
-programming language of choice. If the analysis you plan to perform are going to be more statistical
-in nature, R might be a good alternative.</p>
-<section id="programming-courses-at-uio">
-<h2>Programming courses at UiO<a class="headerlink" href="#programming-courses-at-uio" title="Permalink to this headline">¶</a></h2>
-<p>To get started with learning programming, see some of the UiO software carpentry courses:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="http://swcarpentry.github.io/python-novice-gapminder/">Plotting and programming in Python</a> for beginners,</p></li>
-<li><p><a class="reference external" href="https://swcarpentry.github.io/python-novice-inflammation/">Programming with Python</a> for the ones with some experience with Python,</p></li>
-<li><p><a class="reference external" href="http://swcarpentry.github.io/r-novice-gapminder/">R for Reproducible Scientific Analysis</a> for beginners.</p></li>
-</ul>
-<p>Information on upcoming workshops can be found on the <a class="reference external" href="https://www.ub.uio.no/english/courses-events/courses/other/Carpentry/">UiO Library website</a>.</p>
+<section id="running-an-analysis-from-the-command-line-in-unix-environment">
+<h2>Running an analysis from the command line in UNIX environment<a class="headerlink" href="#running-an-analysis-from-the-command-line-in-unix-environment" title="Permalink to this headline">¶</a></h2>
+<p>to be added</p>
 </section>
-<section id="recommended-literature">
-<h2>Recommended literature<a class="headerlink" href="#recommended-literature" title="Permalink to this headline">¶</a></h2>
-<p>…</p>
+<section id="running-tools-from-a-docker-image">
+<h2>Running tools from a Docker image<a class="headerlink" href="#running-tools-from-a-docker-image" title="Permalink to this headline">¶</a></h2>
+<p>Docker image is a template, a definition of how a computing environment (including libraries, packages, installations and the operating system) should
+look like. Based on a Docker image, a Docker container is created which is the environment itself based on the image.</p>
+<p>To run a tool from Docker environment, see the following tutorials: <a class="reference internal" href="containers.html#install-docker"><span class="std std-ref">Install Docker</span></a> and <a class="reference internal" href="containers.html#run-a-docker-container-locally"><span class="std std-ref">Run a Docker container locally</span></a>.</p>
+</section>
+<section id="running-tools-developed-at-the-centre-for-bioinformatics">
+<h2>Running tools developed at the Centre for Bioinformatics<a class="headerlink" href="#running-tools-developed-at-the-centre-for-bioinformatics" title="Permalink to this headline">¶</a></h2>
+<section id="immuneml">
+<h3>immuneML<a class="headerlink" href="#immuneml" title="Permalink to this headline">¶</a></h3>
+<p>immuneML, a platform for machine learning analysis of adaptive immune receptors and repertoires, can be ran from the command line, Docker container,
+or through an online graphical interface. To get started, graphical user interface might be the most convenient:</p>
+<ul class="simple">
+<li><p>the graphical interface can be accessed at <a class="reference external" href="https://galaxy.immuneml.uio.no">https://galaxy.immuneml.uio.no</a></p></li>
+<li><p>documentation is available at <a class="reference external" href="https://docs.immuneml.uio.no/latest/galaxy.html">this link</a>.</p></li>
+</ul>
+<p>For alternative ways to run immuneML and detailed user documentation, visit <a class="reference external" href="https://docs.immuneml.uio.no">the immuneML documentation website</a>.</p>
+</section>
+<section id="gsuite-hyperbrowser">
+<h3>GSuite HyperBrowser<a class="headerlink" href="#gsuite-hyperbrowser" title="Permalink to this headline">¶</a></h3>
+<p>To be added</p>
+<p>other tools?</p>
+</section>
+</section>
+<section id="introduction-to-programming">
+<h2>Introduction to programming<a class="headerlink" href="#introduction-to-programming" title="Permalink to this headline">¶</a></h2>
+<p>To design custom analysis that cannot be run from the existing tools, one could develop specialized scripts to speed up the analysis or to design new
+ones. To get started with programming, see <a class="reference internal" href="programming_intro.html#getting-started-with-programming"><span class="std std-ref">Getting started with programming</span></a> that discusses choosing the programming language, links to useful
+courses and other material, as well as provides tasks to test the progress.</p>
+</section>
+<section id="version-control">
+<h2>Version control<a class="headerlink" href="#version-control" title="Permalink to this headline">¶</a></h2>
+<p>Version control allows us to keep track of the changes made in the files: both code and results. To learn more about it, see <a class="reference internal" href="../setting_up_project.html#version-control-with-git"><span class="std std-ref">Version control with git</span></a>.</p>
 </section>
 </section>
 
@@ -235,8 +255,26 @@ in nature, R might be a good alternative.</p>
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="../biology/genomics_intro.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Getting started with genomics</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../index.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Home</div>
+                
+              </div>
+            </a>
         </div>
 
         <div class="related-information">
@@ -247,7 +285,7 @@ in nature, R might be a good alternative.</p>
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
               <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
             |
-            <a class="muted-link" href="../_sources/computational/programming_intro.rst.txt"
+            <a class="muted-link" href="../_sources/computational/getting_started_bioinf.rst.txt"
                rel="nofollow">
               Show Source
             </a>
@@ -267,9 +305,16 @@ in nature, R might be a good alternative.</p>
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Getting started with programming</a><ul>
-<li><a class="reference internal" href="#programming-courses-at-uio">Programming courses at UiO</a></li>
-<li><a class="reference internal" href="#recommended-literature">Recommended literature</a></li>
+<li><a class="reference internal" href="#">Getting started in bioinformatics</a><ul>
+<li><a class="reference internal" href="#running-an-analysis-from-the-command-line-in-unix-environment">Running an analysis from the command line in UNIX environment</a></li>
+<li><a class="reference internal" href="#running-tools-from-a-docker-image">Running tools from a Docker image</a></li>
+<li><a class="reference internal" href="#running-tools-developed-at-the-centre-for-bioinformatics">Running tools developed at the Centre for Bioinformatics</a><ul>
+<li><a class="reference internal" href="#immuneml">immuneML</a></li>
+<li><a class="reference internal" href="#gsuite-hyperbrowser">GSuite HyperBrowser</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#introduction-to-programming">Introduction to programming</a></li>
+<li><a class="reference internal" href="#version-control">Version control</a></li>
 </ul>
 </li>
 </ul>

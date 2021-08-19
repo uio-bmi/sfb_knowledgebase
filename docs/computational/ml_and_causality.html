@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Specialized topics in machine learning and statistics" href="specialized_topics_in_ml_and_stats.html" /><link rel="prev" title="Statistics: reference" href="statistics.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Brief overview of machine learning in computational biology" href="ml/overview.html" /><link rel="prev" title="Statistics: reference" href="statistics.html" />
 
     <meta name="generator" content="sphinx-4.1.2, furo 2021.08.17.beta43"/>
         <title>Machine learning and causal inference - SfB knowledge base documentation</title>
@@ -154,16 +154,26 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Getting started:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started_bioinf.html">Getting started in bioinformatics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_bioinf.html">Getting started in bioinformatics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biology/genomics_intro.html">Getting started with genomics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biology/immunology_intro.html">Getting started with immunology and adaptive immune receptors</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Topics:</span></p>
 <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../analysis_design.html">Designing an analysis</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="statistics.html">Statistics: reference</a></li>
-<li class="toctree-l2 current has-children current-page"><a class="current reference internal" href="#">Machine learning and causal inference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+<li class="toctree-l2 current has-children current-page"><a class="current reference internal" href="#">Machine learning and causal inference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="ml/overview.html">Brief overview of machine learning in computational biology</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ml/intro_to_ml.html">Introduction to Machine Learning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ml/ml_models.html">Introduction to machine learning models and algorithms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ml/data_representation.html">Data representation in machine learning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ml/ml_model_comparison_and_uncertainty.html">Machine learning model comparison and uncertainty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ml/transparency_and_reproducibility.html">Transparency and reproducibility in machine learning</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="specialized_topics_in_ml_and_stats.html">Specialized topics in machine learning and statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../biology/genomics.html">Genomics: references</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../biology/immunology.html">Immunology: references</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../programming.html">Programming best practices</a></li>
@@ -196,11 +206,10 @@
         </div>
         <section id="machine-learning-and-causal-inference">
 <h1>Machine learning and causal inference<a class="headerlink" href="#machine-learning-and-causal-inference" title="Permalink to this headline">¶</a></h1>
-<section id="introduction-to-machine-learning">
-<h2>Introduction to machine learning<a class="headerlink" href="#introduction-to-machine-learning" title="Permalink to this headline">¶</a></h2>
+<section id="introduction-to-machine-learning-from-a-computational-biology-perspective">
+<h2>Introduction to machine learning (from a computational biology perspective)<a class="headerlink" href="#introduction-to-machine-learning-from-a-computational-biology-perspective" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>🌱</p>
 <p>Aims:</p>
 <ul class="simple">
 <li><p>get intuition and high-level understanding of what machine learning is and what types of problems it can help solving;</p></li>
@@ -213,6 +222,18 @@
 <p>If you are new to machine learning and want to apply it in a biological discipline, the following material might provide a convenient introduction.
 It consists of 6 parts and combines the content and references with tasks and quizzes to test the covered material.</p>
 <div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Topics:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ml/overview.html">Brief overview of machine learning in computational biology</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ml/overview.html#machine-learning-is-a-powerful-approach-to-discovering-patterns-in-biological-data">Machine learning is a powerful approach to discovering patterns in (biological) data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ml/intro_to_ml.html">Introduction to Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ml/ml_models.html">Introduction to machine learning models and algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ml/data_representation.html">Data representation in machine learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ml/ml_model_comparison_and_uncertainty.html">Machine learning model comparison and uncertainty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ml/transparency_and_reproducibility.html">Transparency and reproducibility in machine learning</a></li>
+</ul>
 </div>
 </section>
 <section id="recommended-material">
@@ -247,12 +268,12 @@ It consists of 6 parts and combines the content and references with tasks and qu
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="specialized_topics_in_ml_and_stats.html">
+          <a class="next-page" href="ml/overview.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Specialized topics in machine learning and statistics</div>
+                <div class="title">Brief overview of machine learning in computational biology</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -298,7 +319,7 @@ It consists of 6 parts and combines the content and references with tasks and qu
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Machine learning and causal inference</a><ul>
-<li><a class="reference internal" href="#introduction-to-machine-learning">Introduction to machine learning</a></li>
+<li><a class="reference internal" href="#introduction-to-machine-learning-from-a-computational-biology-perspective">Introduction to machine learning (from a computational biology perspective)</a></li>
 <li><a class="reference internal" href="#recommended-material">Recommended material</a></li>
 </ul>
 </li>
