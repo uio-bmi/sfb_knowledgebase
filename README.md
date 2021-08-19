@@ -13,8 +13,8 @@ in the newly updated docs folder will be automatically visible at https://uio-bm
 
 ### How to add new content
 
-To add a new page, add a new rst file, add the content, and add the page path without the extension to one of the sidebars by explicitly listing 
-it at the page one level up in the hierarchy. For example, the index.rst file contains the following:
+To add a new page, add a new rst file in the chosen directory under the source folder, add the content, and add the page path without the extension 
+to one of the sidebars by explicitly listing it at the page one level up in the hierarchy. For example, the index.rst file contains the following:
 
 ```
 .. toctree::
@@ -27,3 +27,13 @@ it at the page one level up in the hierarchy. For example, the index.rst file co
 ```
 
 From this, Sphinx will generate a sidebar with these three items that will have the text the same as the main title on the corresponding pages.
+
+Images and other static files are located under source/_static/ and should be included using the relative path from the target page. 
+For example, to add an image to the overview.rst file under `computational/ml/`, the following snippet is used:
+
+```
+
+.. image:: ../../_static/images/TCR_motif_example.png
+   :alt: This figure shows a table with a list of immune receptor (TCR) sequences and the motifs that were extracted as common in those sequences when adjusted and when not adjusted for the genetic background.
+
+```
