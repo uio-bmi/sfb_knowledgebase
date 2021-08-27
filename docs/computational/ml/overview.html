@@ -225,7 +225,38 @@ we might need a bit different approach.</p>
 <p>Machine learning (and statistics) includes a set of methods that allow for making inference about the data. For example if we want to predict if a
 receptor sequence will bind the virus or not, we could fit a logistic regression model on the receptor sequence data and then predict the binding for
 the new receptors using the model.</p>
-<img alt="This figure shows" src="../../_images/simple_ML_workflow.png"/>
+<img alt="This figure shows a simple machine learning workflow including raw labeled data that is transformed to encoded data, and then provided to the ML model fitted via a training procedure. When new raw data is encoded, it is provided to the trained model to make predictions." src="../../_images/simple_ML_workflow.png"/>
+<p>Some applications of machine learning in biology include predicting transcription factor binding, antigen binding, translation initiation site
+discovery, splicing prediction, single-cell RNA-seq clustering, variant calling.</p>
+<p>For instance, in antigen binding prediction, immune receptors
+(proteins) bind to antigens (e.g., parts of viruses) to help eliminate them. The machine learning helps then solve the classification problem of
+predicting if a new receptor will bind to an antigen given a set of receptors that are known to bind that antigen (e.g., <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S2211124721001704">Akbar et al. 2021</a>).</p>
+<p>Transcription factors are proteins that bind to certain sites in DNA and regulate transcription of genes, so the corresponding machine learning
+problem can be formulated as follows: given a set of DNA sequences that we know if the transcription factor will bind or not, can we predict if the
+same transcription factor will bind to a new DNA sequence (e.g., <a class="reference external" href="https://www.nature.com/articles/nbt.3300">Alipanahi et al. 2015</a>).</p>
+<p>In splicing scenario, where splicing refers to processing of precursor RNA that creates messenger RNA by removing
+non-coding regions (introns) and connects gene-coding regions (exons) together, machine learning has been used to predict how often exons will be
+included in the transcripts in a regression problem (e.g., <a class="reference external" href="https://science.sciencemag.org/content/347/6218/1254806.abstract">Xiong, Alipanahi and Lee et al. 2015</a>).</p>
+<p>Single-cell RNA-seq clustering can be performed to idenfity new cell types by applying a dimensionality reduction technique on cell count data,
+followed by clustering the data, e.g., by using k-means algorithm (e.g., <a class="reference external" href="https://www.nature.com/articles/s41576-018-0088-9">Kiselev et al. 2019</a>).</p>
+<img alt="This figure shows a plot with principal components 1 and 2 on x and y axis respectively, with points in clusters. When a clustering algorithm is applied, the same plot is shown but the points are grouped into clusters of different colors, and one cluster is labeled to represent a new cell type." src="../../_images/clustering_rna_seq.png"/>
+</section>
+<section id="computational-biology-poses-unique-challenges-for-machine-learning">
+<h2>Computational biology poses unique challenges for machine learning<a class="headerlink" href="#computational-biology-poses-unique-challenges-for-machine-learning" title="Permalink to this headline">¶</a></h2>
+<p>The unique challenges of computational biology for machine learning come from:</p>
+<ul class="simple">
+<li><p>dimensionality and the dataset size (e.g., immune repertoire data includes over 100 thousand receptors per individual),</p></li>
+<li><p>signal and noise in the data (e.g., in immune repertoire field, only very few of hundreds of thousands of receptors per individual is specific to one disease that we want to predict),</p></li>
+<li><p>the ground truth is unknown and the datasets might be weakly labeled (e.g., we know that an immune repertoire belongs to a person with the immune disease in question, but we do not know which receptors are specific for that disease),</p></li>
+<li><p>there might be selection bias, meaning that there is some preferential selection of data points into the study that might obscure the existing relationships or introduce non-existing ones.</p></li>
+</ul>
+</section>
+<section id="recommended-further-reading">
+<h2>Recommended further reading<a class="headerlink" href="#recommended-further-reading" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Wainberg M, Merico D, Delong A, Frey BJ. Deep learning in biomedicine. Nature Biotechnology. 2018;36(9):829-838. doi:10.1038/nbt.4233</p></li>
+<li><p>Leung MKK, Delong A, Alipanahi B, Frey BJ. Machine Learning in Genomic Medicine: A Review of Computational Problems and Data Sets. Proceedings of the IEEE. 2016;104(1):176-197. doi:10.1109/JPROC.2015.2494198</p></li>
+</ul>
 </section>
 </section>
 
@@ -285,6 +316,8 @@ the new receptors using the model.</p>
             <ul>
 <li><a class="reference internal" href="#">Brief overview of machine learning in computational biology</a><ul>
 <li><a class="reference internal" href="#machine-learning-is-a-powerful-approach-to-discovering-patterns-in-biological-data">Machine learning is a powerful approach to discovering patterns in (biological) data</a></li>
+<li><a class="reference internal" href="#computational-biology-poses-unique-challenges-for-machine-learning">Computational biology poses unique challenges for machine learning</a></li>
+<li><a class="reference internal" href="#recommended-further-reading">Recommended further reading</a></li>
 </ul>
 </li>
 </ul>
