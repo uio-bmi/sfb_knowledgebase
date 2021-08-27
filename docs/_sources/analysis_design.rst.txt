@@ -19,3 +19,11 @@ The full list of topics:
    computational/statistics
    computational/ml_and_causality
    computational/specialized_topics_in_ml_and_stats
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Biological topics:
+
+   biology/genomics
+   biology/immunology

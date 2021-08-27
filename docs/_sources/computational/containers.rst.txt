@@ -58,7 +58,7 @@ This command will:
 - name the container `my_container`
 - download the immuneML Docker image from DockerHub from user milenapavlovic
 - in a thus created environment, it will run immune-ml-quickstart as described above and store the output to /data/output/ directory
-which will be visible later in the current working directory under `output/`.
+  which will be visible later in the current working directory under `output/`.
 
 .. code-block:: console
 

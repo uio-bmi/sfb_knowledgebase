@@ -1,10 +1,10 @@
 Machine learning and causal inference
 =========================================
 
-Introduction to machine learning
-----------------------------------
+Introduction to machine learning (from a computational biology perspective)
+------------------------------------------------------------------------------
 
-.. note:: 🌱
+.. note::
 
   Aims:
 
@@ -22,12 +22,12 @@ It consists of 6 parts and combines the content and references with tasks and qu
    :maxdepth: 2
    :caption: Topics:
 
-   computational/ml/overview
-   computational/ml/intro_to_ml
-   computational/ml/ml_models
-   computational/ml/data_representation
-   computational/ml/ml_model_comparison_and_uncertainty
-   computational/ml/transparency_and_reproducibility
+   ml/overview
+   ml/intro_to_ml
+   ml/ml_models
+   ml/data_representation
+   ml/ml_model_comparison_and_uncertainty
+   ml/transparency_and_reproducibility
 
 Recommended material
 ----------------------

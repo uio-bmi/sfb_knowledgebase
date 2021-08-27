@@ -1,6 +1,4 @@
-Getting started with immunology and adaptive immune receptors
-=======================================================================================
+Immunology: references
+=======================
 
-- intro text?
-- list of intro papers
-- relevant lectures and courses
+to be added
