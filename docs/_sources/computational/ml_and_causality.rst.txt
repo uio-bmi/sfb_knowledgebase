@@ -19,7 +19,7 @@ If you are new to machine learning and want to apply it in a biological discipli
 It consists of 6 parts and combines the content and references with tasks and quizzes to test the covered material.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Topics:
 
    ml/overview
