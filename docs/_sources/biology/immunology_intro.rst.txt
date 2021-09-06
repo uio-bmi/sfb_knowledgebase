@@ -27,6 +27,8 @@ Relevant reviews:
 - Brown, A. J. et al. Augmenting adaptive immunity: progress and challenges in the quantitative engineering and analysis of adaptive immune receptor repertoires. Mol. Syst. Des. Eng. 4, 701–736 (2019).
 - Greiff, V., Yaari, G. & Cowell, L. Mining adaptive immune receptor repertoires for biological and clinical information using machine learning. Current Opinion in Systems Biology (2020) doi:10.1016/j.coisb.2020.10.010.
 - Arnaout, R. A. et al. The Future of Blood Testing Is the Immunome. Front. Immunol. 12, (2021).
+- Davis, M., Tato, C. & Furman, D. Systems immunology: just getting started. Nat Immunol 18, 725–732 (2017).
+- Georgiou, G., Ippolito, G., Beausang, J. et al. The promise and challenge of high-throughput sequencing of the antibody repertoire. Nat Biotechnol 32, 158–168 (2014).
 
 Relevant books:
 
