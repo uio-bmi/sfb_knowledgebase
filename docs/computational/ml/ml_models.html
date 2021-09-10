@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Data representation in machine learning" href="data_representation.html" /><link rel="prev" title="Introduction to Machine Learning" href="intro_to_ml.html" />
 
-    <meta name="generator" content="sphinx-4.1.2, furo 2021.08.31"/>
+    <meta name="generator" content="sphinx-4.1.2, furo 2021.09.08"/>
         <title>Introduction to machine learning models and algorithms - SfB knowledge base documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
@@ -134,7 +134,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -191,7 +191,7 @@
   </aside>
   <div class="main">
     <div class="content">
-      <article role="main">
+      <div class="article-container">
         <div class="content-icon-container">
           <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
@@ -201,17 +201,150 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <section id="introduction-to-machine-learning-models-and-algorithms">
+        <article role="main">
+          <section id="introduction-to-machine-learning-models-and-algorithms">
 <h1>Introduction to machine learning models and algorithms<a class="headerlink" href="#introduction-to-machine-learning-models-and-algorithms" title="Permalink to this headline">¶</a></h1>
-<p>to be added</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Aim: learn what a machine learning model is, the difference between discriminatory and generative
+models, supervised and unsupervised models</p>
+<p>Level: beginner 🌱</p>
+</div>
+<p>In the previous section <a class="reference internal" href="intro_to_ml.html#introduction-to-machine-learning"><span class="std std-ref">Introduction to Machine Learning</span></a>, logistic regression was mentioned
+as a simple option for binary classification. The task was to estimate the function f, so that
+f(X), where X is the data, is approximately equal to the labels Y. The specific format of the
+function f(X) and its parameters (ω and b) are shown in the figure below.</p>
+<a class="reference internal image-reference" href="../../_images/log_reg.png"><img alt="This figure shows an example of a ML/statistical model. The logistic regression function f(x) has value 0 if (1+e^(-ωx-b))^(-1) is less than 0.5 or 1 otherwise." src="../../_images/log_reg.png" style="width: 80%;"/></a>
+<p>But what is a machine learning model? And how models differ between each other? That is the topic of this section.</p>
+<section id="what-is-an-ml-model-and-an-ml-algorithm">
+<h2>What is an ML model and an ML algorithm?<a class="headerlink" href="#what-is-an-ml-model-and-an-ml-algorithm" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://direct.mit.edu/neco/article/10/7/1895/6224/Approximate-Statistical-Tests-for-Comparing">Dietterich 1998</a> defined the following:</p>
+<ul class="simple">
+<li><p><strong>Learning algorithm</strong>: a function that, given a set of examples and their labels, constructs a model (e.g., logistic regression)</p></li>
+<li><p><strong>Model</strong>: a function that was fit to the data using the learning algorithm (e.g., logistic regression with specific parameter values)</p></li>
+</ul>
+<p>These terms are sometimes used interchangeably, but from these definitions, they are a bit different.</p>
+<section id="overview-of-ml-and-statistical-algorithms">
+<h3>Overview of ML and statistical algorithms<a class="headerlink" href="#overview-of-ml-and-statistical-algorithms" title="Permalink to this headline">¶</a></h3>
+<p>There are many different learning algorithms. They differ in their assumptions about the function to be estimated and the type of
+function they can estimate.</p>
+<p>Classification algorithms estimate functions that have discrete outputs that represent different classes the functions aim to predict.
+Some classification algorithms are logistic regression, naive Bayes, decision trees, support vector machine (SVM), neural networks,
+k-nearest neighbors (kNN). There are also algorithms that construct multiple models of the same type and then use them together to
+make predictions. These are called ensemble methods and include random forest (multiple decision trees), boosting and bagging algorithms.</p>
+<p>Regression algorithms, on the other hand, have continuous outputs. Algorithms include linear regression, polynomial regression,
+stepwise regression, ridge and lasso regression, elastic net, support vector regression, neural networks.</p>
+<p>Classification and regression algorithms are useful when the data is labeled (either with a class they belong to or some continuous value). When
+no labels are available, the structure of the data needs to be analyzed in an unsupervised manner. Some unsupervised algorithms
+include k-means clustering, hierarchical clustering, mixture models, autoencoders.</p>
+</section>
+</section>
+<section id="what-can-ml-algorithms-learn-capacity-and-the-hypothesis-space">
+<h2>What can ML algorithms learn: capacity and the hypothesis space<a class="headerlink" href="#what-can-ml-algorithms-learn-capacity-and-the-hypothesis-space" title="Permalink to this headline">¶</a></h2>
+<p>An algorithm’s <strong>capacity</strong> can be informally defined as its ability to fit a wide variety of functions. For example, linear
+regression and polynomial regression look like this:</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\hat{y}_{linear\,regression} = b + ωx\\\hat{y}_{polynomial\,regression} = b + ω_1x + ω_2x^2\end{aligned}\end{align} \]</div></div>
+<p>From these equations, it is possible to see that every function that linear regression model can learn, it is also possible to
+learn with polynomial regression if <span class="math notranslate nohighlight">\(ω_2\)</span> is set to 0. If on the other hand <span class="math notranslate nohighlight">\(ω_2\)</span> is not zero, polynomial regression
+can learn many more different functions that depend not only on <span class="math notranslate nohighlight">\(x\)</span>, but also <span class="math notranslate nohighlight">\(x_2\)</span>. So, polynomial regression has
+higher capacity than linear regression.</p>
+<p>The capacity is also related to overfitting and underfitting from <a class="reference internal" href="intro_to_ml.html#generalization-in-machine-learning"><span class="std std-ref">Generalization in machine learning</span></a> in the previous section.
+If the algorithm has low capacity for the task at hand, it might not be able to learn the function f, and it might underfit.
+If the algorithm’s capacity is too high for the task (e.g., when fitting a polynomial regression when the true function is linear),
+the algorithm might overfit and learn the training data too well, failing to generalize to new data later. There are ways to prevent
+this that will be discussed later.</p>
+<img alt="a graph showing the cost function (error) on y axis and model complexity on the x axis; plotted are the training error curve and the generalization error; they both decrease until optimal model complexity and then split: the training error continues to decrease, while the generalization error goes up; the difference between these errors is labeled as generalization gap" src="../../_images/model_capacity.png"/>
+<p><strong>Hypothesis space</strong> (function space) is a set of functions that the algorithm can choose as the optimal solution. Choosing the hypothesis space controls
+the capacity of the algorithm. Given that an optimal hypothesis (function) is chosen, in theory it is possible to obtain the ideal
+model (called oracle) that knows the true probability distribution that generates the data. In biology, this “true probability distribution”
+refers to the data generating process and the biological mechanism behind it. The minimal error achieved by an ideal model that
+occurs due to e.g., noise in the data, is called <strong>Bayes error</strong>.
+However, more realistically, the algorithms would learn only the (statistical) approximation of the task.</p>
+<section id="searching-through-the-hypothesis-space-using-optimization-algorithms">
+<h3>Searching through the hypothesis space using optimization algorithms<a class="headerlink" href="#searching-through-the-hypothesis-space-using-optimization-algorithms" title="Permalink to this headline">¶</a></h3>
+<p>Fitting the parameters of the model (finding the best parameter values for the task) is an
+optimization problem. There are different algorithms that perform this optimization, but one of
+the most common algorithms is gradient descent, that was already described in <a class="reference internal" href="intro_to_ml.html#training-the-machine-learning-model"><span class="std std-ref">Training the machine learning model</span></a> in
+the previous section. With this algorithm, it is possible to get stuck in a local minima of the
+cost function, but if the performance is good enough, that might still be acceptable.</p>
+<img alt="a 3D function with a local minimum (might be good enough) and a global minimum corresponding to the ideal model" src="../../_images/optimization.png"/>
+<p>Gradient descent minimizes the cost function to find optimal model parameters:</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\text{optimal_parameters} = \underset{parameters}{\mathrm{argmin}} \{ \text{cost_function}(\text{parameters} | \text{train_data})\}\]</div></div>
+<p>If some (domain) knowledge is available to inform what the function is expected to look like, it is possible to
+add constraints to this equation and restrict the parameter values the function can have.</p>
+<p>This is done by adding an additional term to the standard cost function (e.g., cross-entropy) that
+will increase the value of the cost function if the model does not respect the added regularization:</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\text{optimal_parameters} = \underset{parameters}{\mathrm{argmin}} \{ \text{cross_entropy}(\text{parameters} | \text{train_data}) + \alpha \, \text{regularization}(\text{parameters})\}\]</div></div>
+<p>Parameter <span class="math notranslate nohighlight">\(\alpha\)</span> is the regularization constant and defines how much the cost function will increase if the parameter values do not follow the
+constraints.</p>
+<p>The regularization (also called penalty) depends on the prior beliefs on the values parameters can take. These often include the assumption that
+the parameter values might be sparse (some of them should be 0) or that their values should be small. In the first case, to
+ensure sparsity, one might use so called L1 regularization where the regularization term is the sum of the absolute parameter values:</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[regularization(parameters) = \sum_{i} | parameter_i |\]</div></div>
+<p>L1-regularized models are typically sparser and simpler than non-regularized ones. L2-regularization shrinks all parameter values
+proportionally:</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[regularization(parameters) = \sum_{i} parameter_i^2\]</div></div>
+<p>L1 also corresponds to Lasso and L2 to ridge regression.</p>
+</section>
+</section>
+<section id="examples-of-machine-learning-algorithms">
+<h2>Examples of machine learning algorithms<a class="headerlink" href="#examples-of-machine-learning-algorithms" title="Permalink to this headline">¶</a></h2>
+<section id="supervised-learning">
+<h3>Supervised learning<a class="headerlink" href="#supervised-learning" title="Permalink to this headline">¶</a></h3>
+<p>Logistic regression mentioned before, is one example of a statistical learning algorithm for binary classification. Its parameters are shown in the figure
+below.</p>
+<img alt="a logistic regression model: function g computes the log-odds for the positive class by computing the sigmoid function on the linear combination of weights, inputs X and the bias term; function f then makes prediction based on the threshold from the log-odds value" src="../../_images/log_reg_annotated.png"/>
+<p>A single node in a neural network does something similar. It computes a non-linear activation function on the linear combination of inputs X, weights w and
+bias term b.</p>
+<img alt="a neural network node computes the sigmoid (non-linear activation) function on the linear combination of inputs, weights and bias term" src="../../_images/NN_node.png"/>
+<p>A neural network consist of many such nodes organized into layers. This hierarchical structure makes them
+very powerful as they can fit a large variety of different functions. An example of a neural network is shown below.</p>
+<img alt="a neural network consisting of 4 layers with decreasing number of nodes" src="../../_images/NN.png"/>
+<p>Neural networks work by computing the activations for each layer based on the activations from the previous one to make the predictions. They
+are trained in the opposite direction with the same gradient descent algorithm described earlier. The difference between the output of the final layer
+(their predictions) and the true output (true labels) is computed and used to update the parameters (weights) throughout the network.</p>
+<p>The number of nodes per layer and the number of layers are set in advance by the practitioner. They are hyperparameters: parameters of
+ML algorithms that are not tuned during training. Instead, a set of possible configurations of hyperparameters can be provided in
+advance, and optimized over on data not used for training (validation data).</p>
+<p>There are different types of neural networks, and some of them are:</p>
+<ul class="simple">
+<li><p>fully connected networks (as shown above) where every node in one layer is connected to every node from the previous layer,</p></li>
+<li><p>convolutional neural networks that detect position-invariant local patterns (e.g., patterns in the DNA sequence such as in <a class="reference external" href="https://doi.org/10.1093/bioinformatics/btw255">Zeng et al. 2016</a>),</p></li>
+<li><p>residual neural networks that can learn both simple (e.g., identity) and more complex functions (<a class="reference external" href="https://arxiv.org/abs/1512.03385">He et al. 2015</a>),</p></li>
+<li><p>recurrent neural networks often used for long-term dependencies, e.g., in sequence data or text.</p></li>
+</ul>
+</section>
+<section id="unsupervised-learning">
+<h3>Unsupervised learning<a class="headerlink" href="#unsupervised-learning" title="Permalink to this headline">¶</a></h3>
+<p>Neural networks with a slightly different configuration can be also used in unsupervised learning scenario. Autoencoders are
+neural networks trained to reconstruct its input in the final layer while fitting the latent representation in its middle layer.
+The part of the network that transforms the input data into the latent representation is called encoder and the decoder is the part
+of the network mapping the latent representation back to the input data. The representation learned in this way can have some
+useful properties, such as reduced dimensionality that would make it easier to visualize, but there could be other applications as well.</p>
+<img alt="a neural network consist of encoder and decoder part where the middle layer between these two is the learned latent representation and the first and the last layer of the network both correspond to the input data X." src="../../_images/autoencoder.png"/>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p>Dietterich TG. Approximate Statistical Tests for Comparing Supervised Classification Learning Algorithms. Neural Comput. 1998;10(7):1895–1923. doi:10.1162/089976698300017197</p>
+<p>Goodfellow IJ, Bengio Y, Courville A. Deep Learning. MIT Press; 2016. <a class="reference external" href="https://mitpress.mit.edu/books/deep-learning">https://mitpress.mit.edu/books/deep-learning</a> (especially chapter 5 - Machine Learning Basics)</p>
+<p>Zeng, Haoyang, Matthew D. Edwards, Ge Liu, and David K. Gifford. ‘Convolutional Neural Network Architectures for Predicting DNA–Protein Binding’. Bioinformatics 32, no. 12 (15 June 2016): i121–27. <a class="reference external" href="https://doi.org/10.1093/bioinformatics/btw255">https://doi.org/10.1093/bioinformatics/btw255</a></p>
+<p>He, Kaiming, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. ‘Deep Residual Learning for Image Recognition’. ArXiv:1512.03385 [Cs], 10 December 2015. https://arxiv.org/abs/1512.03385</p>
+</section>
 </section>
 
-      </article>
+        </article>
+      </div>
       <footer>
         
         <div class="related-pages">
@@ -238,13 +371,11 @@
         </div>
 
         <div class="related-information">
-              Copyright &#169; 2021, SfB_UiO
-            |
+              Copyright &#169; 2021, SfB_UiO |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-              <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            |
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
             <a class="muted-link" href="../../_sources/computational/ml/ml_models.rst.txt"
                rel="nofollow">
               Show Source
@@ -253,8 +384,40 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Introduction to machine learning models and algorithms</a><ul>
+<li><a class="reference internal" href="#what-is-an-ml-model-and-an-ml-algorithm">What is an ML model and an ML algorithm?</a><ul>
+<li><a class="reference internal" href="#overview-of-ml-and-statistical-algorithms">Overview of ML and statistical algorithms</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#what-can-ml-algorithms-learn-capacity-and-the-hypothesis-space">What can ML algorithms learn: capacity and the hypothesis space</a><ul>
+<li><a class="reference internal" href="#searching-through-the-hypothesis-space-using-optimization-algorithms">Searching through the hypothesis space using optimization algorithms</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#examples-of-machine-learning-algorithms">Examples of machine learning algorithms</a><ul>
+<li><a class="reference internal" href="#supervised-learning">Supervised learning</a></li>
+<li><a class="reference internal" href="#unsupervised-learning">Unsupervised learning</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -264,5 +427,6 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/scripts/main.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>
