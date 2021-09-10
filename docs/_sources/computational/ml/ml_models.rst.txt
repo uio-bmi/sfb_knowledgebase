@@ -3,8 +3,7 @@ Introduction to machine learning models and algorithms
 
 .. note::
 
-  Aim: learn what a machine learning model is, the difference between discriminatory and generative
-  models, supervised and unsupervised models
+  Aim: learn what a machine learning model is, supervised and unsupervised models
 
   Level: beginner 🌱
 
