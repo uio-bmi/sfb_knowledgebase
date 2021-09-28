@@ -25,6 +25,7 @@ jobs:
         run: |
           pip install Sphinx
           pip install furo
+          pip install myst_parser
         
       - name: make html & commit the changes
         run: |
