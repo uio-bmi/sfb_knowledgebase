@@ -1,0 +1,653 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
+
+    <meta name="generator" content="sphinx-4.2.0, furo 2021.09.22"/>
+        <title>Clean code - SfB knowledge base documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=150e365fa939648e89c22f6d7d13c72a1657915a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  body[data-theme="dark"] {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+</style></head>
+  <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" />
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">SfB knowledge base  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  
+  <span class="sidebar-brand-text">SfB knowledge base  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Getting started:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_bioinf.html">Getting started in bioinformatics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biology/genomics_intro.html">Getting started with genomics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../biology/immunology_intro.html">Getting started with immunology and adaptive immune receptors</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Topics:</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../analysis_design.html">Designing an analysis</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html">Statistics: reference</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="ml_and_causality.html">Machine learning and causal inference</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="ml/overview.html">Brief overview of machine learning in computational biology</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ml/intro_to_ml.html">Introduction to Machine Learning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ml/ml_models.html">Introduction to machine learning models and algorithms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ml/data_representation.html">Data representation in machine learning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ml/ml_model_comparison_and_uncertainty.html">Machine learning model comparison and uncertainty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ml/transparency_and_reproducibility.html">Transparency and reproducibility in machine learning</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="specialized_topics_in_ml_and_stats.html">Specialized topics in machine learning and statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../biology/genomics.html">Genomics: references</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../biology/immunology.html">Immunology: references</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../programming.html">Programming best practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setting_up_project.html">Setting up and organizing a project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../running_analysis.html">Running an analysis</a></li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section class="tex2jax_ignore mathjax_ignore" id="clean-code">
+<h1>Clean code<a class="headerlink" href="#clean-code" title="Permalink to this headline">¶</a></h1>
+<p>The following are notes from the Clean Code book by Robert C. Martin.</p>
+<section id="chapter-1-meaningful-names">
+<h2>Chapter 1: Meaningful names<a class="headerlink" href="#chapter-1-meaningful-names" title="Permalink to this headline">¶</a></h2>
+<section id="use-intention-revealing-names">
+<h3>Use intention-revealing names<a class="headerlink" href="#use-intention-revealing-names" title="Permalink to this headline">¶</a></h3>
+<p>Names should reveal intent.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># bad</span>
+<span class="k">def</span> <span class="nf">check</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">d2</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">d2</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">return</span> <span class="bp">False</span> 
+
+<span class="c1"># good</span>
+<span class="k">def</span> <span class="nf">sequence_has_subsequence</span><span class="p">(</span><span class="n">sequence</span><span class="p">,</span> <span class="n">subsequence</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">subsequence</span> <span class="ow">in</span> <span class="n">sequence</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">return</span> <span class="bp">False</span>
+
+
+<span class="k">if</span> <span class="n">sequence_has_subsequence</span><span class="p">(</span><span class="s2">"ACTGACTG"</span><span class="p">,</span> <span class="s2">"ACT"</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">"We have a match"</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="avoid-disinformation">
+<h3>Avoid disinformation<a class="headerlink" href="#avoid-disinformation" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Don’t call something a list unless it’s actually a list</p></li>
+<li><p>Avoid long variable names that are similar</p></li>
+</ul>
+</section>
+<section id="make-meaningful-distinctions">
+<h3>Make meaningful distinctions<a class="headerlink" href="#make-meaningful-distinctions" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># bad</span>
+<span class="k">def</span> <span class="nf">align_sequence_to_reference</span><span class="p">(</span><span class="n">dna1</span><span class="p">,</span> <span class="n">dna2</span><span class="p">):</span>
+    <span class="c1"># ..</span>
+
+<span class="c1"># Good</span>
+<span class="k">def</span> <span class="nf">align_sequence_to_reference</span><span class="p">(</span><span class="n">reference_dna</span><span class="p">,</span> <span class="n">query_dna</span><span class="p">):</span>
+    <span class="c1"># ..</span>
+</pre></div>
+</div>
+<p>Avoid noise words:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dna_string</span> <span class="o">=</span> <span class="s2">"ACTG"</span>
+<span class="c1"># instead:</span>
+<span class="n">dna</span> <span class="o">=</span> <span class="s2">"ACTG"</span>
+</pre></div>
+</div>
+</section>
+<section id="use-pronounceable-names">
+<h3>Use pronounceable names<a class="headerlink" href="#use-pronounceable-names" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># bad</span>
+<span class="n">mcfdrsmplrate</span> <span class="o">=</span> <span class="mf">3.0</span>
+
+<span class="c1"># good</span>
+<span class="n">monte_carlo_false_discovery_sample_rate</span> <span class="o">=</span> <span class="mf">3.0</span>
+<span class="c1"># or maybe</span>
+<span class="n">mc_false_discovery_sample_rate</span> <span class="o">=</span> <span class="mf">3.0</span>
+</pre></div>
+</div>
+</section>
+<section id="use-searchable-names">
+<h3>Use searchable names<a class="headerlink" href="#use-searchable-names" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Only use single-letter names as local variables inside short methods</p></li>
+<li><p>Variables used multiple places should have a search-friendly name</p></li>
+</ul>
+</section>
+<section id="avoid-mental-mapping">
+<h3>Avoid mental mapping<a class="headerlink" href="#avoid-mental-mapping" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># bad</span>
+
+<span class="n">j</span> <span class="o">=</span> <span class="mf">4.0</span>
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_samples</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>
+        <span class="n">analyse_sample</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+
+<span class="c1"># better</span>
+<span class="n">analysis_parameter</span> <span class="o">=</span> <span class="mf">4.0</span>
+<span class="k">for</span> <span class="n">sample_id</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_samples</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">analysis_iteration</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>
+        <span class="n">analyse_sample</span><span class="p">(</span><span class="n">sample_id</span><span class="p">,</span> <span class="n">analysis_iteration</span><span class="p">,</span> <span class="n">analysis_parameter</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="classes-and-objects-should-have-noun-names">
+<h3>Classes and objects should have noun names<a class="headerlink" href="#classes-and-objects-should-have-noun-names" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># bad (avoid verbs)</span>
+<span class="k">class</span> <span class="nc">Analyse</span><span class="p">:</span>
+
+<span class="c1"># good</span>
+<span class="k">class</span> <span class="nc">ImmuneAnalysisRunner</span><span class="p">:</span>
+</pre></div>
+</div>
+</section>
+<section id="methods-should-have-verb-or-verb-phrases-as-names">
+<h3>Methods should have verb or verb phrases as names<a class="headerlink" href="#methods-should-have-verb-or-verb-phrases-as-names" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># bad </span>
+<span class="k">def</span> <span class="nf">figure</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+
+<span class="c1"># good</span>
+<span class="k">def</span> <span class="nf">make_figure</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+
+<span class="c1"># .. or e.g.:</span>
+<span class="k">def</span> <span class="nf">get_figure</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+</pre></div>
+</div>
+</section>
+<section id="don-t-be-cute">
+<h3>Don’t be cute<a class="headerlink" href="#don-t-be-cute" title="Permalink to this headline">¶</a></h3>
+<p>This example is taken from Telia code base for sending an invoice:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># bad </span>
+<span class="k">class</span> <span class="nc">QuantumOfSolace</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">send_to_customer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    
+<span class="c1"># good</span>
+<span class="k">class</span> <span class="nc">Invoice</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">send_to_customer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</pre></div>
+</div>
+</section>
+<section id="pick-one-word-per-concept">
+<h3>Pick one word per concept<a class="headerlink" href="#pick-one-word-per-concept" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># bad</span>
+<span class="k">class</span> <span class="nc">Sample</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">get_sample</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="k">class</span> <span class="nc">Analysis</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">fetch_analysis</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</pre></div>
+</div>
+</section>
+<section id="other-rules">
+<h3>Other rules:<a class="headerlink" href="#other-rules" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Avoid using the same word for two purposes</p></li>
+<li><p>Use solution domain names (okay to use computer science terminology)</p></li>
+<li><p>Add meaningful contect (example: a class can give context to a method)</p></li>
+</ul>
+</section>
+</section>
+<section id="chapter-3-functions">
+<h2>Chapter 3: Functions<a class="headerlink" href="#chapter-3-functions" title="Permalink to this headline">¶</a></h2>
+<section id="make-functions-small">
+<h3>Make functions small<a class="headerlink" href="#make-functions-small" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="keep-indentation-level-at-maximum-1-or-2">
+<h3>Keep indentation level at maximum 1 or 2<a class="headerlink" href="#keep-indentation-level-at-maximum-1-or-2" title="Permalink to this headline">¶</a></h3>
+<p>Everything further intendented can usually be a new function</p>
+</section>
+<section id="functions-should-do-one-thing">
+<h3>Functions should do one thing<a class="headerlink" href="#functions-should-do-one-thing" title="Permalink to this headline">¶</a></h3>
+<p>Functions should do one thing. They should do it well. They should do it only.
+A function can do multiple things if they are at the same level of abstraction.</p>
+<ul class="simple">
+<li><p>“Only one level of abstraction per function”</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># bad</span>
+<span class="k">class</span> <span class="nc">Samples</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">add_sample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sample</span><span class="p">):</span>
+        <span class="c1"># add</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">samples</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+
+        <span class="c1"># run analysis on this sample</span>
+        <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">other_samples</span><span class="p">:</span>
+            <span class="n">simulated_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_simulated_data</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+            <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">analyse_two_samples</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">result</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">best_result</span><span class="p">:</span>
+                    <span class="n">best_result</span> <span class="o">=</span> <span class="n">result</span>
+            
+        <span class="c1"># print report</span>
+        <span class="o">....</span> 
+
+<span class="c1"># better (but not good)</span>
+<span class="k">class</span> <span class="nc">Samples</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">add_sample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sample</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">samples</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+        <span class="n">analysis</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">analyse</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">print_report</span><span class="p">(</span><span class="n">analysis</span><span class="p">)</span>
+
+<span class="c1"># good: Do not analyse anything in the add method</span>
+</pre></div>
+</div>
+</section>
+<section id="the-stepdown-rule">
+<h3>The stepdown-rule<a class="headerlink" href="#the-stepdown-rule" title="Permalink to this headline">¶</a></h3>
+<p>Every function should be followed by a next one so that we can read and understand the code from top to bottom.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SampleAnalyser</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">add_sample</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="nf">filter_sample</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">analyse_sample</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">print_analysis_report</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</pre></div>
+</div>
+</section>
+<section id="give-your-functions-few-arguments">
+<h3>Give your functions few arguments<a class="headerlink" href="#give-your-functions-few-arguments" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Zero arguments is optimal</p></li>
+<li><p>No more than 3 arguments</p>
+<ul>
+<li><p>When more than 3: Wrap arguments in a class of their own</p></li>
+</ul>
+</li>
+</ul>
+<p>(I personally disagree a bit with this rule, since IDE’s and optional arguments in Python makes many arguments less of a problem)</p>
+</section>
+<section id="flag-arguments-are-ugly">
+<h3>Flag arguments are ugly<a class="headerlink" href="#flag-arguments-are-ugly" title="Permalink to this headline">¶</a></h3>
+<p>“Passing a boolean into a function is a truly terrible practice”</p>
+<ul class="simple">
+<li><p>Instead: Make multiple functions</p></li>
+</ul>
+</section>
+<section id="functions-should-not-have-side-effects">
+<h3>Functions should not have side effects<a class="headerlink" href="#functions-should-not-have-side-effects" title="Permalink to this headline">¶</a></h3>
+<p>Example: See the previous <code class="docutils literal notranslate"><span class="pre">add_sample</span></code> method</p>
+</section>
+<section id="functions-should-either-do-something-or-answer-something-not-both">
+<h3>Functions should either do something or answer something (not both)<a class="headerlink" href="#functions-should-either-do-something-or-answer-something-not-both" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="prefer-exceptions-to-returning-error-codes">
+<h3>Prefer exceptions to returning error codes<a class="headerlink" href="#prefer-exceptions-to-returning-error-codes" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># bad</span>
+<span class="k">def</span> <span class="nf">add_sample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sample</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">has_sample</span><span class="p">(</span><span class="n">sample</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">503</span>
+    
+    <span class="bp">self</span><span class="o">.</span><span class="n">samples</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">1</span>
+
+<span class="c1"># good</span>
+<span class="k">def</span> <span class="nf">add_sample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sample</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">has_sample</span><span class="p">(</span><span class="n">sample</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">DuplicateSampleException</span><span class="p">(</span><span class="s2">"Sample </span><span class="si">%s</span><span class="s2"> already exists and cannot be added"</span> <span class="o">%</span> <span class="n">s</span><span class="p">)</span>
+    
+    <span class="bp">self</span><span class="o">.</span><span class="n">samples</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="extract-try-catch-blocks">
+<h3>Extract try/catch blocks<a class="headerlink" href="#extract-try-catch-blocks" title="Permalink to this headline">¶</a></h3>
+<p>Don’t do error handling inside function that do a specific task (have try/catch on the outside)</p>
+</section>
+<section id="don-t-repeat-yourself">
+<h3>Don’t repeat yourself<a class="headerlink" href="#don-t-repeat-yourself" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="optional-all-functions-should-have-one-entry-and-one-exit">
+<h3>(Optional) All functions should have one entry and one exit<a class="headerlink" href="#optional-all-functions-should-have-one-entry-and-one-exit" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>No continue, break or early returns</p></li>
+<li><p>Only one return</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># instead of this</span>
+<span class="k">def</span> <span class="nf">has_sample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sample</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">other_sample</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">samples</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">sample</span>  <span class="o">==</span> <span class="n">other_sample</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        
+    <span class="k">return</span> <span class="bp">False</span>
+
+<span class="c1"># .. do this:</span>
+<span class="k">def</span> <span class="nf">has_sample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sample</span><span class="p">):</span>
+    <span class="n">has_sample</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="k">for</span> <span class="n">other_sample</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">samples</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">sample</span> <span class="o">==</span> <span class="n">other_sample</span><span class="p">:</span>
+            <span class="n">has_sample</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="c1"># break would be discuoraged here ?</span>
+            
+    <span class="k">return</span> <span class="n">has_sample</span>
+</pre></div>
+</div>
+</section>
+<section id="refine-long-functions-into-multiple-shorter">
+<h3>Refine long functions into multiple shorter<a class="headerlink" href="#refine-long-functions-into-multiple-shorter" title="Permalink to this headline">¶</a></h3>
+<p>It is okay and common to start out writing long functions, and then refactor them.</p>
+</section>
+</section>
+<section id="chapter-4-comments">
+<h2>Chapter 4: Comments<a class="headerlink" href="#chapter-4-comments" title="Permalink to this headline">¶</a></h2>
+<p>“Don’t comment bad code – rewrite it.”</p>
+<ul class="simple">
+<li><p>Comments “compensate” for failure to express ourself in code</p></li>
+<li><p>“Comments lie”</p></li>
+<li><p>Code changes and evolve, comments stay behind</p></li>
+<li><p>Inaccurate comments are far worse than no comments at all</p></li>
+</ul>
+<section id="comments-do-not-make-up-for-bade-code">
+<h3>Comments do not make up for bade code<a class="headerlink" href="#comments-do-not-make-up-for-bade-code" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Clean up your bad code instead of commenting it</p>
+<ul>
+<li><p><em>How do we relate this with “quick and dirty programming?”</em></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="explain-your-self-in-code">
+<h3>Explain your self in code<a class="headerlink" href="#explain-your-self-in-code" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="don-t-use-comments-when-you-can-use-a-function-or-variable">
+<h3>Don’t use comments when you can use a function or variable<a class="headerlink" href="#don-t-use-comments-when-you-can-use-a-function-or-variable" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># bad</span>
+<span class="c1"># get the sample</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_some_format</span><span class="p">(</span><span class="s2">"data.txt"</span><span class="p">,</span> <span class="n">skip_header</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">","</span><span class="p">)</span>
+<span class="c1"># analyse sample</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="c1"># ... </span>
+    <span class="c1">#.. </span>
+
+<span class="c1"># good</span>
+<span class="n">sample</span> <span class="o">=</span> <span class="n">get_sample</span><span class="p">()</span>
+<span class="n">analyse</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="avoid-noise">
+<h3>Avoid noise<a class="headerlink" href="#avoid-noise" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># sample</span>
+<span class="n">sample</span> <span class="o">=</span> <span class="n">get_sample</span><span class="p">()</span>
+<span class="c1"># analyse</span>
+<span class="n">analyse</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="avoid-todo-comments">
+<h3>Avoid todo comments<a class="headerlink" href="#avoid-todo-comments" title="Permalink to this headline">¶</a></h3>
+<p>Use external systems instead.</p>
+</section>
+<section id="informative-comments">
+<h3>Informative comments<a class="headerlink" href="#informative-comments" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Can be useful for cryptic code that cannot be written clearly.</p></li>
+<li><p>Can be useful to comment use of library functions/classes</p></li>
+<li><p>Amplify something that’s important (“trimming sequence is important to avoid bug ..”)</p></li>
+</ul>
+</section>
+<section id="don-t-comment-out-code">
+<h3>Don’t comment out code<a class="headerlink" href="#don-t-comment-out-code" title="Permalink to this headline">¶</a></h3>
+<p>Remove it and use version control instead.</p>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2021, SfB_UiO |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
+            <a class="muted-link" href="../_sources/computational/clean_code.md.txt"
+               rel="nofollow">
+              Show Source
+            </a>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Clean code</a><ul>
+<li><a class="reference internal" href="#chapter-1-meaningful-names">Chapter 1: Meaningful names</a><ul>
+<li><a class="reference internal" href="#use-intention-revealing-names">Use intention-revealing names</a></li>
+<li><a class="reference internal" href="#avoid-disinformation">Avoid disinformation</a></li>
+<li><a class="reference internal" href="#make-meaningful-distinctions">Make meaningful distinctions</a></li>
+<li><a class="reference internal" href="#use-pronounceable-names">Use pronounceable names</a></li>
+<li><a class="reference internal" href="#use-searchable-names">Use searchable names</a></li>
+<li><a class="reference internal" href="#avoid-mental-mapping">Avoid mental mapping</a></li>
+<li><a class="reference internal" href="#classes-and-objects-should-have-noun-names">Classes and objects should have noun names</a></li>
+<li><a class="reference internal" href="#methods-should-have-verb-or-verb-phrases-as-names">Methods should have verb or verb phrases as names</a></li>
+<li><a class="reference internal" href="#don-t-be-cute">Don’t be cute</a></li>
+<li><a class="reference internal" href="#pick-one-word-per-concept">Pick one word per concept</a></li>
+<li><a class="reference internal" href="#other-rules">Other rules:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#chapter-3-functions">Chapter 3: Functions</a><ul>
+<li><a class="reference internal" href="#make-functions-small">Make functions small</a></li>
+<li><a class="reference internal" href="#keep-indentation-level-at-maximum-1-or-2">Keep indentation level at maximum 1 or 2</a></li>
+<li><a class="reference internal" href="#functions-should-do-one-thing">Functions should do one thing</a></li>
+<li><a class="reference internal" href="#the-stepdown-rule">The stepdown-rule</a></li>
+<li><a class="reference internal" href="#give-your-functions-few-arguments">Give your functions few arguments</a></li>
+<li><a class="reference internal" href="#flag-arguments-are-ugly">Flag arguments are ugly</a></li>
+<li><a class="reference internal" href="#functions-should-not-have-side-effects">Functions should not have side effects</a></li>
+<li><a class="reference internal" href="#functions-should-either-do-something-or-answer-something-not-both">Functions should either do something or answer something (not both)</a></li>
+<li><a class="reference internal" href="#prefer-exceptions-to-returning-error-codes">Prefer exceptions to returning error codes</a></li>
+<li><a class="reference internal" href="#extract-try-catch-blocks">Extract try/catch blocks</a></li>
+<li><a class="reference internal" href="#don-t-repeat-yourself">Don’t repeat yourself</a></li>
+<li><a class="reference internal" href="#optional-all-functions-should-have-one-entry-and-one-exit">(Optional) All functions should have one entry and one exit</a></li>
+<li><a class="reference internal" href="#refine-long-functions-into-multiple-shorter">Refine long functions into multiple shorter</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#chapter-4-comments">Chapter 4: Comments</a><ul>
+<li><a class="reference internal" href="#comments-do-not-make-up-for-bade-code">Comments do not make up for bade code</a></li>
+<li><a class="reference internal" href="#explain-your-self-in-code">Explain your self in code</a></li>
+<li><a class="reference internal" href="#don-t-use-comments-when-you-can-use-a-function-or-variable">Don’t use comments when you can use a function or variable</a></li>
+<li><a class="reference internal" href="#avoid-noise">Avoid noise</a></li>
+<li><a class="reference internal" href="#avoid-todo-comments">Avoid todo comments</a></li>
+<li><a class="reference internal" href="#informative-comments">Informative comments</a></li>
+<li><a class="reference internal" href="#don-t-comment-out-code">Don’t comment out code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/main.js"></script>
+    </body>
+</html>

@@ -41,6 +41,7 @@ Visit :ref:`this link <Getting started in bioinformatics>` to read:
 - using custom tools developed at the centre
 - computational thinking? / algorithms?
 - intro to programming
+- :ref:`Clean code`
 - version control
 
 Do you need more information on specific tools developed at the Centre? 🌱
@@ -62,7 +63,7 @@ Do you need to run large analyses and use servers or HPC clusters?
 
 Do you want to read up on some more specialized/advanced topics in programming? 🌿
 -----------------------------------------------------------------------------------
-
+- :ref:`Clean code`
 - best coding practices 🌿
 - organizing code 🌿
 - testing 🌿
