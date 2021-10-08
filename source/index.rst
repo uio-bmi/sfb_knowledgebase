@@ -72,6 +72,7 @@ Do you need to set up computational workflows? 🌿
 -------------------------------------------------
 
 - :ref:`Containers` and :ref:`Docker` 🌿
+- :ref:`Services to share developed tools`
 - snakemake, nextflow and similar tools 🌿
 
 Do you want to learn more about statistics and machine learning? 🌱
