@@ -1,5 +1,5 @@
-Programming best practices
-============================
+Programming
+==============
 
 .. note::
 
@@ -101,3 +101,13 @@ Some recommended resources on this topic:
 
 - `Ten simple rules for quick and dirty scientific programming <https://doi.org/10.1371/journal.pcbi.1008549>`_, Gabriel Balaban, Ivar Grytten, Knut D. Rand,
   Lonneke Scheffer, Geir Kjetil Sandve, 2021
+
+
+Specialized topics
+--------------------
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Topics:
+
+   computational/clean_code
