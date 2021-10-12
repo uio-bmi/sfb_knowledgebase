@@ -1,6 +1,5 @@
-*****************************
-Ways to share developed tools
-*****************************
+Services to share developed tools
+**********************************
 
 This document gives an overview of different services that can be used to share developed tools in the bioinformatics field, or when developing tools in general.
 

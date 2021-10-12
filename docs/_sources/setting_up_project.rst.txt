@@ -54,3 +54,11 @@ Virtual environments and package management
 
 to be added
 
+Specialized topics
+----------------------
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Topics:
+
+   computational/sharing_tools
