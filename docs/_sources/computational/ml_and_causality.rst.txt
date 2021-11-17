@@ -22,12 +22,12 @@ It consists of 6 parts and combines the content and references with tasks and qu
    :maxdepth: 1
    :caption: Topics:
 
-   ml/overview
-   ml/intro_to_ml
-   ml/ml_models
-   ml/data_representation
-   ml/ml_model_comparison_and_uncertainty
-   ml/transparency_and_reproducibility
+   ml_intro/overview
+   ml_intro/intro_to_ml
+   ml_intro/ml_models
+   ml_intro/data_representation
+   ml_intro/ml_model_comparison_and_uncertainty
+   ml_intro/transparency_and_reproducibility
 
 Recommended material
 ----------------------

@@ -1,0 +1,379 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="generator" content="sphinx-3.5.4, furo 2021.04.11.beta34"/>
+        <title>Introduction to Machine Learning - SfB knowledge base documentation</title>
+      <link rel="stylesheet" href="../../_static/styles/furo.css?digest=59ab60ac09ea94ccfe6deddff6d715cce948a6fc">
+    <link rel="stylesheet" href="../../_static/pygments.css">
+    <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="../../_static/pygments_dark.css">
+    
+
+
+<style>
+  :root {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+
+  /* For allowing end-user-specific overrides */
+  .override-light {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  .override-dark {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+</style><link rel="stylesheet" href="../../_static/styles/furo-extensions.css?digest=d391b54134226e4196576da3bdb6dddb7e05ba2b"></head>
+  <body dir="">
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke-width="1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z"/>
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">SfB knowledge base  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  
+  <span class="sidebar-brand-text">SfB knowledge base  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html">
+  <input class="sidebar-search" placeholder=Search name="q">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption"><span class="caption-text">Getting started:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started_bioinf.html">Getting started in bioinformatics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../biology/genomics_intro.html">Getting started with genomics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../biology/immunology_intro.html">Getting started with immunology and adaptive immune receptors</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics:</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../analysis_design.html">Designing an analysis</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label for="toctree-checkbox-1"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../statistics.html">Statistics: reference</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../ml_and_causality.html">Machine learning and causal inference</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label for="toctree-checkbox-2"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../specialized_topics_in_ml_and_stats.html">Specialized topics in machine learning and statistics</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label for="toctree-checkbox-3"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../specialized_ml_topics/DL_book_ch5_1_overview.html">Machine Learning Basics</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../biology/genomics.html">Genomics: references</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../biology/immunology.html">Immunology: references</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../programming.html">Programming</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label for="toctree-checkbox-4"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../clean_code.html">Clean code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../setting_up_project.html">Setting up and organizing a project</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label for="toctree-checkbox-5"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sharing_tools.html">Services to share developed tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../running_analysis.html">Running an analysis</a></li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <main class="main">
+    <div class="content">
+      <article role="main">
+        <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+        </label>
+        <div class="section" id="introduction-to-machine-learning">
+<h1>Introduction to Machine Learning<a class="headerlink" href="#introduction-to-machine-learning" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Aim: get an idea of what machine learning is, what types of problems it can help solve, what some assumptions are made,
+what the workflow is, and what generalization is</p>
+<p>Level: beginner 🌱</p>
+</div>
+<div class="section" id="what-is-machine-learning">
+<h2>What is machine learning?<a class="headerlink" href="#what-is-machine-learning" title="Permalink to this headline">¶</a></h2>
+<p>There are many definitions on machine learning (ML):</p>
+<blockquote>
+<div><p>“Machine learning refers to extracting patterns from raw data”</p>
+<p>“Machine learning is essentially a form of applied statistics with increased emphasis in the use of computers to statistically estimate complicated functions and a decreased emphasis in proving confidence intervals around these functions.”</p>
+</div></blockquote>
+<p>– Goodfellow et al. 2016</p>
+<blockquote>
+<div><p>“A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E.”</p>
+</div></blockquote>
+<p>– Mitchell 1997</p>
+<p>One possible view of machine learning is as it is performing a function approximation task. In the example below, there is a set of images for which the task
+is to predict if they contain a cat or a a dog. Those images are called examples in ML and are represented by features.
+The function f is then estimated in order to predict what the label is for each image. The labels here can be either CAT or DOG.</p>
+<img alt="This figure shows a set of examples in machine learning (a set of pictures containing either a cat or a dog), a set of label (CAT, DOG) and a function f that maps between these two sets." src="../../_images/ML_as_fn_approximation.png"/>
+<p>The same problem setup would apply if we wanted to estimate the function f that would for predict if an adaptive immune receptor (that mounts
+specific immune response to e.g., viruses or bacteria) binds a COVID-19 antigen.</p>
+<img alt="This figure shows a set of examples in machine learning (a set of immune receptor sequences), a set of labels (positive, negative for COVID-19) and a function f that maps between these two sets." src="../../_images/ML_as_fn_approximation_receptors.png"/>
+<p>More generally, each example is represented by a feature vector that describe examples in a way that is suitable to estimate the function of interest.
+This function takes a feature vector as input (in a format of a design matrix) and provides the label (class) as output.</p>
+<img alt="This figure shows a set of examples in machine learning represented by feature vectors, a set of labels (class 1 and class 2) and a function f that maps between these two sets. The function is also referred to as the model or the hypothesis." src="../../_images/ML_as_fn_approximation_general.png"/>
+</div>
+<div class="section" id="the-types-of-problems-in-machine-learning">
+<h2>The types of problems in machine learning<a class="headerlink" href="#the-types-of-problems-in-machine-learning" title="Permalink to this headline">¶</a></h2>
+<p>The example described above illustrates one type of problem machine learning can tackle, called <strong>supervised learning</strong>. In this setup,
+for each example, there is a known label of interest that we wish the function f to predict. The label can be a discrete value,
+representing a class (e.g., binding an antigen or not, image is of a cat or a dog), in which case it is called classification. If
+the label is continuous value, such as binding affinity, it is a regression task.</p>
+<p>If there are no labels that we want to predict, but instead we want to find some structure in the data, the setup is called
+<strong>unsupervised learning</strong>. For instance, if we have the scRNA-seq of some cell population, clustering might reveal new cell types
+(e.g., <a class="reference external" href="https://www.science.org/lookup/doi/10.1126/science.aah4573">Villani et al. 2017</a>).</p>
+<p>Reinforcement learning describes the setting in which the program (agent) interacts with the environment. The labels are not provided
+directly (to help the agent choose the sequence of actions), but it is known how good the action is. The agent then combines explorations
+of new actions with exploiting the knowledge of previously taken actions to find the optimal set of actions. For example, one such
+task could be finding the optimal dosing policy for the medication.</p>
+</div>
+<div class="section" id="assumptions-about-the-data">
+<h2>Assumptions about the data<a class="headerlink" href="#assumptions-about-the-data" title="Permalink to this headline">¶</a></h2>
+<p>There exists a data generating process that creates the data and gives rise to the probability distribution P<sub>data</sub>.
+What we typically assume about the data is:</p>
+<ul class="simple">
+<li><p>the examples in the dataset we have for some task are independent of each other, and</p></li>
+<li><p>when we want to use machine learning on some new data, we assume those data come from the same data generating process
+(come from the same probability distribution).</p></li>
+</ul>
+<p>These two assumptions are called the i.i.d. assumption (independent and identically distributed).</p>
+<p>With these assumptions (approximately) satisfied, we can choose the data representation and estimate the function f of interest.</p>
+</div>
+<div class="section" id="estimating-the-function-and-the-training-procedure">
+<h2>Estimating the function and the training procedure<a class="headerlink" href="#estimating-the-function-and-the-training-procedure" title="Permalink to this headline">¶</a></h2>
+<p>To estimate the function f in the supervised setting that will predict the labels Y based on the data X so that f(X) ≈ Y, we need to have some
+labeled data (e.g., a set of sequences for which we know if they will bind the antigen or not). We then need to come up with a way to represent that
+data (encode the data) in a way that is suitable for the problem at hand. For example, in antigen binding example, one encoding could be representing
+the sequence by its biochemical properties. Encoded and labeled data are then provided to the machine learning model (function).</p>
+<p>The parameters of the function are tuned so that the for the data we have, the tuned function predicts the labels as well as possible. This includes
+a few steps: initializing the parameters of the function and then iteratively predict the label Y from the encoded training data X,
+compute the cost function (showing how much the predicted labels differ from the known labels), and update the parameter of the
+function f to reduce the cost function and get better prediction. This process is repeated until the cost function (prediction
+error) becomes sufficiently small or until the maximum number of iterations has been reached.</p>
+<p>These steps are shown in the figure:</p>
+<img alt="This figure shows ML process consisting of raw data that is encoded, fed to classifier which is then trained until it estimates the function f well enough." src="../../_images/ML_process.png"/>
+<p>The data used to estimate the function is called the training data. However, it cannot be used to estimate how well the function
+f that was estimated predicts the label Y. This is because the training data was already used during training, so every estimate
+based on the same data will be overly optimistic. To see how well the function f works once we deploy it, we need to use the
+data that we have not used for training. This data is referred to as test data.</p>
+<p>Once we have test data, to estimate the performance of the fitted function f, we will encode the test data in the same way as
+the training data was encoded previously, feed it to the function f and examine the predictions made. We will check if the
+predictions function f made match the true label Y. Based on this we will estimate the performance of the function f when applied
+to the new test data where each example is independent of others and the examples come from the same distribution as the
+training data.</p>
+<p>This process is shown in the figure below:</p>
+<img alt="This figure shows the next step of the ML process: encoding raw labeled test data and feeding it to the estimated function to check the function's performance, by e.g., measuring accuracy." src="../../_images/ML_process_test.png"/>
+<div class="section" id="performance-metrics">
+<h3>Performance metrics<a class="headerlink" href="#performance-metrics" title="Permalink to this headline">¶</a></h3>
+<p>To estimate how well the function f works on a certain domain, depending on the problem, different performance metrics can be defined.</p>
+<p>If label values are continuous (such as binding affinity of a sequence), this is a regression task, and one commonly used metric
+is mean squared error (MSE) showing how much on average the predicted value differs from the true value:</p>
+<a class="reference internal image-reference" href="../../_images/MSE.png"><img alt="This figure shows the mathematical expression for the mean squared error: 1/m * sum over all m examples of the squared difference between the true value for the label for example and the predicted value for that example." src="../../_images/MSE.png" style="width: 50%;"/></a>
+<p>Other regression metrics include mean absolute error, R<sup>2</sup>.</p>
+<p>In classification setting, where the labels come from a discrete set (e.g., a sequence binds an antigen (label: 1) or not (label: 0)), metrics include
+accuracy (the percentage of correct predictions), balanced accuracy, precision, recall, sensitivity, specificity, ROC curve,
+area under the ROC curve (AUC or AUROC), cross-entropy etc. In the binary classification case (only 2 classes), we can also
+distinguish between true positives (e.g., true label is 1 and it is predicted as 1 by the model), true negatives (label is 0 and
+0 is predicted), false positives (predicted value is 1 but the true value is 0) and false negatives (predicted value is 0 but the
+true value is 1). These notions can be useful to define other metrics listed above.</p>
+<img alt="This figure shows the mathematical expression for the accuracy as the number of correct predictions divided by the total number of predictions. In case of binary classification, that is also equal to the sum of true positives and true negatives divided by the sum of true positives, true negatives, false positives and false negatives." src="../../_images/accuracy.png"/>
+</div>
+<div class="section" id="training-the-machine-learning-model">
+<h3>Training the machine learning model<a class="headerlink" href="#training-the-machine-learning-model" title="Permalink to this headline">¶</a></h3>
+<p>Now that a way to measure how good the model is was described above, we describe the procedure used to fit the model. The description here
+aims to provide an intuition of how it works, and does not go into much details.</p>
+<p>The performance metric defines how well the model predicts. Usually the problem of training a model is defined as the procedure of
+minimizing the cost function (e.g., minimizing the mean squared error or maximizing the accuracy). One iterative algorithm frequently used
+for this is called gradient descent. The following steps are repeated until the optimal solution or the maximum number of iterations
+is reached:</p>
+<ol class="arabic simple">
+<li><p>Find derivative of the cost function with respect to each of the parameters of the model.</p></li>
+<li><p>Update each parameter incrementally using the cost function as a starting point for the update computation.</p></li>
+</ol>
+<p>The idea is that if we repeat this, we will gradually improve the model until we reach satisfactory performance.</p>
+<img alt="This figure a graph with parameter values on the x axis and cost function on the y axis and the function roughly looking like a quadratic one. On the right upper part of the function curve, there is a dot representing the initial parameters and a cross on the middle lower part of the function curve representing the optimal set of parameter values. There are also a few arrows following the function curve from initial to optimal parameters showing how the cost function changes with each iteration." src="../../_images/gradient_descent.png"/>
+<p>The cost function typically looks much more complex that this illustrative example, and if it is not a convex function, we might
+not know if the point being evaluated is a local or a global minimum. However, even finding a local minimum might be sufficient.</p>
+<img alt="a 3D function with a local and a global minima" src="../../_images/gradient_descent_2.png"/>
+</div>
+<div class="section" id="machine-learning-workflow">
+<h3>Machine learning workflow<a class="headerlink" href="#machine-learning-workflow" title="Permalink to this headline">¶</a></h3>
+<p>Putting all this together, a full machine learning workflow typically looks like this: the original dataset is split into two:
+training and test. Training dataset (where a small portion can again be left out for validation) is then used to train an ML model,
+assess the performance and maybe even choose between two ML models if we need to decide between two. The best ML model can
+then be refitted on the full training dataset and its performance assessed on the test set that was not used during the training
+nor choosing between models. Because the test dataset was not used during training, the performance of the model on the test data
+will typically be worse than on the training dataset, but it is still a more accurate estimate of the performance on the new data.
+This is shown in the figure below.</p>
+<img alt="a schema of the ML process as described in the previous paragraph" src="../../_images/ml_workflow.png"/>
+</div>
+</div>
+<div class="section" id="generalization-in-machine-learning">
+<h2>Generalization in machine learning<a class="headerlink" href="#generalization-in-machine-learning" title="Permalink to this headline">¶</a></h2>
+<p>Generalization in machine learning refers to the ability of an ML model to perform well on previously unseen data (independent examples coming
+from the same distribution as the training dataset). The error on
+the test set (from the process described in the previous section, where error is just the value of the cost function) is often
+used as an estimate of the generalization error. Generalization error is then the expected error on new data.</p>
+<p>Ideally, a good model that we obtain from this procedure will have a small error on the training dataset and a small gap between
+the training set error and the test set error. These two might contradict each other: if the trained model could learn an
+arbitrary function and the aim is to minimize the prediction errors, if the model learned every example exactly and its corresponding
+label, it would have perfect prediction on the training set. However, when it gets a new example from the test set (and this
+example is not seen before), it will not be able to predict its class because it fails to generalize.</p>
+<p>For example, if the
+method’s aim was to predict if a picture contains a cat or a dog, and it did so by memorizing pictures exactly, if we constructed
+a new cat picture by taking one from the training set and rotated it by a few degrees, it would not be able to correctly
+classify it.</p>
+<p>When the model fits the training data well (too well), but fails to extract patterns that would enable good performance on the
+new (test) data, this phenomenon is called overfitting. Underfitting on the other hand happens when the model is not able to learn from
+the training data, when it had high training error. This can happen when the model is too simple for the target task, for example.</p>
+<p>This is illustrated in the figure below. The training error is shown to monotonically decrease with increasing complexity of the model.
+The generalization error decreases up to a certain point before it starts rising again. The minimum of the generalization error
+maps to the optimal model complexity. The difference between the generalization and training error is called generalization gap.
+If the model is too simple (left of the optimal model in the graph), the model underfits the task. If the model is too complex
+(right of the optimal model in the graph), the model overfits.</p>
+<img alt="a graph showing the cost function (error) on y axis and model complexity on the x axis; plotted are the training error curve and the generalization error; they both decrease until optimal model complexity and then split: the training error continues to decrease, while the generalization error goes up; the difference between these errors is labeled as generalization gap" src="../../_images/generalization.png"/>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Goodfellow IJ, Bengio Y, Courville A. Deep Learning. MIT Press; 2016. <a class="reference external" href="https://mitpress.mit.edu/books/deep-learning">https://mitpress.mit.edu/books/deep-learning</a></p></li>
+<li><p>Mitchell T. Machine Learning. McGraw Hill; 1997. <a class="reference external" href="http://www.cs.cmu.edu/~tom/mlbook.html">http://www.cs.cmu.edu/~tom/mlbook.html</a></p></li>
+</ul>
+</div>
+</div>
+
+      </article>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2021, SfB_UiO
+            |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+            |
+            <a class="muted-link" href="../../_sources/computational/ml_into/intro_to_ml.rst.txt"
+               rel="nofollow">
+              Show Source
+            </a>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Introduction to Machine Learning</a><ul>
+<li><a class="reference internal" href="#what-is-machine-learning">What is machine learning?</a></li>
+<li><a class="reference internal" href="#the-types-of-problems-in-machine-learning">The types of problems in machine learning</a></li>
+<li><a class="reference internal" href="#assumptions-about-the-data">Assumptions about the data</a></li>
+<li><a class="reference internal" href="#estimating-the-function-and-the-training-procedure">Estimating the function and the training procedure</a><ul>
+<li><a class="reference internal" href="#performance-metrics">Performance metrics</a></li>
+<li><a class="reference internal" href="#training-the-machine-learning-model">Training the machine learning model</a></li>
+<li><a class="reference internal" href="#machine-learning-workflow">Machine learning workflow</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#generalization-in-machine-learning">Generalization in machine learning</a></li>
+<li><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </main>
+</div>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/scripts/main.js?digest=e931d09b2a40c1bb82b542effe772014573baf67"></script></body>
+</html>

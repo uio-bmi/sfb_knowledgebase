@@ -1,0 +1,359 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="generator" content="sphinx-3.5.4, furo 2021.04.11.beta34"/>
+        <title>Introduction to machine learning models and algorithms - SfB knowledge base documentation</title>
+      <link rel="stylesheet" href="../../_static/styles/furo.css?digest=59ab60ac09ea94ccfe6deddff6d715cce948a6fc">
+    <link rel="stylesheet" href="../../_static/pygments.css">
+    <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="../../_static/pygments_dark.css">
+    
+
+
+<style>
+  :root {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+
+  /* For allowing end-user-specific overrides */
+  .override-light {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  .override-dark {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+</style><link rel="stylesheet" href="../../_static/styles/furo-extensions.css?digest=d391b54134226e4196576da3bdb6dddb7e05ba2b"></head>
+  <body dir="">
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke-width="1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z"/>
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">SfB knowledge base  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  
+  <span class="sidebar-brand-text">SfB knowledge base  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html">
+  <input class="sidebar-search" placeholder=Search name="q">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption"><span class="caption-text">Getting started:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started_bioinf.html">Getting started in bioinformatics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../biology/genomics_intro.html">Getting started with genomics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../biology/immunology_intro.html">Getting started with immunology and adaptive immune receptors</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics:</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../analysis_design.html">Designing an analysis</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label for="toctree-checkbox-1"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../statistics.html">Statistics: reference</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../ml_and_causality.html">Machine learning and causal inference</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label for="toctree-checkbox-2"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../specialized_topics_in_ml_and_stats.html">Specialized topics in machine learning and statistics</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label for="toctree-checkbox-3"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../specialized_ml_topics/DL_book_ch5_1_overview.html">Machine Learning Basics</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../biology/genomics.html">Genomics: references</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../biology/immunology.html">Immunology: references</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../programming.html">Programming</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label for="toctree-checkbox-4"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../clean_code.html">Clean code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../setting_up_project.html">Setting up and organizing a project</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label for="toctree-checkbox-5"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sharing_tools.html">Services to share developed tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../running_analysis.html">Running an analysis</a></li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <main class="main">
+    <div class="content">
+      <article role="main">
+        <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+        </label>
+        <div class="section" id="introduction-to-machine-learning-models-and-algorithms">
+<h1>Introduction to machine learning models and algorithms<a class="headerlink" href="#introduction-to-machine-learning-models-and-algorithms" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Aim: learn what a machine learning model is, supervised and unsupervised models</p>
+<p>Level: beginner 🌱</p>
+</div>
+<p>In the previous section <a class="reference internal" href="intro_to_ml.html#introduction-to-machine-learning"><span class="std std-ref">Introduction to Machine Learning</span></a>, logistic regression was mentioned
+as a simple option for binary classification. The task was to estimate the function f, so that
+f(X), where X is the data, is approximately equal to the labels Y. The specific format of the
+function f(X) and its parameters (ω and b) are shown in the figure below.</p>
+<a class="reference internal image-reference" href="../../_images/log_reg.png"><img alt="This figure shows an example of a ML/statistical model. The logistic regression function f(x) has value 0 if (1+e^(-ωx-b))^(-1) is less than 0.5 or 1 otherwise." src="../../_images/log_reg.png" style="width: 80%;"/></a>
+<p>But what is a machine learning model? And how models differ between each other? That is the topic of this section.</p>
+<div class="section" id="what-is-an-ml-model-and-an-ml-algorithm">
+<h2>What is an ML model and an ML algorithm?<a class="headerlink" href="#what-is-an-ml-model-and-an-ml-algorithm" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://direct.mit.edu/neco/article/10/7/1895/6224/Approximate-Statistical-Tests-for-Comparing">Dietterich 1998</a> defined the following:</p>
+<ul class="simple">
+<li><p><strong>Learning algorithm</strong>: a function that, given a set of examples and their labels, constructs a model (e.g., logistic regression)</p></li>
+<li><p><strong>Model</strong>: a function that was fit to the data using the learning algorithm (e.g., logistic regression with specific parameter values)</p></li>
+</ul>
+<p>These terms are sometimes used interchangeably, but from these definitions, they are a bit different.</p>
+<div class="section" id="overview-of-ml-and-statistical-algorithms">
+<h3>Overview of ML and statistical algorithms<a class="headerlink" href="#overview-of-ml-and-statistical-algorithms" title="Permalink to this headline">¶</a></h3>
+<p>There are many different learning algorithms. They differ in their assumptions about the function to be estimated and the type of
+function they can estimate.</p>
+<p>Classification algorithms estimate functions that have discrete outputs that represent different classes the functions aim to predict.
+Some classification algorithms are logistic regression, naive Bayes, decision trees, support vector machine (SVM), neural networks,
+k-nearest neighbors (kNN). There are also algorithms that construct multiple models of the same type and then use them together to
+make predictions. These are called ensemble methods and include random forest (multiple decision trees), boosting and bagging algorithms.</p>
+<p>Regression algorithms, on the other hand, have continuous outputs. Algorithms include linear regression, polynomial regression,
+stepwise regression, ridge and lasso regression, elastic net, support vector regression, neural networks.</p>
+<p>Classification and regression algorithms are useful when the data is labeled (either with a class they belong to or some continuous value). When
+no labels are available, the structure of the data needs to be analyzed in an unsupervised manner. Some unsupervised algorithms
+include k-means clustering, hierarchical clustering, mixture models, autoencoders.</p>
+</div>
+</div>
+<div class="section" id="what-can-ml-algorithms-learn-capacity-and-the-hypothesis-space">
+<h2>What can ML algorithms learn: capacity and the hypothesis space<a class="headerlink" href="#what-can-ml-algorithms-learn-capacity-and-the-hypothesis-space" title="Permalink to this headline">¶</a></h2>
+<p>An algorithm’s <strong>capacity</strong> can be informally defined as its ability to fit a wide variety of functions. For example, linear
+regression and polynomial regression look like this:</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\hat{y}_{linear\,regression} = b + ωx\\\hat{y}_{polynomial\,regression} = b + ω_1x + ω_2x^2\end{aligned}\end{align} \]</div></div>
+<p>From these equations, it is possible to see that every function that linear regression model can learn, it is also possible to
+learn with polynomial regression if <span class="math notranslate nohighlight">\(ω_2\)</span> is set to 0. If on the other hand <span class="math notranslate nohighlight">\(ω_2\)</span> is not zero, polynomial regression
+can learn many more different functions that depend not only on <span class="math notranslate nohighlight">\(x\)</span>, but also <span class="math notranslate nohighlight">\(x_2\)</span>. So, polynomial regression has
+higher capacity than linear regression.</p>
+<p>The capacity is also related to overfitting and underfitting from <a class="reference internal" href="intro_to_ml.html#generalization-in-machine-learning"><span class="std std-ref">Generalization in machine learning</span></a> in the previous section.
+If the algorithm has low capacity for the task at hand, it might not be able to learn the function f, and it might underfit.
+If the algorithm’s capacity is too high for the task (e.g., when fitting a polynomial regression when the true function is linear),
+the algorithm might overfit and learn the training data too well, failing to generalize to new data later. There are ways to prevent
+this that will be discussed later.</p>
+<img alt="a graph showing the cost function (error) on y axis and model complexity on the x axis; plotted are the training error curve and the generalization error; they both decrease until optimal model complexity and then split: the training error continues to decrease, while the generalization error goes up; the difference between these errors is labeled as generalization gap" src="../../_images/model_capacity.png"/>
+<p><strong>Hypothesis space</strong> (function space) is a set of functions that the algorithm can choose as the optimal solution. Choosing the hypothesis space controls
+the capacity of the algorithm. Given that an optimal hypothesis (function) is chosen, in theory it is possible to obtain the ideal
+model (called oracle) that knows the true probability distribution that generates the data. In biology, this “true probability distribution”
+refers to the data generating process and the biological mechanism behind it. The minimal error achieved by an ideal model that
+occurs due to e.g., noise in the data, is called <strong>Bayes error</strong>.
+However, more realistically, the algorithms would learn only the (statistical) approximation of the task.</p>
+<div class="section" id="searching-through-the-hypothesis-space-using-optimization-algorithms">
+<h3>Searching through the hypothesis space using optimization algorithms<a class="headerlink" href="#searching-through-the-hypothesis-space-using-optimization-algorithms" title="Permalink to this headline">¶</a></h3>
+<p>Fitting the parameters of the model (finding the best parameter values for the task) is an
+optimization problem. There are different algorithms that perform this optimization, but one of
+the most common algorithms is gradient descent, that was already described in <a class="reference internal" href="intro_to_ml.html#training-the-machine-learning-model"><span class="std std-ref">Training the machine learning model</span></a> in
+the previous section. With this algorithm, it is possible to get stuck in a local minima of the
+cost function, but if the performance is good enough, that might still be acceptable.</p>
+<img alt="a 3D function with a local minimum (might be good enough) and a global minimum corresponding to the ideal model" src="../../_images/optimization.png"/>
+<p>Gradient descent minimizes the cost function to find optimal model parameters:</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\text{optimal_parameters} = \underset{parameters}{\mathrm{argmin}} \{ \text{cost_function}(\text{parameters} | \text{train_data})\}\]</div></div>
+<p>If some (domain) knowledge is available to inform what the function is expected to look like, it is possible to
+add constraints to this equation and restrict the parameter values the function can have.</p>
+<p>This is done by adding an additional term to the standard cost function (e.g., cross-entropy) that
+will increase the value of the cost function if the model does not respect the added regularization:</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\text{optimal_parameters} = \underset{parameters}{\mathrm{argmin}} \{ \text{cross_entropy}(\text{parameters} | \text{train_data}) + \alpha \, \text{regularization}(\text{parameters})\}\]</div></div>
+<p>Parameter <span class="math notranslate nohighlight">\(\alpha\)</span> is the regularization constant and defines how much the cost function will increase if the parameter values do not follow the
+constraints.</p>
+<p>The regularization (also called penalty) depends on the prior beliefs on the values parameters can take. These often include the assumption that
+the parameter values might be sparse (some of them should be 0) or that their values should be small. In the first case, to
+ensure sparsity, one might use so called L1 regularization where the regularization term is the sum of the absolute parameter values:</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[regularization(parameters) = \sum_{i} | parameter_i |\]</div></div>
+<p>L1-regularized models are typically sparser and simpler than non-regularized ones. L2-regularization shrinks all parameter values
+proportionally:</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[regularization(parameters) = \sum_{i} parameter_i^2\]</div></div>
+<p>L1 also corresponds to Lasso and L2 to ridge regression.</p>
+</div>
+</div>
+<div class="section" id="examples-of-machine-learning-algorithms">
+<h2>Examples of machine learning algorithms<a class="headerlink" href="#examples-of-machine-learning-algorithms" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="supervised-learning">
+<h3>Supervised learning<a class="headerlink" href="#supervised-learning" title="Permalink to this headline">¶</a></h3>
+<p>Logistic regression mentioned before, is one example of a statistical learning algorithm for binary classification. Its parameters are shown in the figure
+below.</p>
+<img alt="a logistic regression model: function g computes the log-odds for the positive class by computing the sigmoid function on the linear combination of weights, inputs X and the bias term; function f then makes prediction based on the threshold from the log-odds value" src="../../_images/log_reg_annotated.png"/>
+<p>A single node in a neural network does something similar. It computes a non-linear activation function on the linear combination of inputs X, weights w and
+bias term b.</p>
+<img alt="a neural network node computes the sigmoid (non-linear activation) function on the linear combination of inputs, weights and bias term" src="../../_images/NN_node.png"/>
+<p>A neural network consist of many such nodes organized into layers. This hierarchical structure makes them
+very powerful as they can fit a large variety of different functions. An example of a neural network is shown below.</p>
+<img alt="a neural network consisting of 4 layers with decreasing number of nodes" src="../../_images/NN.png"/>
+<p>Neural networks work by computing the activations for each layer based on the activations from the previous one to make the predictions. They
+are trained in the opposite direction with the same gradient descent algorithm described earlier. The difference between the output of the final layer
+(their predictions) and the true output (true labels) is computed and used to update the parameters (weights) throughout the network.</p>
+<p>The number of nodes per layer and the number of layers are set in advance by the practitioner. They are hyperparameters: parameters of
+ML algorithms that are not tuned during training. Instead, a set of possible configurations of hyperparameters can be provided in
+advance, and optimized over on data not used for training (validation data).</p>
+<p>There are different types of neural networks, and some of them are:</p>
+<ul class="simple">
+<li><p>fully connected networks (as shown above) where every node in one layer is connected to every node from the previous layer,</p></li>
+<li><p>convolutional neural networks that detect position-invariant local patterns (e.g., patterns in the DNA sequence such as in <a class="reference external" href="https://doi.org/10.1093/bioinformatics/btw255">Zeng et al. 2016</a>),</p></li>
+<li><p>residual neural networks that can learn both simple (e.g., identity) and more complex functions (<a class="reference external" href="https://arxiv.org/abs/1512.03385">He et al. 2015</a>),</p></li>
+<li><p>recurrent neural networks often used for long-term dependencies, e.g., in sequence data or text.</p></li>
+</ul>
+</div>
+<div class="section" id="unsupervised-learning">
+<h3>Unsupervised learning<a class="headerlink" href="#unsupervised-learning" title="Permalink to this headline">¶</a></h3>
+<p>Neural networks with a slightly different configuration can be also used in unsupervised learning scenario. Autoencoders are
+neural networks trained to reconstruct its input in the final layer while fitting the latent representation in its middle layer.
+The part of the network that transforms the input data into the latent representation is called encoder and the decoder is the part
+of the network mapping the latent representation back to the input data. The representation learned in this way can have some
+useful properties, such as reduced dimensionality that would make it easier to visualize, but there could be other applications as well.</p>
+<img alt="a neural network consist of encoder and decoder part where the middle layer between these two is the learned latent representation and the first and the last layer of the network both correspond to the input data X." src="../../_images/autoencoder.png"/>
+</div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p>Dietterich TG. Approximate Statistical Tests for Comparing Supervised Classification Learning Algorithms. Neural Comput. 1998;10(7):1895–1923. doi:10.1162/089976698300017197</p>
+<p>Goodfellow IJ, Bengio Y, Courville A. Deep Learning. MIT Press; 2016. <a class="reference external" href="https://mitpress.mit.edu/books/deep-learning">https://mitpress.mit.edu/books/deep-learning</a> (especially chapter 5 - Machine Learning Basics)</p>
+<p>Zeng, Haoyang, Matthew D. Edwards, Ge Liu, and David K. Gifford. ‘Convolutional Neural Network Architectures for Predicting DNA–Protein Binding’. Bioinformatics 32, no. 12 (15 June 2016): i121–27. <a class="reference external" href="https://doi.org/10.1093/bioinformatics/btw255">https://doi.org/10.1093/bioinformatics/btw255</a></p>
+<p>He, Kaiming, Xiangyu Zhang, Shaoqing Ren, and Jian Sun. ‘Deep Residual Learning for Image Recognition’. ArXiv:1512.03385 [Cs], 10 December 2015. https://arxiv.org/abs/1512.03385</p>
+</div>
+</div>
+
+      </article>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2021, SfB_UiO
+            |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+            |
+            <a class="muted-link" href="../../_sources/computational/ml_into/ml_models.rst.txt"
+               rel="nofollow">
+              Show Source
+            </a>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Introduction to machine learning models and algorithms</a><ul>
+<li><a class="reference internal" href="#what-is-an-ml-model-and-an-ml-algorithm">What is an ML model and an ML algorithm?</a><ul>
+<li><a class="reference internal" href="#overview-of-ml-and-statistical-algorithms">Overview of ML and statistical algorithms</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#what-can-ml-algorithms-learn-capacity-and-the-hypothesis-space">What can ML algorithms learn: capacity and the hypothesis space</a><ul>
+<li><a class="reference internal" href="#searching-through-the-hypothesis-space-using-optimization-algorithms">Searching through the hypothesis space using optimization algorithms</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#examples-of-machine-learning-algorithms">Examples of machine learning algorithms</a><ul>
+<li><a class="reference internal" href="#supervised-learning">Supervised learning</a></li>
+<li><a class="reference internal" href="#unsupervised-learning">Unsupervised learning</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </main>
+</div>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="../../_static/scripts/main.js?digest=e931d09b2a40c1bb82b542effe772014573baf67"></script></body>
+</html>
