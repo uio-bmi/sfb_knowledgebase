@@ -7,4 +7,8 @@ Specialized topics in machine learning and statistics
 
   Level: apprentice 🌿
 
-to be added
+.. toctree::
+   :maxdepth: 1
+   :caption: Topics:
+
+   specialized_ml_topics/DL_book_ch5_1_overview
