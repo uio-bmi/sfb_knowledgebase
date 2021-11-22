@@ -2,10 +2,10 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Notes on variational inference" href="variational_inference.html" /><link rel="prev" title="Specialized topics in machine learning and statistics" href="../specialized_topics_in_ml_and_stats.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Machine learning model comparison and uncertainty" href="ml_model_comparison_and_uncertainty.html" /><link rel="prev" title="Introduction to machine learning models and algorithms" href="ml_models.html" />
 
     <meta name="generator" content="sphinx-3.5.4, furo 2021.04.11.beta34"/>
-        <title>Machine Learning Basics - SfB knowledge base documentation</title>
+        <title>Data representation in machine learning - SfB knowledge base documentation</title>
       <link rel="stylesheet" href="../../_static/styles/furo.css?digest=59ab60ac09ea94ccfe6deddff6d715cce948a6fc">
     <link rel="stylesheet" href="../../_static/pygments.css">
     <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="../../_static/pygments_dark.css">
@@ -117,18 +117,18 @@
 <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../../analysis_design.html">Designing an analysis</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label for="toctree-checkbox-1"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../statistics.html">Statistics: reference</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../ml_and_causality.html">Machine learning and causal inference</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label for="toctree-checkbox-2"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../ml_intro/overview.html">Brief overview of machine learning in computational biology</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ml_intro/intro_to_ml.html">Introduction to Machine Learning</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ml_intro/ml_models.html">Introduction to machine learning models and algorithms</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ml_intro/data_representation.html">Data representation in machine learning</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ml_intro/ml_model_comparison_and_uncertainty.html">Machine learning model comparison and uncertainty</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ml_intro/transparency_and_reproducibility.html">Transparency and reproducibility in machine learning</a></li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../ml_and_causality.html">Machine learning and causal inference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label for="toctree-checkbox-2"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="overview.html">Brief overview of machine learning in computational biology</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro_to_ml.html">Introduction to Machine Learning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ml_models.html">Introduction to machine learning models and algorithms</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Data representation in machine learning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ml_model_comparison_and_uncertainty.html">Machine learning model comparison and uncertainty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="transparency_and_reproducibility.html">Transparency and reproducibility in machine learning</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current has-children"><a class="reference internal" href="../specialized_topics_in_ml_and_stats.html">Specialized topics in machine learning and statistics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label for="toctree-checkbox-3"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Machine Learning Basics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="variational_inference.html">Notes on variational inference</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../specialized_topics_in_ml_and_stats.html">Specialized topics in machine learning and statistics</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label for="toctree-checkbox-3"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../specialized_ml_topics/DL_book_ch5_1_overview.html">Machine Learning Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../specialized_ml_topics/variational_inference.html">Notes on variational inference</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../biology/genomics.html">Genomics: references</a></li>
@@ -160,32 +160,51 @@
         <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
           <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
         </label>
-        <div class="section" id="machine-learning-basics">
-<h1>Machine Learning Basics<a class="headerlink" href="#machine-learning-basics" title="Permalink to this headline">¶</a></h1>
-<p>These are notes from the Chapter 5.1 of the <a class="reference external" href="https://www.deeplearningbook.org/">Deep Learning book by Goodfellow et al. 2016</a>.</p>
+        <div class="section" id="data-representation-in-machine-learning">
+<h1>Data representation in machine learning<a class="headerlink" href="#data-representation-in-machine-learning" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>🌱</p>
+<p>Aim: introduce the idea of data representation and encoding, explain some basic terminology like features, design matrix, and provide an
+intuition for some commonly used data representation techniques</p>
+<p>Level: beginner 🌱</p>
+</div>
+<p>In computational biology, the data to be used for a machine learning (ML) task might be given in form of
+sequences (e.g., DNA sequences, or immune receptor sequences). However, machine learning typically cannot use the data as is -
+ML algorithms require the data to be represented in some numerical format. And it is not sufficient that this is just some numerical
+format: these should be some meaningful numbers for the given problem.</p>
+<p>For example, a task could be that for a given set of immune receptor sequences, an ML model needs to be developed so that it can
+predict if the sequence will bind to COVID-19 or not:</p>
+<a class="reference internal image-reference" href="_static/images/sequence_classification.png"><img alt='This figure shows a set of immune receptor sequences colored in orange (to indicate that they will bind COVID-19) or grey (to indicate that they will not bind COVID-19). The sequences are in a set, mapped by function f, to another set that contains classes "positive" (specific to COVID-19) and "negative" (not specific to COVID-19).' src="_static/images/sequence_classification.png" style="width: 80%;"/></a>
+<p>These sequences could then be represented by their physicochemical properties, for example. Each sequence could be
+represented by a vector of numerical values, where each value corresponds to specific physicochemical property. Each of these properties
+is called a <cite>feature</cite>. <cite>Feature vector</cite> is a vector of values for all features (here for all the physicochemical properties considered)
+for one sequence. That one sequence is also called an example. ML algorithm will them be trained on set of many examples (many sequences).</p>
+<p>Feature vectors for examples are organized in a matrix format, and that matrix is called <cite>design matrix</cite> (or <cite>feature matrix</cite>) and is
+usually denoted by X.</p>
 </div>
 
       </article>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="variational_inference.html">
+          <a class="next-page" href="ml_model_comparison_and_uncertainty.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Notes on variational inference</div>
+                <div class="title">Machine learning model comparison and uncertainty</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../specialized_topics_in_ml_and_stats.html">
+          <a class="prev-page" href="ml_models.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Specialized topics in machine learning and statistics</div>
+                <div class="title">Introduction to machine learning models and algorithms</div>
                 
               </div>
             </a>
@@ -199,7 +218,7 @@
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
               <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
             |
-            <a class="muted-link" href="../../_sources/computational/specialized_ml_topics/DL_book_ch5_1_overview.rst.txt"
+            <a class="muted-link" href="../../_sources/computational/ml_intro/data_representation.rst.txt"
                rel="nofollow">
               Show Source
             </a>
