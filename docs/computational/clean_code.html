@@ -162,7 +162,12 @@
         </label>
         <div class="section" id="clean-code">
 <h1>Clean code<a class="headerlink" href="#clean-code" title="Permalink to this headline">¶</a></h1>
-<p>The following are notes from the Clean Code book by Robert C. Martin.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Aim: The following are notes from the Clean Code book by Robert C. Martin. The aim is to briefly cover some best coding practices on simple
+examples.</p>
+<p>Level: any 🌱🌿🌳</p>
+</div>
 <div class="section" id="chapter-1-meaningful-names">
 <h2>Chapter 1: Meaningful names<a class="headerlink" href="#chapter-1-meaningful-names" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="use-intention-revealing-names">
@@ -371,7 +376,7 @@ A function can do multiple things if they are at the same level of abstraction.<
 </ul>
 </li>
 </ul>
-<p>(I personally disagree a bit with this rule, since IDE’s and optional arguments in Python makes many arguments less of a problem)</p>
+<p>(This rule might be up for discussion, since IDE’s and optional arguments in Python makes many arguments less of a problem)</p>
 </div>
 <div class="section" id="flag-arguments-are-ugly">
 <h3>Flag arguments are ugly<a class="headerlink" href="#flag-arguments-are-ugly" title="Permalink to this headline">¶</a></h3>
@@ -433,7 +438,7 @@ A function can do multiple things if they are at the same level of abstraction.<
     <span class="k">for</span> <span class="n">other_sample</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">samples</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">sample</span> <span class="o">==</span> <span class="n">other_sample</span><span class="p">:</span>
             <span class="n">has_sample</span> <span class="o">=</span> <span class="bp">True</span>
-            <span class="c1"># break would be discuoraged here ?</span>
+            <span class="c1"># break would be discouraged here ?</span>
             
     <span class="k">return</span> <span class="n">has_sample</span>
 </pre></div>
@@ -500,7 +505,7 @@ A function can do multiple things if they are at the same level of abstraction.<
 <ul class="simple">
 <li><p>Can be useful for cryptic code that cannot be written clearly.</p></li>
 <li><p>Can be useful to comment use of library functions/classes</p></li>
-<li><p>Amplify something that’s important (“trimming sequence is important to avoid bug ..”)</p></li>
+<li><p>Amplify something that’s important (“trimming sequence is important to avoid bug …”)</p></li>
 </ul>
 </div>
 <div class="section" id="don-t-comment-out-code">
