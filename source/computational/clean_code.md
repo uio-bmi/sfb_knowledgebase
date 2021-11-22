@@ -1,12 +1,18 @@
 
 # Clean code
-The following are notes from the Clean Code book by Robert C. Martin. 
 
+```{note}
+  Aim: The following are notes from the Clean Code book by Robert C. Martin. The aim is to briefly cover some best coding practices on simple 
+  examples.
+
+  Level: any 🌱🌿🌳
+```
 
 ## Chapter 1: Meaningful names
 
 ### Use intention-revealing names
 Names should reveal intent.
+
 ```python
 # bad
 def check(d, d2):
@@ -186,7 +192,7 @@ class SampleAnalyser:
 * No more than 3 arguments
   * When more than 3: Wrap arguments in a class of their own
 
-(I personally disagree a bit with this rule, since IDE's and optional arguments in Python makes many arguments less of a problem)
+(This rule might be up for discussion, since IDE's and optional arguments in Python makes many arguments less of a problem)
 
 ### Flag arguments are ugly
 "Passing a boolean into a function is a truly terrible practice"
@@ -239,7 +245,7 @@ def has_sample(self, sample):
     for other_sample in self.samples:
         if sample == other_sample:
             has_sample = True
-            # break would be discuoraged here ?
+            # break would be discouraged here ?
             
     return has_sample
 ```
@@ -291,7 +297,7 @@ Use external systems instead.
 ### Informative comments
 * Can be useful for cryptic code that cannot be written clearly.
 * Can be useful to comment use of library functions/classes
-* Amplify something that's important ("trimming sequence is important to avoid bug ..")
+* Amplify something that's important ("trimming sequence is important to avoid bug ...")
 
 ### Don't comment out code
 Remove it and use version control instead.
