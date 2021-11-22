@@ -103,11 +103,12 @@ Some recommended resources on this topic:
   Lonneke Scheffer, Geir Kjetil Sandve, 2021
 
 
-Specialized topics
---------------------
+Topics in programming
+------------------------
 
 .. toctree::
    :maxdepth: 2
    :caption: Topics:
 
+   computational/programming_intro
    computational/clean_code

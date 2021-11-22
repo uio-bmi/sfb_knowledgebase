@@ -3,7 +3,7 @@ Introduction to machine learning models and algorithms
 
 .. note::
 
-  Aim: learn what a machine learning model is, supervised and unsupervised models
+  Aim: learn what a machine learning model is, supervised and unsupervised learning
 
   Level: beginner 🌱
 
