@@ -9,8 +9,7 @@ Deep Learning
 
 ## Chapter 5.1: Machine Learning Basics
 
-Definition of "Learning" and a Practical Example
-======
+### Definition of "Learning" and a Practical Example
 
 -- Goodfellow et al. 2016
 
@@ -19,17 +18,13 @@ Definition of "Learning" and a Practical Example
   .. image:: ../../_static/images/learning_system.png
    :alt: This figure shows the elements of a learning system, comprising of a training experience, performance measure and learning task.
 
-Solving a Logistic Regression Problem
-======
+### Solving a Logistic Regression Problem
 
-Components of a ML Algorithm
-======
+### Components of a ML Algorithm
 
-Machine Learning as Optimizing Search
-======
+### Machine Learning as Optimizing Search
 
-Overcoming Overfitting
-======
+### Overcoming Overfitting
 
 Recommended literature
 ------------------------
