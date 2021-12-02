@@ -168,26 +168,47 @@
 <p>Aim: provide a broad overview of the concepts relating to the Machine Learning Basics chapter of the Deep Learning book</p>
 <p>Level: beginner 🌱🌿🌳</p>
 </div>
-<p>## Chapter 5.1: Machine Learning Basics</p>
-<p>As has been described previously in the Knowledge Base, Machine Learning can be defined in many ways. One principle starting point is with the definition of “learning”, with this an objective baseline can be established and progression in decision-making can be effectively measured. In the following we explore and build on the concept of learning provided by Tom Mitchell in 1997 and present a real-world example which incorporates this definition</p>
-<p>### Definition of “Learning” and a Practical Example</p>
+<div class="section" id="chapter-5-1-machine-learning-basics">
+<h2>Chapter 5.1: Machine Learning Basics<a class="headerlink" href="#chapter-5-1-machine-learning-basics" title="Permalink to this headline">¶</a></h2>
+<p>As has been described previously in the Knowledge Base, Machine Learning can be defined in many ways. One principle starting point is with the definition of “learning”. With such an objective baseline established, progression in decision-making can be effectively measured. In the following we explore and build on the concept of learning provided by Tom Mitchell in 1997 and present a real-world example which incorporates this definition.</p>
+<div class="section" id="definition-of-learning-and-a-practical-example">
+<h3>Definition of “Learning” and a Practical Example<a class="headerlink" href="#definition-of-learning-and-a-practical-example" title="Permalink to this headline">¶</a></h3>
 <p>– Mitchell 1997</p>
 <blockquote>
 <div><p>“A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E.”</p>
 </div></blockquote>
-<dl>
-<dt>### Solving a Logistic Regression Problem</dt><dd><img alt="This figure shows the elements of a learning system, comprising of a training experience, performance measure and learning task." src="../_static/images/learning_system.png"/>
-</dd>
-</dl>
-<p>### Components of a ML Algorithm</p>
-<p>### Machine Learning as Optimizing Search</p>
-<p>### Overcoming Overfitting</p>
+<p>Learning as defined by Mitchell is comprised of an <strong>Experience (E)</strong>, <strong>Performance (P)</strong>, and <strong>Task (T)</strong> with the interaction between these elements giving structure to the learning system. The unique combination of these elements articulate the environments, observations and scores that one can expect of the system. Let us delve into each individually.</p>
+<p>1. Task: Tasks describe the kind of observations a learner processes represented by an example containing a collection of Features
+Classification: convert input into k categories</p>
+<p>2. Performance: Performance marks the quantitative evaluation used to design metrics in a learner
+Due to the nature of the task, this can be specific:
+Classification: Accuracy, Precision and Recall, F1-score, AU-ROC
+Regression: Mean Absolute Error (MAE), Mean Squared Error (MSE), Root Mean Squared Error (RMSE), R² (R-Squared)</p>
+<p>3. Experience: Experience defines the training experience the system will learn
+Attribute is there direct or indirect feedback, e.g., direct training examples, indirect information and outcomes Attribute degree to which the learner controls the sequence of training examples, this relates to the label or target and the distinction between supervised/unsupervised Attribute how well it represents the distribution of examples over which the final system performance P is measured</p>
+</div>
+<div class="section" id="solving-a-logistic-regression-problem">
+<h3>Solving a Logistic Regression Problem<a class="headerlink" href="#solving-a-logistic-regression-problem" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><img alt="This figure shows the elements of a learning system, comprising of a training experience, performance measure and learning task." src="../_static/images/learning_system.png"/>
+</div></blockquote>
+</div>
+<div class="section" id="components-of-a-ml-algorithm">
+<h3>Components of a ML Algorithm<a class="headerlink" href="#components-of-a-ml-algorithm" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="machine-learning-as-optimizing-search">
+<h3>Machine Learning as Optimizing Search<a class="headerlink" href="#machine-learning-as-optimizing-search" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="overcoming-overfitting">
+<h3>Overcoming Overfitting<a class="headerlink" href="#overcoming-overfitting" title="Permalink to this headline">¶</a></h3>
+</div>
 <div class="section" id="recommended-literature">
-<h2>Recommended literature<a class="headerlink" href="#recommended-literature" title="Permalink to this headline">¶</a></h2>
+<h3>Recommended literature<a class="headerlink" href="#recommended-literature" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Goodfellow IJ, Bengio Y, Courville A. Deep Learning. MIT Press; 2016. <a class="reference external" href="https://mitpress.mit.edu/books/deep-learning">https://mitpress.mit.edu/books/deep-learning</a></p></li>
 </ul>
 <p>…</p>
+</div>
 </div>
 </div>
 
@@ -246,7 +267,15 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Deep Learning</a><ul>
+<li><a class="reference internal" href="#chapter-5-1-machine-learning-basics">Chapter 5.1: Machine Learning Basics</a><ul>
+<li><a class="reference internal" href="#definition-of-learning-and-a-practical-example">Definition of “Learning” and a Practical Example</a></li>
+<li><a class="reference internal" href="#solving-a-logistic-regression-problem">Solving a Logistic Regression Problem</a></li>
+<li><a class="reference internal" href="#components-of-a-ml-algorithm">Components of a ML Algorithm</a></li>
+<li><a class="reference internal" href="#machine-learning-as-optimizing-search">Machine Learning as Optimizing Search</a></li>
+<li><a class="reference internal" href="#overcoming-overfitting">Overcoming Overfitting</a></li>
 <li><a class="reference internal" href="#recommended-literature">Recommended literature</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
