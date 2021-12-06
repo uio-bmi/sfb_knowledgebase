@@ -112,4 +112,3 @@ Topics in programming
 
    computational/programming_intro
    computational/clean_code
-   computational/deep_learning
