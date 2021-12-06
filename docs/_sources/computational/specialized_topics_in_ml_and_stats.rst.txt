@@ -5,7 +5,7 @@ Specialized topics in machine learning and statistics
 
   Aim: discuss topics of interest in more details
 
-  Level: apprentice 🌿
+  Level: beginner 🌱 or apprentice 🌿 (depending on the topic)
 
 .. toctree::
    :maxdepth: 1
