@@ -17,8 +17,7 @@ Definition of "Learning" and a Practical Example
 
 -- Mitchell 1997
 
-  "A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks
-   in T, as measured by P, improves with experience E."
+  "A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E."
 
 Learning as defined by Mitchell is comprised of an **Experience (E)**, **Performance (P)**, and **Task (T)** with the interaction between these
 elements giving structure to the learning system. The unique combination of these elements therefore articulates the environments, observations and
