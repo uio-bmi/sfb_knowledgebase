@@ -537,14 +537,14 @@ Recommendation: Avoid collapsing scopes down to one line, and expand and indent 
 
 Quick and dirty tests: variables are not well named, test functions are not short and descriptive.
 
-#### Issues:
+**Issues**:
 - Having dirty tests is equivalent to, if not worse than, having no tests. 
 - Tests must change as the production code evolves. The dirtier the tests, the harder they are to change.
 - As you modify the production code, old tests start to fail, and the mess in the test code makes it hard to get those tests to pass again.
 
 Verdict: test code is just as important as production code, and it is not a second-class citizen.
 
-### Clean Tests:
+### Clean Tests
 
 What makes a clean test? Three things. Readability, readability, and readability.
 
