@@ -513,6 +513,492 @@ A function can do multiple things if they are at the same level of abstraction.<
 <p>Remove it and use version control instead.</p>
 </div>
 </div>
+<div class="section" id="chapter-5-formatting">
+<h2>Chapter 5: Formatting<a class="headerlink" href="#chapter-5-formatting" title="Permalink to this headline">¶</a></h2>
+<p>The purpose of good formating is give a good impression about the neatness and consistency of the code.</p>
+<div class="section" id="vertical-formatting">
+<h3>Vertical formatting<a class="headerlink" href="#vertical-formatting" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>No hard and fast rule</p></li>
+<li><p>Small files are usually easier to understand ~200 lines.</p></li>
+</ul>
+<div class="section" id="the-newspaper-metaphor-structure">
+<h4>The Newspaper Metaphor (structure)<a class="headerlink" href="#the-newspaper-metaphor-structure" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Headline: what the story is about</p></li>
+<li><p>First paragraph: synopsis/bird’s-eye view of the story</p></li>
+<li><p>The rest: all the details</p></li>
+</ul>
+<p>Similarly, in a source file:</p>
+<ul class="simple">
+<li><p>Name should be simple and tell us whether we are in the
+right module or not.</p></li>
+<li><p>The topmost parts of the source file should provide the high-level
+concepts.</p></li>
+<li><p>Detail should increase as we move downward.</p></li>
+</ul>
+</div>
+<div class="section" id="the-newspaper-metaphor-length-of-files">
+<h4>The Newspaper Metaphor (length of files)<a class="headerlink" href="#the-newspaper-metaphor-length-of-files" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Most articles are very small.</p></li>
+<li><p>Some are a bit larger.</p></li>
+<li><p>Very few contain as much text as a page can hold.</p></li>
+</ul>
+</div>
+<div class="section" id="vertical-openness-between-concepts">
+<h4>Vertical Openness Between Concepts<a class="headerlink" href="#vertical-openness-between-concepts" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># bad</span>
+<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="kn">as</span> <span class="nn">rn</span>
+<span class="k">def</span> <span class="nf">get_rand_int</span><span class="p">(</span><span class="n">h</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">rn</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">get_normal</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">rn</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># good</span>
+<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="kn">as</span> <span class="nn">rn</span>
+
+<span class="k">def</span> <span class="nf">get_rand_int</span><span class="p">(</span><span class="n">h</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">rn</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">get_normal</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">rn</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="vertical-density">
+<h4>Vertical Density<a class="headerlink" href="#vertical-density" title="Permalink to this headline">¶</a></h4>
+<p>If openness separates concepts, then vertical density implies close association.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// bad</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ReporterConfig</span> <span class="o">{</span>
+ <span class="cm">/**</span>
+<span class="cm"> * The class name of the reporter listener</span>
+<span class="cm"> */</span>
+ <span class="kd">private</span> <span class="n">String</span> <span class="n">m_className</span><span class="o">;</span>
+ <span class="cm">/**</span>
+<span class="cm"> * The properties of the reporter listener</span>
+<span class="cm"> */</span>
+ <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Property</span><span class="o">&gt;</span> <span class="n">m_properties</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Property</span><span class="o">&gt;();</span>
+ <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addProperty</span><span class="o">(</span><span class="n">Property</span> <span class="n">property</span><span class="o">)</span> <span class="o">{</span>
+ <span class="n">m_properties</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">property</span><span class="o">);</span>
+ <span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// good</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ReporterConfig</span> <span class="o">{</span>
+ <span class="kd">private</span> <span class="n">String</span> <span class="n">m_className</span><span class="o">;</span>
+ <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Property</span><span class="o">&gt;</span> <span class="n">m_properties</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Property</span><span class="o">&gt;();</span>
+ 
+ <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addProperty</span><span class="o">(</span><span class="n">Property</span> <span class="n">property</span><span class="o">)</span> <span class="o">{</span>
+ <span class="n">m_properties</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">property</span><span class="o">);</span>
+ <span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="vertical-distance">
+<h4>Vertical Distance<a class="headerlink" href="#vertical-distance" title="Permalink to this headline">¶</a></h4>
+<p>Concepts that are closely related should be kept vertically close to each other.</p>
+<div class="section" id="variable-declarations">
+<h5>Variable Declarations<a class="headerlink" href="#variable-declarations" title="Permalink to this headline">¶</a></h5>
+<p>Variables should be declared as close to their usage as possible.</p>
+</div>
+</div>
+<div class="section" id="vertical-ordering-language-dependent">
+<h4>Vertical ordering (language dependent)<a class="headerlink" href="#vertical-ordering-language-dependent" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Functions should be defined below the functions that call it</p></li>
+<li><p>This is the exact opposite of languages like C and C++ that enforce functions to be defined, or at least declared,
+before they are used.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="horizontal-formatting">
+<h3>Horizontal Formatting<a class="headerlink" href="#horizontal-formatting" title="Permalink to this headline">¶</a></h3>
+<p>No hard rules, especially as monitors can be too wide, and the font size is adjustable.</p>
+<p>Rule of thumb: 120 characters</p>
+<div class="section" id="horizontal-openness-and-density">
+<h4>Horizontal Openness and Density<a class="headerlink" href="#horizontal-openness-and-density" title="Permalink to this headline">¶</a></h4>
+<p>Horizontal white space to associate things that are strongly related and disassociate
+things that are more weakly related.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span># bad
+class Quadratic():
+ def __init__ (self,...):
+     ⋮
+ def root1 (self, a, b, c):
+  determinant=self.determinant(a, b, c)
+  return (-b+math.sqrt(determinant))/(2 * a)
+
+ def determinant (self, a, b, c):
+  return b*b-4*a*c
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span># good
+class Quadratic():
+ def __init__(self,...):
+     ⋮
+ def root1(self, a, b, c): # no separation between function name and parentheses
+  determinant = self.determinant(a, b, c) # spaces before and after assignment operators
+  return (-b - math.sqrt(determinant)) / (2*a) # spaces to accentuate the precedence of operators, and clarify the operations
+
+ def determinant(self, a, b, c):
+  return b*b - 4*a*c
+</pre></div>
+</div>
+<p>Unfortunately, most tools for reformatting code are blind to the precedence of
+operators and impose the same spacing throughout. So subtle spacings like those
+shown above tend to get lost after you reformat the code.</p>
+</div>
+<div class="section" id="horizontal-alignment">
+<h4>Horizontal Alignment<a class="headerlink" href="#horizontal-alignment" title="Permalink to this headline">¶</a></h4>
+<p>Assembly language-inspired alignment</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// bad</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FitNesseExpediter</span> <span class="kd">implements</span> <span class="n">ResponseSender</span>
+<span class="o">{</span>
+    <span class="kd">private</span>     <span class="n">Socket</span>          <span class="n">socket</span><span class="o">;</span>
+    <span class="kd">private</span>     <span class="n">InputStream</span>     <span class="n">input</span><span class="o">;</span>
+    <span class="kd">private</span>     <span class="n">OutputStream</span>    <span class="n">output</span><span class="o">;</span>
+    <span class="kd">private</span>     <span class="n">Request</span>         <span class="n">request</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="nf">FitNesseExpediter</span><span class="o">(</span><span class="n">Socket</span> <span class="n">s</span><span class="o">,</span>
+                             <span class="n">FitNesseContext</span> <span class="n">context</span><span class="o">)</span> <span class="c1">// throws Exception</span>
+    <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">context</span> <span class="o">=</span>              <span class="n">context</span><span class="o">;</span>
+    <span class="n">socket</span> <span class="o">=</span>                    <span class="n">s</span><span class="o">;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// good</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FitNesseExpediter</span> <span class="kd">implements</span> <span class="n">ResponseSender</span>
+<span class="o">{</span>
+    <span class="kd">private</span> <span class="n">Socket</span> <span class="n">socket</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">InputStream</span> <span class="n">input</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">OutputStream</span> <span class="n">output</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">Request</span> <span class="n">request</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="nf">FitNesseExpediter</span><span class="o">(</span><span class="n">Socket</span> <span class="n">s</span><span class="o">,</span> <span class="n">FitNesseContext</span> <span class="n">context</span><span class="o">)</span>
+    <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">context</span> <span class="o">=</span> <span class="n">context</span><span class="o">;</span>
+    <span class="n">socket</span> <span class="o">=</span> <span class="n">s</span><span class="o">;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="indentation">
+<h4>Indentation<a class="headerlink" href="#indentation" title="Permalink to this headline">¶</a></h4>
+<p>A source file is a hierarchy rather like an outline.</p>
+<p>Each level of this hierarchy is a scope into which:</p>
+<ul class="simple">
+<li><p>names can be declared</p></li>
+<li><p>declarations and executable statements are interpreted.</p></li>
+</ul>
+<p>Therefore, we indent the lines in proportion to their position in the hiearchy:</p>
+<ul class="simple">
+<li><p>Statements at the level of the file, e.g. class declarations, are not indented at all.</p></li>
+<li><p>Methods within a class are indented one level to the right of the class.</p></li>
+<li><p>Implementations of those methods are implemented one level to the right of the method declaration.</p></li>
+</ul>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">FitNesseServer</span> <span class="kd">implements</span> <span class="n">SocketServer</span> <span class="o">{</span> <span class="kd">private</span> <span class="n">FitNesseContext</span>
+<span class="n">context</span><span class="o">;</span> <span class="kd">public</span> <span class="nf">FitNesseServer</span><span class="o">(</span><span class="n">FitNesseContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span> <span class="k">this</span><span class="o">.</span><span class="na">context</span> <span class="o">=</span>
+<span class="n">context</span><span class="o">;</span> <span class="o">}</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">serve</span><span class="o">(</span><span class="n">Socket</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span> <span class="n">serve</span><span class="o">(</span><span class="n">s</span><span class="o">,</span> <span class="mi">10000</span><span class="o">);</span> <span class="o">}</span> <span class="kd">public</span> <span class="kt">void</span>
+<span class="nf">serve</span><span class="o">(</span><span class="n">Socket</span> <span class="n">s</span><span class="o">,</span> <span class="kt">long</span> <span class="n">requestTimeout</span><span class="o">)</span> <span class="o">{</span> <span class="k">try</span> <span class="o">{</span> <span class="n">FitNesseExpediter</span> <span class="n">sender</span> <span class="o">=</span> <span class="k">new</span>
+<span class="n">FitNesseExpediter</span><span class="o">(</span><span class="n">s</span><span class="o">,</span> <span class="n">context</span><span class="o">);</span>
+<span class="n">sender</span><span class="o">.</span><span class="na">setRequestParsingTimeLimit</span><span class="o">(</span><span class="n">requestTimeout</span><span class="o">);</span> <span class="n">sender</span><span class="o">.</span><span class="na">start</span><span class="o">();</span> <span class="o">}</span>
+<span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span> <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span> <span class="o">}</span> <span class="o">}</span> <span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">FitNesseServer</span> <span class="kd">implements</span> <span class="n">SocketServer</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="n">FitNesseContext</span> <span class="n">context</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="nf">FitNesseServer</span><span class="o">(</span><span class="n">FitNesseContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">context</span> <span class="o">=</span> <span class="n">context</span><span class="o">;</span>
+  <span class="o">}</span>
+ 
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">serve</span><span class="o">(</span><span class="n">Socket</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">serve</span><span class="o">(</span><span class="n">s</span><span class="o">,</span> <span class="mi">10000</span><span class="o">);</span>
+  <span class="o">}</span>
+ 
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">serve</span><span class="o">(</span><span class="n">Socket</span> <span class="n">s</span><span class="o">,</span> <span class="kt">long</span> <span class="n">requestTimeout</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">try</span> <span class="o">{</span>
+      <span class="n">FitNesseExpediter</span> <span class="n">sender</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FitNesseExpediter</span><span class="o">(</span><span class="n">s</span><span class="o">,</span> <span class="n">context</span><span class="o">);</span>
+      <span class="n">sender</span><span class="o">.</span><span class="na">setRequestParsingTimeLimit</span><span class="o">(</span><span class="n">requestTimeout</span><span class="o">);</span>
+      <span class="n">sender</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+    <span class="o">}</span>
+    <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<div class="section" id="breaking-indentation">
+<h5>Breaking Indentation<a class="headerlink" href="#breaking-indentation" title="Permalink to this headline">¶</a></h5>
+<p>It is sometimes tempting to break the indentation rule for short
+if statements, short while loops, or short functions.</p>
+<p>Recommendation: Avoid collapsing scopes down to one line, and expand and indent the scopes instead, as described earlier.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="chapter-9-unit-tests">
+<h2>Chapter 9: Unit Tests<a class="headerlink" href="#chapter-9-unit-tests" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-three-laws-of-tdd-test-driven-development">
+<h3>The Three Laws of TDD (Test Driven Development)<a class="headerlink" href="#the-three-laws-of-tdd-test-driven-development" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>First Law: You may not write production code until you have written a failing unit test.</p></li>
+<li><p>Second Law: You may not write more of a unit test than is sufficient to fail, and not compiling is failing.</p></li>
+<li><p>Third Law: You may not write more production code than is sufficient to pass the currently failing test.</p></li>
+</ul>
+</div>
+<div class="section" id="keeping-tests-clean-no-quick-and-dirty-tests">
+<h3>Keeping Tests Clean: No quick and dirty tests<a class="headerlink" href="#keeping-tests-clean-no-quick-and-dirty-tests" title="Permalink to this headline">¶</a></h3>
+<p>Quick and dirty tests: variables are not well named, test functions are not short and descriptive.</p>
+<div class="section" id="issues">
+<h4>Issues:<a class="headerlink" href="#issues" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Having dirty tests is equivalent to, if not worse than, having no tests.</p></li>
+<li><p>Tests must change as the production code evolves. The dirtier the tests, the harder they are to change.</p></li>
+<li><p>As you modify the production code, old tests start to fail, and the mess in the test code makes it hard to get those tests to pass again.</p></li>
+</ul>
+<p>Verdict: test code is just as important as production code, and it is not a second-class citizen.</p>
+</div>
+</div>
+<div class="section" id="clean-tests">
+<h3>Clean Tests:<a class="headerlink" href="#clean-tests" title="Permalink to this headline">¶</a></h3>
+<p>What makes a clean test? Three things. Readability, readability, and readability.</p>
+<p>Don’t write a test where the reader is inundated with details that must be understood before the tests make any sense.
+(<strong>show java files</strong>)</p>
+<div class="section" id="build-operate-check-pattern">
+<h4>BUILD-OPERATE-CHECK pattern<a class="headerlink" href="#build-operate-check-pattern" title="Permalink to this headline">¶</a></h4>
+<p>The first part builds up the test data:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">testGetPageHieratchyAsXml</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+ <span class="n">makePages</span><span class="o">(</span><span class="s">"PageOne"</span><span class="o">,</span> <span class="s">"PageOne.ChildOne"</span><span class="o">,</span> <span class="s">"PageTwo"</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>The second part operates on that test data:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span> <span class="n">submitRequest</span><span class="o">(</span><span class="s">"root"</span><span class="o">,</span> <span class="s">"type:pages"</span><span class="o">);</span>
+</pre></div>
+</div>
+<p>The third part checks that the operation yielded the expected results:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span> <span class="n">assertResponseIsXML</span><span class="o">();</span>
+ <span class="n">assertResponseContains</span><span class="o">(</span>
+ <span class="s">"&lt;name&gt;PageOne&lt;/name&gt;"</span><span class="o">,</span> <span class="s">"&lt;name&gt;PageTwo&lt;/name&gt;"</span><span class="o">,</span> <span class="s">"&lt;name&gt;ChildOne&lt;/name&gt;"</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="a-dual-standard">
+<h4>A Dual Standard<a class="headerlink" href="#a-dual-standard" title="Permalink to this headline">¶</a></h4>
+<p>Test code must still be simple, succinct, and expressive, but it need not be as efficient as
+production code.</p>
+<p>There are things that you might never do in a
+production environment that are perfectly fine in a test environment.</p>
+<div class="section" id="readability">
+<h5>Readability<a class="headerlink" href="#readability" title="Permalink to this headline">¶</a></h5>
+<p>Before:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Test</span>
+ <span class="kd">public</span> <span class="kt">void</span> <span class="nf">turnOnLoTempAlarmAtThreashold</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+ <span class="n">hw</span><span class="o">.</span><span class="na">setTemp</span><span class="o">(</span><span class="n">WAY_TOO_COLD</span><span class="o">);</span>
+ <span class="n">controller</span><span class="o">.</span><span class="na">tic</span><span class="o">();</span>
+ 
+ <span class="n">assertTrue</span><span class="o">(</span><span class="n">hw</span><span class="o">.</span><span class="na">heaterState</span><span class="o">());</span>
+ <span class="n">assertTrue</span><span class="o">(</span><span class="n">hw</span><span class="o">.</span><span class="na">blowerState</span><span class="o">());</span>
+ <span class="n">assertFalse</span><span class="o">(</span><span class="n">hw</span><span class="o">.</span><span class="na">coolerState</span><span class="o">());</span>
+ <span class="n">assertFalse</span><span class="o">(</span><span class="n">hw</span><span class="o">.</span><span class="na">hiTempAlarm</span><span class="o">());</span>
+ <span class="n">assertTrue</span><span class="o">(</span><span class="n">hw</span><span class="o">.</span><span class="na">loTempAlarm</span><span class="o">());</span>
+ <span class="o">}</span>
+</pre></div>
+</div>
+<p>After:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Test</span>
+ <span class="kd">public</span> <span class="kt">void</span> <span class="nf">turnOnLoTempAlarmAtThreshold</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+ <span class="n">wayTooCold</span><span class="o">();</span>
+ <span class="n">assertEquals</span><span class="o">(</span><span class="s">"HBchL"</span><span class="o">,</span> <span class="n">hw</span><span class="o">.</span><span class="na">getState</span><span class="o">());</span>
+ <span class="o">}</span>
+</pre></div>
+</div>
+<p>Another example:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Test</span>
+ <span class="kd">public</span> <span class="kt">void</span> <span class="nf">turnOnHeaterAndBlowerIfTooCold</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+ <span class="n">tooCold</span><span class="o">();</span>
+ <span class="n">assertEquals</span><span class="o">(</span><span class="s">"HBchl"</span><span class="o">,</span> <span class="n">hw</span><span class="o">.</span><span class="na">getState</span><span class="o">());</span>
+ <span class="o">}</span>
+</pre></div>
+</div>
+<p>Even though this is close to a violation of the rule about mental mapping, it seems
+appropriate in this case. Notice, once you know the meaning, your eyes glide across
+that string and you can quickly interpret the results.</p>
+</div>
+<div class="section" id="efficiency">
+<h5>Efficiency<a class="headerlink" href="#efficiency" title="Permalink to this headline">¶</a></h5>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="n">String</span> <span class="nf">getState</span><span class="o">()</span> <span class="o">{</span>
+ <span class="n">String</span> <span class="n">state</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
+ <span class="n">state</span> <span class="o">+=</span> <span class="n">heater</span> <span class="o">?</span> <span class="s">"H"</span> <span class="o">:</span> <span class="s">"h"</span><span class="o">;</span>
+ <span class="n">state</span> <span class="o">+=</span> <span class="n">blower</span> <span class="o">?</span> <span class="s">"B"</span> <span class="o">:</span> <span class="s">"b"</span><span class="o">;</span>
+ <span class="n">state</span> <span class="o">+=</span> <span class="n">cooler</span> <span class="o">?</span> <span class="s">"C"</span> <span class="o">:</span> <span class="s">"c"</span><span class="o">;</span>
+ <span class="n">state</span> <span class="o">+=</span> <span class="n">hiTempAlarm</span> <span class="o">?</span> <span class="s">"H"</span> <span class="o">:</span> <span class="s">"h"</span><span class="o">;</span>
+ <span class="n">state</span> <span class="o">+=</span> <span class="n">loTempAlarm</span> <span class="o">?</span> <span class="s">"L"</span> <span class="o">:</span> <span class="s">"l"</span><span class="o">;</span>
+ <span class="k">return</span> <span class="n">state</span><span class="o">;</span>
+ <span class="o">}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">StringBuffers</span></code> would have been more efficient. However, the test environment, is not likely to be
+constrained.</p>
+</div>
+<div class="section" id="verdict">
+<h5>Verdict:<a class="headerlink" href="#verdict" title="Permalink to this headline">¶</a></h5>
+<p>There are things that you might never do in a production environment that are perfectly fine in a test environment. Usually they involve
+issues of memory or CPU efficiency. But they never involve issues of <strong>cleanliness</strong>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="one-assert-per-test-soft-requirement">
+<h3>One Assert per Test (soft requirement)<a class="headerlink" href="#one-assert-per-test-soft-requirement" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// relatively bad</span>
+
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">testGetPageHieratchyAsXml</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+ <span class="n">makePages</span><span class="o">(</span><span class="s">"PageOne"</span><span class="o">,</span> <span class="s">"PageOne.ChildOne"</span><span class="o">,</span> <span class="s">"PageTwo"</span><span class="o">);</span>
+ 
+ <span class="n">submitRequest</span><span class="o">(</span><span class="s">"root"</span><span class="o">,</span> <span class="s">"type:pages"</span><span class="o">);</span>
+ 
+ <span class="n">assertResponseIsXML</span><span class="o">();</span>
+ 
+ <span class="n">assertResponseContains</span><span class="o">(</span>
+ <span class="s">"&lt;name&gt;PageOne&lt;/name&gt;"</span><span class="o">,</span> <span class="s">"&lt;name&gt;PageTwo&lt;/name&gt;"</span><span class="o">,</span> <span class="s">"&lt;name&gt;ChildOne&lt;/name&gt;"</span>
+ <span class="o">);</span>
+ <span class="o">}</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// relatively good</span>
+
+<span class="c1">// first assert</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">testGetPageHierarchyAsXml</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+
+<span class="n">givenPages</span><span class="o">(</span><span class="s">"PageOne"</span><span class="o">,</span> <span class="s">"PageOne.ChildOne"</span><span class="o">,</span> <span class="s">"PageTwo"</span><span class="o">);</span>
+
+<span class="n">whenRequestIsIssued</span><span class="o">(</span><span class="s">"root"</span><span class="o">,</span> <span class="s">"type:pages"</span><span class="o">);</span>
+
+<span class="n">thenResponseShouldBeXML</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="c1">// second assert</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">testGetPageHierarchyHasRightTags</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+
+<span class="n">givenPages</span><span class="o">(</span><span class="s">"PageOne"</span><span class="o">,</span> <span class="s">"PageOne.ChildOne"</span><span class="o">,</span> <span class="s">"PageTwo"</span><span class="o">);</span>
+
+<span class="n">whenRequestIsIssued</span><span class="o">(</span><span class="s">"root"</span><span class="o">,</span> <span class="s">"type:pages"</span><span class="o">);</span>
+
+<span class="n">thenResponseShouldContain</span><span class="o">(</span>
+<span class="s">"&lt;name&gt;PageOne&lt;/name&gt;"</span><span class="o">,</span> <span class="s">"&lt;name&gt;PageTwo&lt;/name&gt;"</span><span class="o">,</span> <span class="s">"&lt;name&gt;ChildOne&lt;/name&gt;"</span>
+<span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Notice the <code class="docutils literal notranslate"><span class="pre">given-when-then</span></code> naming pattern.</p>
+<p>Drawback: duplicate code</p>
+<div class="section" id="possible-solutions">
+<h4>Possible solutions<a class="headerlink" href="#possible-solutions" title="Permalink to this headline">¶</a></h4>
+<p>1- Use the TEMPLATE METHOD pattern and put the <strong>given</strong>/<strong>when</strong> parts in the base class, and the <strong>then</strong> parts in different derivatives<br/>
+2- Create a completely separate test class and put the <strong>given</strong>/<strong>when</strong> parts in the @Before function, and the <strong>then</strong> parts in each @Test function.</p>
+<p>Here, this seems like too much mechanism for such a minor issue, and you could stick to multiple <code class="docutils literal notranslate"><span class="pre">asserts</span></code>.</p>
+<p><strong>Verdict</strong>: the best thing we can say is that the number of asserts in a test ought to be minimized.</p>
+</div>
+</div>
+<div class="section" id="single-concept-per-test">
+<h3>Single Concept per Test<a class="headerlink" href="#single-concept-per-test" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Miscellaneous tests for the addMonths() method.</span>
+<span class="cm"> */</span>
+ <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testAddMonths</span><span class="o">()</span> <span class="o">{</span>
+     <span class="n">SerialDate</span> <span class="n">d1</span> <span class="o">=</span> <span class="n">SerialDate</span><span class="o">.</span><span class="na">createInstance</span><span class="o">(</span><span class="mi">31</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">2004</span><span class="o">);</span>
+     
+     <span class="n">SerialDate</span> <span class="n">d2</span> <span class="o">=</span> <span class="n">SerialDate</span><span class="o">.</span><span class="na">addMonths</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">d1</span><span class="o">);</span>
+     <span class="n">assertEquals</span><span class="o">(</span><span class="mi">30</span><span class="o">,</span> <span class="n">d2</span><span class="o">.</span><span class="na">getDayOfMonth</span><span class="o">());</span>
+     <span class="n">assertEquals</span><span class="o">(</span><span class="mi">6</span><span class="o">,</span> <span class="n">d2</span><span class="o">.</span><span class="na">getMonth</span><span class="o">());</span>
+     <span class="n">assertEquals</span><span class="o">(</span><span class="mi">2004</span><span class="o">,</span> <span class="n">d2</span><span class="o">.</span><span class="na">getYYYY</span><span class="o">());</span>
+     
+     <span class="n">SerialDate</span> <span class="n">d3</span> <span class="o">=</span> <span class="n">SerialDate</span><span class="o">.</span><span class="na">addMonths</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="n">d1</span><span class="o">);</span>
+     <span class="n">assertEquals</span><span class="o">(</span><span class="mi">31</span><span class="o">,</span> <span class="n">d3</span><span class="o">.</span><span class="na">getDayOfMonth</span><span class="o">());</span>
+     <span class="n">assertEquals</span><span class="o">(</span><span class="mi">7</span><span class="o">,</span> <span class="n">d3</span><span class="o">.</span><span class="na">getMonth</span><span class="o">());</span>
+     <span class="n">assertEquals</span><span class="o">(</span><span class="mi">2004</span><span class="o">,</span> <span class="n">d3</span><span class="o">.</span><span class="na">getYYYY</span><span class="o">());</span>
+     
+     <span class="n">SerialDate</span> <span class="n">d4</span> <span class="o">=</span> <span class="n">SerialDate</span><span class="o">.</span><span class="na">addMonths</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">SerialDate</span><span class="o">.</span><span class="na">addMonths</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">d1</span><span class="o">));</span>
+     <span class="n">assertEquals</span><span class="o">(</span><span class="mi">30</span><span class="o">,</span> <span class="n">d4</span><span class="o">.</span><span class="na">getDayOfMonth</span><span class="o">());</span>
+     <span class="n">assertEquals</span><span class="o">(</span><span class="mi">7</span><span class="o">,</span> <span class="n">d4</span><span class="o">.</span><span class="na">getMonth</span><span class="o">());</span>
+     <span class="n">assertEquals</span><span class="o">(</span><span class="mi">2004</span><span class="o">,</span> <span class="n">d4</span><span class="o">.</span><span class="na">getYYYY</span><span class="o">());</span>
+ <span class="o">}</span>
+</pre></div>
+</div>
+<p><strong>Concepts:</strong></p>
+<p>• Given the last day of a month with 31 days (like May):</p>
+<ol class="simple">
+<li><p>When you add one month, such that the last day of that month is the 30th
+(like June), then the date should be the 30th of that month, not the 31st.</p></li>
+<li><p>When you add two months to that date, such that the final month has 31 days,
+then the date should be the 31st.</p></li>
+</ol>
+<p>• Given the last day of a month with 30 days in it (like June):</p>
+<ol class="simple">
+<li><p>When you add one month such that the last day of that month has 31 days, then the
+date should be the 30th, not the 31st.</p></li>
+</ol>
+<p><strong>Proposed change:</strong>
+You should test just <strong>one concept per test</strong> function.</p>
+</div>
+<div class="section" id="f-i-r-s-t">
+<h3>F.I.R.S.T.<a class="headerlink" href="#f-i-r-s-t" title="Permalink to this headline">¶</a></h3>
+<p>The other five rules for clean tests:</p>
+<ul class="simple">
+<li><p><strong>Fast:</strong></p>
+<ul>
+<li><p>They should run quickly.</p></li>
+<li><p>When tests run slow, you won’t want to run them frequently.</p></li>
+<li><p>If you don’t run them frequently, you won’t find problems early
+enough to fix them easily.</p></li>
+<li><p>You won’t feel as free to clean up the code.</p></li>
+<li><p>Eventually the code will begin to rot.</p></li>
+</ul>
+</li>
+<li><p><strong>Independent:</strong></p>
+<ul>
+<li><p>One test should not set up the conditions for the next test.</p></li>
+<li><p>You should be able to run each test independently and run the tests in
+any order you like.</p></li>
+<li><p>When tests depend on each other, then the first one to fail causes a cascade of downstream failures, making diagnosis difficult and hiding downstream defects.</p></li>
+</ul>
+</li>
+<li><p><strong>Repeatable:</strong></p>
+<ul>
+<li><p>Tests should be repeatable in any environment.</p></li>
+<li><p>You should be able to run the
+tests in the production environment, in the QA environment, and on your laptop while
+riding home on the train without a network.</p></li>
+<li><p>If your tests aren’t repeatable in any environment, then you’ll always have an excuse for why they fail.</p></li>
+<li><p>You’ll also find yourself unable to run the tests when the environment isn’t available.</p></li>
+</ul>
+</li>
+<li><p><strong>Self-Validating:</strong></p>
+<ul>
+<li><p>The tests should have a boolean output.</p></li>
+<li><p>Either they pass or fail.</p></li>
+<li><p>You should not have to read through a log file to tell whether the tests pass.</p></li>
+<li><p>You should not have
+to manually compare two different text files to see whether the tests pass.</p></li>
+<li><p>If the tests aren’t self-validating, then failure can become subjective and running the tests can require a long
+manual evaluation.</p></li>
+</ul>
+</li>
+<li><p><strong>Timely:</strong></p>
+<ul>
+<li><p>The tests need to be written in a timely fashion.</p></li>
+<li><p>Unit tests should be written just before the production code that makes them pass.</p></li>
+<li><p>If you write tests after the production code, then you may find the production code to be hard to test.</p></li>
+<li><p>You may decide that some production code is too hard to test.</p></li>
+<li><p>You may not design the production code to be testable.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
 </div>
 
       </article>
@@ -608,6 +1094,54 @@ A function can do multiple things if they are at the same level of abstraction.<
 <li><a class="reference internal" href="#avoid-todo-comments">Avoid todo comments</a></li>
 <li><a class="reference internal" href="#informative-comments">Informative comments</a></li>
 <li><a class="reference internal" href="#don-t-comment-out-code">Don’t comment out code</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#chapter-5-formatting">Chapter 5: Formatting</a><ul>
+<li><a class="reference internal" href="#vertical-formatting">Vertical formatting</a><ul>
+<li><a class="reference internal" href="#the-newspaper-metaphor-structure">The Newspaper Metaphor (structure)</a></li>
+<li><a class="reference internal" href="#the-newspaper-metaphor-length-of-files">The Newspaper Metaphor (length of files)</a></li>
+<li><a class="reference internal" href="#vertical-openness-between-concepts">Vertical Openness Between Concepts</a></li>
+<li><a class="reference internal" href="#vertical-density">Vertical Density</a></li>
+<li><a class="reference internal" href="#vertical-distance">Vertical Distance</a><ul>
+<li><a class="reference internal" href="#variable-declarations">Variable Declarations</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#vertical-ordering-language-dependent">Vertical ordering (language dependent)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#horizontal-formatting">Horizontal Formatting</a><ul>
+<li><a class="reference internal" href="#horizontal-openness-and-density">Horizontal Openness and Density</a></li>
+<li><a class="reference internal" href="#horizontal-alignment">Horizontal Alignment</a></li>
+<li><a class="reference internal" href="#indentation">Indentation</a><ul>
+<li><a class="reference internal" href="#breaking-indentation">Breaking Indentation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#chapter-9-unit-tests">Chapter 9: Unit Tests</a><ul>
+<li><a class="reference internal" href="#the-three-laws-of-tdd-test-driven-development">The Three Laws of TDD (Test Driven Development)</a></li>
+<li><a class="reference internal" href="#keeping-tests-clean-no-quick-and-dirty-tests">Keeping Tests Clean: No quick and dirty tests</a><ul>
+<li><a class="reference internal" href="#issues">Issues:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#clean-tests">Clean Tests:</a><ul>
+<li><a class="reference internal" href="#build-operate-check-pattern">BUILD-OPERATE-CHECK pattern</a></li>
+<li><a class="reference internal" href="#a-dual-standard">A Dual Standard</a><ul>
+<li><a class="reference internal" href="#readability">Readability</a></li>
+<li><a class="reference internal" href="#efficiency">Efficiency</a></li>
+<li><a class="reference internal" href="#verdict">Verdict:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#one-assert-per-test-soft-requirement">One Assert per Test (soft requirement)</a><ul>
+<li><a class="reference internal" href="#possible-solutions">Possible solutions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#single-concept-per-test">Single Concept per Test</a></li>
+<li><a class="reference internal" href="#f-i-r-s-t">F.I.R.S.T.</a></li>
 </ul>
 </li>
 </ul>
