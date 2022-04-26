@@ -95,6 +95,14 @@ See the following pages for resources for:
 - :ref:`Getting started with genomics` 🌱
 - :ref:`Getting started with immunology and adaptive immune receptors` 🌱
 
+Academic writing & other skills
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Are you a master student getting started with the writing?
+-------------------------------------------------------------
+
+- :ref:`Writing an essay for master students` 🌱
+
 .. toctree::
    :maxdepth: 2
    :caption: Getting started:
@@ -111,6 +119,7 @@ See the following pages for resources for:
    programming
    setting_up_project
    running_analysis
+   writing
 
 
 Indices and tables
