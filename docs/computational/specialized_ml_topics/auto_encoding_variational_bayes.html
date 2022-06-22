@@ -1,0 +1,319 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Notes on variational inference" href="variational_inference.html" /><link rel="prev" title="Machine Learning Basics" href="DL_book_ch5_1_overview.html" />
+
+    <meta name="generator" content="sphinx-3.5.4, furo 2021.04.11.beta34"/>
+        <title>Auto-Encoding Variational Bayes - SfB knowledge base documentation</title>
+      <link rel="stylesheet" href="../../_static/styles/furo.css?digest=59ab60ac09ea94ccfe6deddff6d715cce948a6fc">
+    <link rel="stylesheet" href="../../_static/pygments.css">
+    <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="../../_static/pygments_dark.css">
+    
+
+
+<style>
+  :root {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+
+  /* For allowing end-user-specific overrides */
+  .override-light {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  .override-dark {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+</style><link rel="stylesheet" href="../../_static/styles/furo-extensions.css?digest=d391b54134226e4196576da3bdb6dddb7e05ba2b"></head>
+  <body dir="">
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke-width="1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z"/>
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">SfB knowledge base  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  
+  <span class="sidebar-brand-text">SfB knowledge base  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html">
+  <input class="sidebar-search" placeholder=Search name="q">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption"><span class="caption-text">Getting started:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started_bioinf.html">Getting started in bioinformatics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../biology/genomics_intro.html">Getting started with genomics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../biology/immunology_intro.html">Getting started with immunology and adaptive immune receptors</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Topics:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../analysis_design.html">Designing an analysis</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label for="toctree-checkbox-1"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../statistics.html">Statistics: reference</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../ml_and_causality.html">Machine learning and causal inference</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label for="toctree-checkbox-2"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ml_intro/overview.html">Brief overview of machine learning in computational biology</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ml_intro/intro_to_ml.html">Introduction to Machine Learning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ml_intro/ml_models.html">Introduction to machine learning models and algorithms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ml_intro/data_representation.html">Data representation in machine learning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ml_intro/ml_model_comparison_and_uncertainty.html">Machine learning model comparison and uncertainty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ml_intro/transparency_and_reproducibility.html">Transparency and reproducibility in machine learning</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../specialized_topics_in_ml_and_stats.html">Specialized topics in machine learning and statistics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label for="toctree-checkbox-3"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="DL_book_ch5_1_overview.html">Machine Learning Basics</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Auto-Encoding Variational Bayes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="variational_inference.html">Notes on variational inference</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../biology/genomics.html">Genomics: references</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../biology/immunology.html">Immunology: references</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../programming.html">Programming</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label for="toctree-checkbox-4"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../programming_intro.html">Getting started with programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clean_code.html">Clean code</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../setting_up_project.html">Setting up and organizing a project</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label for="toctree-checkbox-5"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sharing_tools.html">Services to share developed tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../containers.html">Containers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../running_analysis.html">Running an analysis</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../writing.html">Academic Writing</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label for="toctree-checkbox-6"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../writing/essay_master_students.html">Writing an essay for master students</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <main class="main">
+    <div class="content">
+      <article role="main">
+        <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+        </label>
+        <div class="section" id="auto-encoding-variational-bayes">
+<h1>Auto-Encoding Variational Bayes<a class="headerlink" href="#auto-encoding-variational-bayes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="problem-formulation">
+<h2>Problem Formulation<a class="headerlink" href="#problem-formulation" title="Permalink to this headline">¶</a></h2>
+<p>Suppose our input data <span class="math notranslate nohighlight">\(x\)</span> is generated from a random process. This random process involves an unobserved continuous random variable <span class="math notranslate nohighlight">\(z\)</span>, which is generated from another process: <span class="math notranslate nohighlight">\(p_{\theta^*}(z)\)</span>. Then, given the latent variable <span class="math notranslate nohighlight">\(z\)</span>, we can derive the conditional probabilistic distribution <span class="math notranslate nohighlight">\(p_{\theta^*}(x|z)\)</span> that we would like to find.</p>
+<p>However, both the latent variable <span class="math notranslate nohighlight">\(z\)</span> and the parameter of the random process <span class="math notranslate nohighlight">\(\theta^*\)</span> is unknown. As we don’t know the probability density function <span class="math notranslate nohighlight">\(p_\theta(x|z)\)</span>, we couldn’t use the <strong>expectation-maximization (EM)</strong> algorithm to find <span class="math notranslate nohighlight">\(p_{\theta^*}(x|z)\)</span>. (EM algorithm is used to find the optimal parameter when the probability density function of a distribution is known)</p>
+<p>Another way of finding <span class="math notranslate nohighlight">\(p_{\theta^*}(x|z)\)</span> is to use the <strong>Monte Carlo EM algorithm</strong>, however, it doesn’t scale well to a large dataset. For mean-field approximation, analytical solutions of expectations with respect to the approximate posterior is also required, which is intractable in this application.</p>
+</div>
+<div class="section" id="decomposition-of-log-likelihood">
+<h2>Decomposition of Log-Likelihood<a class="headerlink" href="#decomposition-of-log-likelihood" title="Permalink to this headline">¶</a></h2>
+<p>The authors proposed to use a neural network to find an encoder function <span class="math notranslate nohighlight">\(q_\psi(x)\)</span> to approximate <span class="math notranslate nohighlight">\(p_{\theta^*}(z|x)\)</span>, and a decoder function to approximate <span class="math notranslate nohighlight">\(p_{\theta^*}(x|z)\)</span>.</p>
+<p>For any probability density function, we can maximize the corresponding log-likelihood with our input data:</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\begin{split}\text{log}p(x) &amp; = \text{log}p(x)\int_zq(z|x)dz \\
+&amp; = \int_zq(z|x)\text{log}p(x)dz \\
+&amp; = \int_zq(z|x)\text{log}(\frac{p(x, z)}{p(z|x)})dz \\
+&amp; = \int_zq(z|x)\text{log}(\frac{p(x, z)}{q(z|x)}\frac{q(z|x)}{p(z|x)})dz \\
+&amp; = \int_zq(z|x)\text{log}(\frac{p(x, z)}{q(z|x)})dz+\int_zq(z|x)\text{log}(\frac{q(z|x)}{p(z|x)})dz\end{split}\]</div></div>
+<p>, where <span class="math notranslate nohighlight">\(q(z|x)\)</span> is the posterior distribution of <span class="math notranslate nohighlight">\(z\)</span> given the input data <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>Let the first term on the right-hand side be:</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[L_b = \int_zq(z|x)\text{log}(\frac{p(x, z)}{q(z|x)})dz\]</div></div>
+<p>, and the second term on the right hand side would be:</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[D_{KL}(q(z|x)\;||\;p(z|x)) = \int_zq(z|x)\text{log}\frac{q(z|x)}{p(z|x)}dz\]</div></div>
+<p>Since Kullback–Leibler divergence (KL divergence) is always <span class="math notranslate nohighlight">\(\geq 0\)</span>:</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\text{log}p(x) = L_b+D_{KL}(q(z|x)\;||\;p(z|x))\geq L_b+0=L_b\]</div></div>
+<p>To maximize the log-likelihood of <span class="math notranslate nohighlight">\(p(x)\)</span>, we try to maximize the lower bound <span class="math notranslate nohighlight">\(L_b\)</span>, this is also known as the <strong>evidence lower bound (ELBO)</strong> of log-likelihood of <span class="math notranslate nohighlight">\(p(x)\)</span>.</p>
+<p>Let’s further decompose <span class="math notranslate nohighlight">\(L_b\)</span>:</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\begin{split}L_b &amp;= \int_zq(z|x)\text{log}(\frac{p(x, z)}{q(z|x)})dz \\
+&amp; = \int_zq(z|x)\text{log}(\frac{p(x| z)p(z)}{q(z|x)})dz \\
+&amp; = \int_zq(z|x)\text{log}p(x| z)dz+\int_zq(z|x)\text{log}(\frac{p(z)}{q(z|x)})dz \\
+&amp; = \int_zq(z|x)\text{log}p(x| z)dz-D_{KL}(q(z|x)\;||\;p(z))\end{split}\]</div></div>
+<p>Finally, the log-likelihood can be written as:</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\log p(x)=\int_zq(z|x)\log p(x| z)dz-D_{KL}(q(z|x)\;||\;p(z))+D_{KL}(q(z|x)\;||\;p(z|x))\]</div></div>
+<p>Assume the marginal distribution of <span class="math notranslate nohighlight">\(p(z)\)</span> follows a standard Gaussian distribution and <span class="math notranslate nohighlight">\(q(z|x)\)</span> follows a multivariate Gaussian distribution, the second term of the ELBO can be solve by:</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[-D_{KL}(q(z|x)\;||\;p(z))=\frac{1}{2}\sum\limits_{j=1}^D[1+\log(\sigma_j)-(\sigma_j)^2-(\mu_j)^2]\]</div></div>
+<p>where <span class="math notranslate nohighlight">\(D\)</span> is the number of latent dimensions, <span class="math notranslate nohighlight">\(\mu_j\)</span> and <span class="math notranslate nohighlight">\(\sigma_j\)</span> is the mean and standard deviation from <span class="math notranslate nohighlight">\(j\)</span>-th components in the multivariate Gaussian distribution <span class="math notranslate nohighlight">\(q(z|x)\)</span>.</p>
+</div>
+<div class="section" id="reparameterization">
+<h2>Reparameterization<a class="headerlink" href="#reparameterization" title="Permalink to this headline">¶</a></h2>
+<p>The first term of the ELBO can be optimized by many methods, such as the Monte Carlo estimator, however, the authors mention that using the Monte Carlo estimator exhibit high variance. Instead, the author uses a neural network to approximate this term.</p>
+<img alt="architecture of variational autoencoder (without reparameterization trick)" src="../../_images/vae_architecture_1.png"/>
+<p>However, the parameters for the encoder and the decoder couldn’t be optimized using backpropagation as there’s a sampling process dependent on the parameters in forward propagation. The authors proposed a reparameterization trick to address this. Instead of sampling from a Gaussian distribution <span class="math notranslate nohighlight">\(N(\mu, \sigma^2)\)</span> that dependent on <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span>, the reparameterization trick sample a Gaussian noise, and use the following equation to approximate the sampling while decoupling the parameters and the sampling process:</p>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[z_i = \mu_i+\sigma_i\varepsilon_i\]</div></div>
+<p>, where <span class="math notranslate nohighlight">\(\varepsilon\sim N(0, 1)\)</span>. The neural network then becomes:</p>
+<img alt="architecture of variational autoencoder" src="../../_images/vae_architecture_2.png"/>
+</div>
+<div class="section" id="decomposition-of-the-loss-function">
+<h2>Decomposition of the Loss Function<a class="headerlink" href="#decomposition-of-the-loss-function" title="Permalink to this headline">¶</a></h2>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[L_b = \int_zq(z|x)\text{log}p(x| z)dz+\frac{1}{2}\sum\limits_{j=1}^D[1+\log(\sigma_j)-(\sigma_j)^2-(\mu_j)^2]\]</div></div>
+<p>The first term of the ELBO is often referred to as the <strong>reconstruction loss</strong>. For the decoder to correctly decodes the distribution into different data points in the feature space. The embedding distribution for different data points needs to be separated. There are two straightforward ways of achieving this, the first way is to embed the data into distributions with very small standard deviation. However, this makes variational autoencoder degenerates into autoencoder and the network will not be able to generate data points from unseen distributions in the latent space. The second way is to scatter the mean of the distribution of each data point across the entire embedding space, however, the model couldn’t learn relevant representation from the data point as well.</p>
+<img alt="encoder of variational autoencoder" src="../../_images/vae_encoder.png"/>
+<img alt="decoder of variational autoencoder" src="../../_images/vae_decoder.png"/>
+<p>The KL divergence term can be thought of as a regularization applies to the latent representation so that the data is constrained with a prior distribution <span class="math notranslate nohighlight">\(p(z)\sim N(0, I)\)</span>. The KL divergence punishes distributions with large mean values to prevent the distribution from scattering across the entire embedding space and the term <span class="math notranslate nohighlight">\(1+\log(\sigma_j)-(\sigma_j)^2\)</span> prevent the variance to diminish.</p>
+<img alt="kl_divergence analysis" src="../../_images/vae_kl_divergence.png"/>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Auto-Encoding Variational Bayes. Kingma et al., ICLR 2014.</p></li>
+<li><p>Deep Learning DS-GA 1008, New York University. Spring 2018.</p></li>
+</ol>
+</div>
+</div>
+
+      </article>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="variational_inference.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Notes on variational inference</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="DL_book_ch5_1_overview.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Machine Learning Basics</div>
+                
+              </div>
+            </a>
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2021, SfB_UiO
+            |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+            |
+            <a class="muted-link" href="../../_sources/computational/specialized_ml_topics/auto_encoding_variational_bayes.rst.txt"
+               rel="nofollow">
+              Show Source
+            </a>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Auto-Encoding Variational Bayes</a><ul>
+<li><a class="reference internal" href="#problem-formulation">Problem Formulation</a></li>
+<li><a class="reference internal" href="#decomposition-of-log-likelihood">Decomposition of Log-Likelihood</a></li>
+<li><a class="reference internal" href="#reparameterization">Reparameterization</a></li>
+<li><a class="reference internal" href="#decomposition-of-the-loss-function">Decomposition of the Loss Function</a></li>
+<li><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </main>
+</div>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="../../_static/scripts/main.js?digest=e931d09b2a40c1bb82b542effe772014573baf67"></script></body>
+</html>
